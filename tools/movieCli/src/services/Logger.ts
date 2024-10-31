@@ -15,7 +15,7 @@ export class Logger {
   }
 
   public infoIssueNotProcessing(label: string) {
-    this.logInfo(`Ignoring, this issue as it is not for automation`);
+    this.logInfo(`Ignoring this issue as it is not for automation`);
     this.logInfo(`If this was in error, make sure the issue:`);
     this.logInfo(`- has a ${green(label)} label`);
     this.logInfo(`- has yaml data in its body which includes a 'type' field`);
