@@ -18,19 +18,20 @@ export interface SubtitlePackage {
 
 interface ZipFileSource {
   type: SourceTypeEnum.ZipFile;
-  zipFileUrl: string;
+  sourceUrl: string;
   zipFileName: string;
   subtitleFileName: string;
 }
 
 interface StandaloneFileSource {
   type: SourceTypeEnum.StandaloneFile;
-  subtitleUrl: string;
+  sourceUrl: string;
   subtitleFileName: string;
 }
 
 export interface Movie {
   imdbId: string;
+  sourceUrls: string[];
   title: string;
   posterUrl: string | null;
   releaseDate: string | null;
