@@ -1,6 +1,7 @@
 import { find, isNil } from 'lodash-es';
 import { parse } from 'yaml';
 import type { GetIssueResponse, GitHubIssueReader } from './GitHubIssueReader.types';
+import { ReadOutput, ReadOutputCodeEnum } from './GitHubIssueReader.types';
 
 export class GitHubIssueReaderImpl implements GitHubIssueReader {
   public constructor(
@@ -10,16 +11,29 @@ export class GitHubIssueReaderImpl implements GitHubIssueReader {
     private readonly label: string
   ) {}
 
-  public async read(issueNumber: number) {
-    const issue = <GetIssueResponse>await this.get(`/issues/${issueNumber}`);
+  public async read(issueNumber: number): Promise<ReadOutput> {
+    const issue = await this.getIssue(issueNumber);
+
     const label = find(issue.labels, (l) => l.name === this.label);
-    if (isNil(label)) return null;
+    if (isNil(label)) return { code: ReadOutputCodeEnum.NotAutomated };
+
+    const rawData = this.getRawData(issue.body);
+    if (isNil(rawData)) return { code: ReadOutputCodeEnum.AutomatedNoData };
 
     try {
-      const data = this.parseIssueText(issue.body);
-      return data;
+      const data = parse(rawData);
+      return { code: ReadOutputCodeEnum.Automated, data };
+    } catch {
+      return { code: ReadOutputCodeEnum.AutomatedYamlError, yaml: rawData };
+    }
+  }
+
+  private async getIssue(issueNumber: number) {
+    try {
+      const issue = <GetIssueResponse>await this.get(`/issues/${issueNumber}`);
+      return issue;
     } catch (cause) {
-      throw new Error(`GitHubIssueReader: read '${issueNumber}' failed`, { cause });
+      throw new Error(`Error fetching issue '${issueNumber}'`, { cause });
     }
   }
 
@@ -29,6 +43,14 @@ export class GitHubIssueReaderImpl implements GitHubIssueReader {
     const response = await fetch(url, { headers });
     const json = await response.json();
     return json;
+  }
+
+  private getRawData(issueBody: string) {
+    const separatorIndex = issueBody.indexOf(this.separator);
+    if (separatorIndex === -1) return null;
+
+    const rawData = issueBody.slice(separatorIndex + 3).trim();
+    return rawData;
   }
 
   private parseIssueText(issueText: string): Record<string, any> | null {

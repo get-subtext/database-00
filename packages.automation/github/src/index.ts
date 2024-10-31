@@ -1,7 +1,16 @@
 import type { GitHubIssueReader } from './services/GitHubIssueReader.types';
 import { GitHubIssueReaderImpl } from './services/GitHubIssueReaderImpl';
 
-export type { GitHubIssueReader } from './services/GitHubIssueReader.types';
+export { ReadOutputCodeEnum as ReadOutputTypeEnum } from './services/GitHubIssueReader.types';
+export type {
+  GetIssueResponse,
+  GitHubIssueReader,
+  ReadOutput,
+  ReadOutputAutomated,
+  ReadOutputAutomatedNoData,
+  ReadOutputAutomatedYamlError,
+  ReadOutputNotAutomated,
+} from './services/GitHubIssueReader.types';
 
 export interface GitHubIssueReaderOptions {
   apiUrlBase: string;

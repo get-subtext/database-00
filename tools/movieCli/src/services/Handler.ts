@@ -1,6 +1,7 @@
 import type { GitHubIssueReader } from '@get-subtext/automation.github';
 import type { MovieReader } from '@get-subtext/movies.api';
 import { get, isNil } from 'lodash-es';
+import { ReadOutputCodeEnum } from 'packages.automation/github/src/services/GitHubIssueReader.types';
 import type { ProcessIssueInput } from './Handler.types';
 import type { Logger } from './Logger';
 
@@ -16,16 +17,26 @@ export class Handler {
     this.logger.infoBlank();
     this.logger.infoIssueStarting(issueNumber);
 
-    const data = await this.gitHubIssueReader.read(issueNumber);
-    if (isNil(data)) {
-      this.logger.infoIssueNotProcessing(this.botLabel);
-    } else {
-      const type = get(data, 'type');
-      if (isNil(type)) {
-        this.logger.errorIssueNoType();
-      } else {
-        await this.doProcessIssue(issueNumber, type, data);
-      }
+    const readRes = await this.gitHubIssueReader.read(issueNumber);
+    switch (readRes.code) {
+      case ReadOutputCodeEnum.NotAutomated:
+        this.logger.infoIssueNotProcessing(this.botLabel);
+        break;
+      case ReadOutputCodeEnum.Automated:
+        const type = get(readRes.data, 'type');
+        if (isNil(type)) {
+          this.logger.errorIssueNoType();
+        } else {
+          await this.doProcessIssue(issueNumber, type, readRes.data);
+        }
+
+        break;
+      case ReadOutputCodeEnum.AutomatedNoData:
+        this.logger.errorIssueNoData();
+        break;
+      case ReadOutputCodeEnum.AutomatedYamlError:
+        this.logger.errorIssueInvalidYaml();
+        break;
     }
 
     this.logger.infoBlank();
