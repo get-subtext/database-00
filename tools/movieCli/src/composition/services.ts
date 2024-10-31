@@ -9,6 +9,7 @@ import { config } from './config';
 
 const pkgMeta = getPkgMeta(rootDir);
 const logPrefix = last(split(pkgMeta.name, '/'));
+const botLabel = 'subtext-bot';
 
 export const createHandler = (verbose: boolean) => {
   const logger = new Logger(logPrefix!, verbose);
@@ -16,9 +17,9 @@ export const createHandler = (verbose: boolean) => {
     apiUrlBase: config.gitHub.apiUrlBase,
     apiToken: config.gitHub.token,
     dataSeparator: '===',
-    botLabel: 'subtext-bot',
+    botLabel,
   });
 
   const movieReader = createMovieReader({});
-  return new Handler(gitHubIssueReader, logger);
+  return new Handler(botLabel, gitHubIssueReader, movieReader, logger);
 };
