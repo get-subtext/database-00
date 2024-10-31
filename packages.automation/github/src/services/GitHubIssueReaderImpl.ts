@@ -31,9 +31,9 @@ export class GitHubIssueReaderImpl implements GitHubIssueReader {
     return json;
   }
 
-  private parseIssueText(issueText: string): Record<string, any> {
+  private parseIssueText(issueText: string): Record<string, any> | null {
     const separatorIndex = issueText.indexOf(this.separator);
-    if (separatorIndex === -1) throw new Error(`No separator found`);
+    if (separatorIndex === -1) return null;
 
     const yamlContent = issueText.slice(separatorIndex + 3).trim();
     try {
