@@ -1,4 +1,5 @@
 import { createGitHubIssueReader } from '@get-subtext/automation.github';
+import { createMovieReader } from '@get-subtext/movies.api';
 import { last, split } from 'lodash-es';
 import { rootDir } from '../rootDir';
 import { Handler } from '../services/Handler';
@@ -8,6 +9,7 @@ import { config } from './config';
 
 const pkgMeta = getPkgMeta(rootDir);
 const logPrefix = last(split(pkgMeta.name, '/'));
+const botLabel = 'subtext-bot';
 
 export const createHandler = (verbose: boolean) => {
   const logger = new Logger(logPrefix!, verbose);
@@ -15,8 +17,9 @@ export const createHandler = (verbose: boolean) => {
     apiUrlBase: config.gitHub.apiUrlBase,
     apiToken: config.gitHub.token,
     dataSeparator: '===',
-    botLabel: 'subtext-bot',
+    botLabel,
   });
 
-  return new Handler(gitHubIssueReader, logger);
+  const movieReader = createMovieReader({});
+  return new Handler(botLabel, gitHubIssueReader, movieReader, logger);
 };

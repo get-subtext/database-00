@@ -1,0 +1,23 @@
+{
+  "name": "@get-subtext/movies.api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "jest --verbose",
+    "clean": "shx rm -rf ./coverage",
+    "test": "jest --verbose"
+  },
+  "dependencies": {
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^22.8.5",
+    "lodash-es": "^4.17.21",
+    "yaml": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0",
+    "shx": "^0.3.4",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.6.3"
+  }
+}
