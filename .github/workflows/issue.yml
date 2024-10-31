@@ -33,6 +33,10 @@ jobs:
         run: pnpm install
 
       - name: Process New Issue
+        env:
+          REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+          REPO_OWNER: ${{ github.repository_owner }}
+          REPO_NAME: ${{ github.event.repository.name }}
         run: pnpm run process-new-issue -i ${{ github.event.issue.number }}
 
       - name: Pull
