@@ -21,7 +21,7 @@ export class MovieReaderImpl implements MovieReader {
       subtitlePackages: [
         {
           provider: 'HardCoded',
-          author: 'dev',
+          author: 'some-author',
           origin: OriginEnum.Manual,
           source: {
             type: SourceTypeEnum.StandaloneFile,
