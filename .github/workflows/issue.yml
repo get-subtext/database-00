@@ -1,0 +1,46 @@
+name: Process New Issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  process_new_issue:
+    runs-on: ubuntu-latest
+
+    permissions:
+      issues: write
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Process New Issue
+        run: pnpm run process-new-issue -i ${{ github.event.issue.number }}
+
+      - name: Pull
+        run: git pull origin main
+
+      - name: Commit
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-processed issue #${{ github.event.issue.number }} (${{ github.event.issue.title }})"
+          commit_options: '--no-verify --allow-empty'
+          push_options: '--force'
