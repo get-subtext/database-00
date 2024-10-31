@@ -6,3 +6,7 @@ export interface GetIssueResponse {
   labels: [{ name: string }];
   body: string;
 }
+
+export interface GitHubIssueReader {
+  read: (issueNumber: number) => Promise<any>;
+}

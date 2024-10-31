@@ -1,8 +1,8 @@
 import { find, isNil } from 'lodash-es';
 import { parse } from 'yaml';
-import { GetIssueResponse } from './GitHubIssueReader.types';
+import type { GetIssueResponse, GitHubIssueReader } from './GitHubIssueReader.types';
 
-export class GitHubIssueReader {
+export class GitHubIssueReaderImpl implements GitHubIssueReader {
   public constructor(
     private readonly apiUrlBase: string,
     private readonly token: string,
