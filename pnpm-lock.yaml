@@ -30,7 +30,7 @@ importers:
         specifier: ^4.19.2
         version: 4.19.2
 
-  packages.automation/library:
+  packages.automation/github:
     dependencies:
       '@types/lodash-es':
         specifier: ^4.17.12
@@ -65,7 +65,7 @@ importers:
     dependencies:
       '@get-subtext/automation.github':
         specifier: workspace:^
-        version: link:../../packages.automation/library
+        version: link:../../packages.automation/github
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
