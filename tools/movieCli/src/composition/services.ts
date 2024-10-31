@@ -1,4 +1,5 @@
 import { createGitHubIssueReader } from '@get-subtext/automation.github';
+import { createMovieReader } from '@get-subtext/movies.api';
 import { last, split } from 'lodash-es';
 import { rootDir } from '../rootDir';
 import { Handler } from '../services/Handler';
@@ -18,5 +19,6 @@ export const createHandler = (verbose: boolean) => {
     botLabel: 'subtext-bot',
   });
 
+  const movieReader = createMovieReader({});
   return new Handler(gitHubIssueReader, logger);
 };
