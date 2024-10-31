@@ -29,6 +29,14 @@ export class Logger {
     this.logError(`The issue has no 'type' field in its yaml data`);
   }
 
+  public errorIssueNoData() {
+    this.logError(`The issue has no yaml data`);
+  }
+
+  public errorIssueInvalidYaml() {
+    this.logError(`The issue has invalid yaml data`);
+  }
+
   public errorIssueReadUnexpectedError(message: string | null) {
     if (message === null) {
       this.logError(`An unexpected error occured reading the issue`);
