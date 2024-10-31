@@ -97,6 +97,9 @@ importers:
       '@get-subtext/automation.github':
         specifier: workspace:^
         version: link:../../packages.automation/github
+      '@get-subtext/movies.api':
+        specifier: workspace:^
+        version: link:../../packages.movies/api
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
