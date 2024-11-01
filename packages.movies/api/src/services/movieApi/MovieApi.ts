@@ -1,8 +1,8 @@
 import { concat } from 'lodash-es';
+import { mergeMovies } from '../../utils/mergeMovies';
 import { OmdbMovieReader } from '../omdb/OmdbMovieReader';
 import { OpenSubtitlesMovieReader } from '../openSubtitles/OpenSubtitlesMovieReader';
 import type { SubdlMovieReader } from '../subdl/SubdlMovieReader';
-import { mergeMovies } from '../utils/mergeMovies';
 import type * as T from './MovieApi.types';
 
 export class MovieReader implements T.MovieReader {

@@ -1,9 +1,9 @@
 import AdmZip from 'adm-zip';
 import { cloneDeep, get, toPairs } from 'lodash-es';
 import path from 'path';
+import { defaultMovie } from '../../utils/defaultMovie';
 import { OriginEnum, SourceTypeEnum } from '../common/Movie.types';
 import type * as T from '../movieApi/MovieApi.types';
-import { defaultMovie } from '../utils/defaultMovie';
 import type { SubdlApi } from './SubdlApi';
 
 export class SubdlMovieReader implements T.MovieReader {

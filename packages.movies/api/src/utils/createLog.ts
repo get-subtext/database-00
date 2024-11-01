@@ -1,4 +1,4 @@
-import { FetchLog } from '../common/FetchLog.types';
+import { FetchLog } from '../services/common/FetchLog.types';
 
 export interface CreateLogInput {
   input: {

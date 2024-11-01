@@ -1,5 +1,5 @@
+import { createLog } from '../../utils/createLog';
 import type { FetchWrapper } from '../fetch/FetchWrapper.types';
-import { createLog } from '../utils/createLog';
 import type * as T from './OmdbApi.types';
 
 export class OmdbApi implements T.OmdbApi {

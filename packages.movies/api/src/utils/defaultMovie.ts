@@ -1,4 +1,4 @@
-import { Movie } from '../common/Movie.types';
+import { Movie } from '../services/common/Movie.types';
 
 export const defaultMovie = (): Movie => ({
   imdbId: 'Unknown',

@@ -1,5 +1,5 @@
+import { createLog } from '../../utils/createLog';
 import type { FetchWrapper } from '../fetch/FetchWrapper.types';
-import { createLog } from '../utils/createLog';
 import type * as T from './SubdlApi.types';
 
 export class SubdlApi implements T.SubdlApi {
