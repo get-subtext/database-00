@@ -1,10 +1,24 @@
 import { FetchLog } from '../common/FetchLog.types';
 import { Movie } from '../common/Movie.types';
 
-export interface ReadOutput {
-  success: boolean;
+export interface ReadOutputOk {
+  success: true;
   logs: FetchLog[];
-  data: Movie | null;
+  data: Movie;
+}
+
+export interface ReadOutputFail {
+  success: false;
+  logs: FetchLog[];
+  data: null;
+}
+
+export type ReadOutput = ReadOutputOk | ReadOutputFail;
+
+export interface ExtractZipOutput {
+  success: boolean;
+  data: Record<string, string>;
+  message: string | null;
 }
 
 export interface MovieReader {

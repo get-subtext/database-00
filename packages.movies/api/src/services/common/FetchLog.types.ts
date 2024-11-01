@@ -7,7 +7,7 @@ export interface FetchInput {
 
 export interface FetchOutput {
   status: number;
-  text: string;
+  body: any | null;
 }
 
 export interface FetchLog {
