@@ -36,4 +36,5 @@ export type ReadOutput = ReadOutputNotAutomated | ReadOutputAutomated | ReadOutp
 
 export interface GitHubIssueService {
   read: (issueNumber: number) => Promise<ReadOutput>;
+  close: (issueNumber: number, comment: string, labels: string[]) => Promise<void>;
 }
