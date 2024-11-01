@@ -1,11 +1,11 @@
-name: Process New Issue
+name: Process Issue
 
 on:
   issues:
     types: [opened, reopened]
 
 jobs:
-  process_new_issue:
+  process_issue:
     runs-on: ubuntu-latest
 
     permissions:
@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Process New Issue
+      - name: Process Issue
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO_OWNER: ${{ github.repository_owner }}
