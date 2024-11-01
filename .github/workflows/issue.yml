@@ -2,7 +2,7 @@ name: Process New Issue
 
 on:
   issues:
-    types: [opened]
+    types: [opened, reopened]
 
 jobs:
   process_new_issue:
