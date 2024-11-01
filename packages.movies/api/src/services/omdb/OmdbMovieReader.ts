@@ -1,12 +1,12 @@
 import { endsWith, map, parseInt, split, trim } from 'lodash-es';
-import { Movie } from '../common/Movie.types';
-import { MovieReader } from '../movieApi/MovieApi.types';
-import { OmdbApi } from './OmdbApi';
+import type { Movie } from '../common/Movie.types';
+import type * as T from '../movieApi/MovieApi.types';
+import type { OmdbApi } from './OmdbApi.types';
 
-export class OmdbMovieReader implements MovieReader {
+export class OmdbMovieReader implements T.MovieReader {
   public constructor(private readonly omdbApi: OmdbApi) {}
 
-  public async read(imdbId: string) {
+  public async read(imdbId: string): Promise<T.ReadOutput> {
     const getMovieInfoRes = await this.omdbApi.getMovieInfo(imdbId);
     if (getMovieInfoRes.success) {
       const data = getMovieInfoRes.data;

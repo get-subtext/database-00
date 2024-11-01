@@ -1,4 +1,4 @@
-import { FetchLog } from '../common/FetchLog.types';
+import type { FetchLog } from '../common/FetchLog.types';
 
 export interface GetMovieInfoOutputDataRating {
   Source: string;

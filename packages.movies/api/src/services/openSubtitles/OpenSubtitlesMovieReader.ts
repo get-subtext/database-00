@@ -1,19 +1,20 @@
 import { isNil } from 'lodash-es';
-import { FetchLog } from '../common/FetchLog.types';
-import { Movie, OriginEnum, SourceTypeEnum } from '../common/Movie.types';
-import { MovieReader, ReadOutput } from '../movieApi/MovieApi.types';
+import type { FetchLog } from '../common/FetchLog.types';
+import type { Movie } from '../common/Movie.types';
+import { OriginEnum, SourceTypeEnum } from '../common/Movie.types';
+import type * as T from '../movieApi/MovieApi.types';
 import { defaultMovie } from '../utils/defaultMovie';
 import { mergeMovie } from '../utils/mergeMovie';
 import { OpenSubtitlesApi } from './OpenSubtitlesApi';
-import { GetMovieInfoOutputData, GetMovieInfoOutputDataData, SearchOutputDataDataAttributesRelatedLink } from './OpenSubtitlesApi.types';
+import type { GetMovieInfoOutputData, GetMovieInfoOutputDataData, SearchOutputDataDataAttributesRelatedLink } from './OpenSubtitlesApi.types';
 
-export class OpenSubtitlesMovieReader implements MovieReader {
+export class OpenSubtitlesMovieReader implements T.MovieReader {
   public constructor(private readonly openSubtitlesApi: OpenSubtitlesApi) {}
 
-  public async read(imdbId: string): Promise<ReadOutput> {
+  public async read(imdbId: string): Promise<T.ReadOutput> {
     const movieInfoListRes = await this.getMovieInfoList(imdbId);
     if (movieInfoListRes.success) {
-      const output: ReadOutput = { success: true, data: defaultMovie(), logs: [...movieInfoListRes.logs] };
+      const output: T.ReadOutput = { success: true, data: defaultMovie(), logs: [...movieInfoListRes.logs] };
       for (let i = 0; i < movieInfoListRes.data.length; i++) {
         const movieInfo = movieInfoListRes.data[i];
         for (let i = 0; i < movieInfo.data.length; i++) {
