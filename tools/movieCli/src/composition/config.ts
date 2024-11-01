@@ -7,4 +7,8 @@ export const config: Config = {
     apiUrlBase: `https://api.gitHub.com/repos/${environment.REPO_OWNER}/${environment.REPO_NAME}`,
     uiUrlBase: `https://gitHub.com/${environment.REPO_OWNER}/${environment.REPO_NAME}`,
   },
+  omdb: {
+    apiKey: environment.OMDB_API_KEY,
+    apiUrlBase: 'https://www.omdbapi.com',
+  },
 };

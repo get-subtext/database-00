@@ -31,7 +31,6 @@ interface StandaloneFileSource {
 
 export interface Movie {
   imdbId: string;
-  sourceUrls: string[];
   title: string;
   posterUrl: string | null;
   releaseDate: string | null;
