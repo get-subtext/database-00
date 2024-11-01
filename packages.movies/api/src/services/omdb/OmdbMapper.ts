@@ -1,9 +1,8 @@
 import { endsWith, map, parseInt, split, trim } from 'lodash-es';
-import type { OmdbApi } from './OmdbApi.types';
 import type * as T from './OmdbMapper.types';
 
 export class OmdbMapper implements T.OmdbMapper {
-  public constructor(private readonly omdbApi: OmdbApi) {}
+  public constructor() {}
 
   public mapMovie(movie: T.ApiMovie): T.MapMovieOutput {
     return {

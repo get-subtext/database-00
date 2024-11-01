@@ -2,6 +2,7 @@ import { FetchWrapper } from './services/fetch/FetchWrapper';
 import { MovieReader as MovieReaderImpl } from './services/movieApi/MovieApi';
 import type { MovieReader } from './services/movieApi/MovieApi.types';
 import { OmdbApi } from './services/omdb/OmdbApi';
+import { OmdbMapper } from './services/omdb/OmdbMapper';
 import { OmdbMovieReader } from './services/omdb/OmdbMovieReader';
 import { OpenSubtitlesApi } from './services/openSubtitles/OpenSubtitlesApi';
 import { OpenSubtitlesMovieReader } from './services/openSubtitles/OpenSubtitlesMovieReader';
@@ -30,7 +31,8 @@ export interface MovieReaderOptions {
 export const createMovieReader = ({ omdb, openSubtitles, subdl }: MovieReaderOptions): MovieReader => {
   const fetchWrapper = new FetchWrapper();
   const omdbApi = new OmdbApi(omdb.apiKey, omdb.apiUrlBase, fetchWrapper);
-  const omdbMovieReader = new OmdbMovieReader(omdbApi);
+  const omdbMapper = new OmdbMapper();
+  const omdbMovieReader = new OmdbMovieReader(omdbApi, omdbMapper);
   const openSubtitlesApi = new OpenSubtitlesApi(openSubtitles.apiKey, openSubtitles.apiUrlBase, fetchWrapper);
   const openSubtitlesMovieReader = new OpenSubtitlesMovieReader(openSubtitlesApi);
   const subdlApi = new SubdlApi(subdl.apiKey, subdl.apiUrlBase, subdl.zipUrlBase, fetchWrapper);
