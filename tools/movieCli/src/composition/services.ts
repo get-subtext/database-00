@@ -20,6 +20,10 @@ export const createHandler = (verbose: boolean) => {
     botLabel,
   });
 
-  const movieReader = createMovieReader({ omdb: { apiUrlBase: config.omdb.apiUrlBase, apiKey: config.omdb.apiKey } });
+  const movieReader = createMovieReader({
+    omdb: { apiUrlBase: config.omdb.apiUrlBase, apiKey: config.omdb.apiKey },
+    openSubtitles: { apiUrlBase: config.openSubtitles.apiUrlBase, apiKey: config.openSubtitles.apiKey },
+  });
+
   return new Handler(botLabel, gitHubIssueReader, movieReader, logger);
 };

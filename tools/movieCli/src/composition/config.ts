@@ -11,4 +11,8 @@ export const config: Config = {
     apiKey: environment.OMDB_API_KEY,
     apiUrlBase: 'https://www.omdbapi.com',
   },
+  openSubtitles: {
+    apiKey: environment.OPEN_SUBTITLES_API_KEY,
+    apiUrlBase: 'https://api.opensubtitles.com/api/v1',
+  },
 };
