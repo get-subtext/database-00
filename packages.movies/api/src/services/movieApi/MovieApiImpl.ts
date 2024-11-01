@@ -1,11 +1,10 @@
-import type { Movie } from './Common.types';
-import { OriginEnum, SourceTypeEnum } from './Common.types';
-import type { MovieReader } from './MovieApi.types';
+import { OriginEnum, SourceTypeEnum } from '../common/Movie.types';
+import type { MovieReader, ReadOutput } from './MovieApi.types';
 
 export class MovieReaderImpl implements MovieReader {
   public async read(imdbId: string) {
     // From https://www.omdbapi.com/?i=tt0062622&apikey=<API_KEY>
-    const movie: Movie = {
+    const movie: ReadOutput = {
       imdbId: 'tt0062622',
       sourceUrls: ['https://www.omdbapi.com/?i=tt0062622&apikey=<API_KEY>', 'https://some/subtitle/file.srt'],
       title: '2001: A Space Odyssey',

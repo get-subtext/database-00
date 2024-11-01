@@ -1,8 +1,8 @@
-import type { MovieReader } from './services/MovieApi.types';
-import { MovieReaderImpl } from './services/MovieApiImpl';
+import type { MovieReader } from './services/movieApi/MovieApi.types';
+import { MovieReaderImpl } from './services/movieApi/MovieApiImpl';
 
-export type { Movie, OriginEnum, SourceTypeEnum, SubtitlePackage } from './services/Common.types';
-export type { MovieReader, ReadOutput } from './services/MovieApi.types';
+export type { Movie, OriginEnum, SourceTypeEnum, SubtitlePackage } from './services/common/Movie.types';
+export type { MovieReader, ReadOutput } from './services/movieApi/MovieApi.types';
 
 export interface MovieReaderOptions {}
 
