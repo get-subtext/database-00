@@ -1,7 +1,7 @@
 import type { FetchWrapper } from '../fetch/FetchWrapper.types';
 import type * as T from './OpenSubtitlesApi.types';
 
-export class OmdbApi implements T.OmdbApi {
+export class OpenSubtitlesApi implements T.OpenSubtitlesApi {
   public constructor(
     private readonly apiUrlBase: string,
     private readonly apiKey: string,

@@ -102,7 +102,7 @@ export interface GetFileOutput {
   data: string | null;
 }
 
-export interface OmdbApi {
+export interface OpenSubtitlesApi {
   getMovieInfo: (imdbId: string) => Promise<GetMovieInfoOutput>;
   getDownloadInfo: (fileId: number) => Promise<GetDownloadInfoOutput>;
   getFile: (url: string) => Promise<GetFileOutput>;
