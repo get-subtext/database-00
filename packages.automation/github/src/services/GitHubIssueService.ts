@@ -12,6 +12,22 @@ export class GitHubIssueService implements T.GitHubIssueService {
   ) {}
 
   public async read(issueNumber: number): Promise<T.ReadOutput> {
+    try {
+      return await this.doRead(issueNumber);
+    } catch (cause) {
+      throw new Error(`[Github] Error reading issue '${issueNumber}'`, { cause });
+    }
+  }
+
+  public async close(issueNumber: number, comment: string, labels: string[]) {
+    try {
+      await this.doClose(issueNumber, comment, labels);
+    } catch (cause) {
+      throw new Error(`[Github] Error closing issue '${issueNumber}'`, { cause });
+    }
+  }
+
+  private async doRead(issueNumber: number): Promise<T.ReadOutput> {
     const issue = await this.getIssue(issueNumber);
 
     const label = find(issue.labels, (l) => l.name === this.label);
@@ -28,6 +44,12 @@ export class GitHubIssueService implements T.GitHubIssueService {
     }
   }
 
+  private async doClose(issueNumber: number, comment: string, labels: string[]) {
+    await this.patch(`/issues/${issueNumber}`, { state: 'closed' });
+    await this.post(`/issues/${issueNumber}/labels`, { labels });
+    await this.post(`/issues/${issueNumber}/comments`, { body: comment });
+  }
+
   private async getIssue(issueNumber: number) {
     try {
       const issue = <T.GetIssueResponse>await this.get(`/issues/${issueNumber}`);
@@ -39,10 +61,31 @@ export class GitHubIssueService implements T.GitHubIssueService {
 
   private async get(urlPath: string) {
     const url = `${this.apiUrlBase}${urlPath}`;
-    const headers = { Authorization: `token ${this.token}`, Accept: 'application/vnd.github.v3+json' };
+    const headers = this.getHeaders();
     const response = await fetch(url, { headers });
     const json = await response.json();
     return json;
+  }
+
+  private async patch(urlPath: string, body: any) {
+    const url = `${this.apiUrlBase}${urlPath}`;
+    const headers = this.getHeaders();
+    const response = await fetch(url, { method: 'PATCH', headers, body: JSON.stringify(body) });
+    const json = await response.json();
+    return json;
+  }
+
+  private async post(urlPath: string, body: any) {
+    const url = `${this.apiUrlBase}${urlPath}`;
+    const headers = this.getHeaders();
+    const response = await fetch(url, { method: 'POST', headers, body: JSON.stringify(body) });
+    const json = await response.json();
+    return json;
+  }
+
+  private getHeaders() {
+    const headers = { Authorization: `token ${this.token}`, Accept: 'application/vnd.github.v3+json' };
+    return headers;
   }
 
   private getRawData(issueBody: string) {
@@ -51,18 +94,5 @@ export class GitHubIssueService implements T.GitHubIssueService {
 
     const rawData = issueBody.slice(separatorIndex + 3).trim();
     return rawData;
-  }
-
-  private parseIssueText(issueText: string): Record<string, any> | null {
-    const separatorIndex = issueText.indexOf(this.separator);
-    if (separatorIndex === -1) return null;
-
-    const yamlContent = issueText.slice(separatorIndex + 3).trim();
-    try {
-      const data = parse(yamlContent) as Record<string, any>;
-      return data;
-    } catch (cause) {
-      throw new Error(`Could not parse yaml`, { cause });
-    }
   }
 }
