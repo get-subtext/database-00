@@ -92,6 +92,37 @@ importers:
         specifier: ^5.6.3
         version: 5.6.3
 
+  packages.movies/api.omdb:
+    dependencies:
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
+      '@types/node':
+        specifier: ^22.8.5
+        version: 22.8.5
+      lodash-es:
+        specifier: ^4.17.21
+        version: 4.17.21
+      yaml:
+        specifier: ^2.6.0
+        version: 2.6.0
+    devDependencies:
+      '@types/jest':
+        specifier: ^29.5.14
+        version: 29.5.14
+      jest:
+        specifier: ^29.7.0
+        version: 29.7.0(@types/node@22.8.5)
+      shx:
+        specifier: ^0.3.4
+        version: 0.3.4
+      ts-jest:
+        specifier: ^29.2.5
+        version: 29.2.5(@babel/core@7.26.0)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.26.0))(jest@29.7.0(@types/node@22.8.5))(typescript@5.6.3)
+      typescript:
+        specifier: ^5.6.3
+        version: 5.6.3
+
   tools/movieCli:
     dependencies:
       '@get-subtext/automation.github':
@@ -99,7 +130,7 @@ importers:
         version: link:../../packages.automation/github
       '@get-subtext/movies.api':
         specifier: workspace:^
-        version: link:../../packages.movies/api
+        version: link:../../packages.movies/api.omdb
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
