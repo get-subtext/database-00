@@ -37,14 +37,14 @@ export class Logger {
     if (subtitleCount > 0) {
       this.logInfo(`- ${subtitleCount} ${green('valid subtitle ' + packageP11n)} found`);
     } else {
-      this.logWarn(`- Could not find any ${red('valid subtitle ' + packageP11n)}`);
+      this.logError(`- Could not find any ${red('valid subtitle ' + packageP11n)}`);
     }
   }
 
   public infoRequestMovieNotFound(imdbId: string, apiCallsPassed: number, apiCallsFailed: number) {
     const passedCallP11n = apiCallsPassed === 1 ? 'call' : 'calls';
     const failedCallP11n = apiCallsFailed === 1 ? 'call' : 'calls';
-    this.logInfo(`Could not find movie ${green(imdbId)}`);
+    this.logError(`Could not find movie ${green(imdbId)}`);
 
     this.logInfo(`- ${green(apiCallsPassed)} api ${passedCallP11n} passed`);
     if (apiCallsFailed === 0) {

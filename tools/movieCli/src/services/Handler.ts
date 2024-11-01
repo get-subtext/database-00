@@ -68,12 +68,12 @@ export class Handler {
     }
 
     const subtitleCount = data?.subtitlePackages.length ?? 0;
-    const subtitleP11n = subtitleCount === 1 ? 'subtitle' : 'subtitles';
+    const packageP11n = subtitleCount === 1 ? 'package' : 'packages';
     const passedCallP11n = apiStats.passed === 1 ? 'call' : 'calls';
     const failedCallP11n = apiStats.failed === 1 ? 'call' : 'calls';
-    issueComments.push(`- ${subtitleCount} ${subtitleP11n} found`);
+    issueComments.push(`- ${subtitleCount} valid subtitle ${packageP11n} found`);
     issueComments.push(``);
-    issueComments.push(`:no_entry: **API Stats**`);
+    issueComments.push(`:clipboard: **API Stats**`);
     issueComments.push(`- ${apiStats.passed} API ${passedCallP11n} passed`);
     issueComments.push(`- ${apiStats.failed} API ${failedCallP11n} failed`);
     await this.gitHubIssueService.close(issueNumber, join(issueComments, '\n'), []);
