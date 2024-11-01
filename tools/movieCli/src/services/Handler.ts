@@ -1,6 +1,5 @@
 import type { GitHubIssueReader } from '@get-subtext/automation.github';
 import type { MovieReader } from '@get-subtext/movies.api';
-import fs from 'fs';
 import { countBy, get, isNil } from 'lodash-es';
 import { ReadOutputCodeEnum } from 'packages.automation/github/src/services/GitHubIssueReader.types';
 import type { ProcessIssueInput } from './Handler.types';
@@ -64,7 +63,5 @@ export class Handler {
     } else {
       this.logger.infoRequestMovieNotFound(imdbId, apiStats.passed, apiStats.failed);
     }
-
-    fs.writeFileSync('movie.json', JSON.stringify({ data, logs }, null, 2));
   }
 }
