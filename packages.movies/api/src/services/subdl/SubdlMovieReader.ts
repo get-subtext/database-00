@@ -36,7 +36,6 @@ export class SubdlMovieReader implements T.MovieReader {
         if (getZipFileRes.success) {
           const extractZipRes = await this.extractZip(getZipFileRes.data);
           if (extractZipRes.success) {
-            console.log(extractZipRes.data);
             const subtitleFilePairs = toPairs(extractZipRes.data);
             const zipFileName = path.basename(subtitle.url);
             for (let i = 0; i < subtitleFilePairs.length; i++) {

@@ -34,6 +34,7 @@ export interface ReadOutputAutomatedYamlError {
 
 export type ReadOutput = ReadOutputNotAutomated | ReadOutputAutomated | ReadOutputAutomatedNoData | ReadOutputAutomatedYamlError;
 
-export interface GitHubIssueReader {
+export interface GitHubIssueService {
   read: (issueNumber: number) => Promise<ReadOutput>;
+  close: (issueNumber: number, comment: string, labels: string[]) => Promise<void>;
 }
