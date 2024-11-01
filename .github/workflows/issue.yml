@@ -37,6 +37,8 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO_OWNER: ${{ github.repository_owner }}
           REPO_NAME: ${{ github.event.repository.name }}
+          OMDB_API_KEY: ${{ secrets.OMDB_API_KEY }}
+          OPEN_SUBTITLES_API_KEY: ${{ secrets.OPEN_SUBTITLES_API_KEY }}
         run: pnpm run process-new-issue -i ${{ github.event.issue.number }}
 
       - name: Pull
