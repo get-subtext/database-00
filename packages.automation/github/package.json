@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@types/lodash-es": "^4.17.12",
-    "@types/node": "^22.8.5",
+    "@types/node": "^22.8.6",
     "lodash-es": "^4.17.21",
     "yaml": "^2.6.0"
   },
