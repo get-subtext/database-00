@@ -1,16 +1,16 @@
-import type { GitHubIssueReader } from './services/GitHubIssueReader.types';
-import { GitHubIssueReaderImpl } from './services/GitHubIssueReaderImpl';
+import { GitHubIssueService as GitHubIssueServiceImpl } from './services/GitHubIssueService';
+import type { GitHubIssueService } from './services/GitHubIssueService.types';
 
-export { ReadOutputCodeEnum as ReadOutputTypeEnum } from './services/GitHubIssueReader.types';
+export { ReadOutputCodeEnum as ReadOutputTypeEnum } from './services/GitHubIssueService.types';
 export type {
   GetIssueResponse,
-  GitHubIssueReader,
+  GitHubIssueService,
   ReadOutput,
   ReadOutputAutomated,
   ReadOutputAutomatedNoData,
   ReadOutputAutomatedYamlError,
   ReadOutputNotAutomated,
-} from './services/GitHubIssueReader.types';
+} from './services/GitHubIssueService.types';
 
 export interface GitHubIssueReaderOptions {
   apiUrlBase: string;
@@ -19,6 +19,6 @@ export interface GitHubIssueReaderOptions {
   botLabel: string;
 }
 
-export const createGitHubIssueReader = ({ apiUrlBase, apiToken, dataSeparator, botLabel }: GitHubIssueReaderOptions): GitHubIssueReader => {
-  return new GitHubIssueReaderImpl(apiUrlBase, apiToken, dataSeparator, botLabel);
+export const createGitHubIssueService = ({ apiUrlBase, apiToken, dataSeparator, botLabel }: GitHubIssueReaderOptions): GitHubIssueService => {
+  return new GitHubIssueServiceImpl(apiUrlBase, apiToken, dataSeparator, botLabel);
 };

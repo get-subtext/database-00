@@ -1,14 +1,14 @@
-import type { GitHubIssueReader } from '@get-subtext/automation.github';
+import type { GitHubIssueService } from '@get-subtext/automation.github';
 import type { MovieReader } from '@get-subtext/movies.api';
 import { countBy, get, isNil } from 'lodash-es';
-import { ReadOutputCodeEnum } from 'packages.automation/github/src/services/GitHubIssueReader.types';
+import { ReadOutputCodeEnum } from 'packages.automation/github/src/services/GitHubIssueService.types';
 import type { ProcessIssueInput } from './Handler.types';
 import type { Logger } from './Logger';
 
 export class Handler {
   public constructor(
     private readonly botLabel: string,
-    private readonly gitHubIssueReader: GitHubIssueReader,
+    private readonly gitHubIssueService: GitHubIssueService,
     private readonly movieReader: MovieReader,
     private readonly logger: Logger
   ) {}
@@ -17,7 +17,7 @@ export class Handler {
     this.logger.infoBlank();
     this.logger.infoIssueStarting(issueNumber);
 
-    const readRes = await this.gitHubIssueReader.read(issueNumber);
+    const readRes = await this.gitHubIssueService.read(issueNumber);
     switch (readRes.code) {
       case ReadOutputCodeEnum.NotAutomated:
         this.logger.infoIssueNotProcessing(this.botLabel);

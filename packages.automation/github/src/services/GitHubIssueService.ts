@@ -1,9 +1,9 @@
 import { find, isNil } from 'lodash-es';
 import { parse } from 'yaml';
-import type { GetIssueResponse, GitHubIssueReader } from './GitHubIssueReader.types';
-import { ReadOutput, ReadOutputCodeEnum } from './GitHubIssueReader.types';
+import type * as T from './GitHubIssueService.types';
+import { ReadOutputCodeEnum } from './GitHubIssueService.types';
 
-export class GitHubIssueReaderImpl implements GitHubIssueReader {
+export class GitHubIssueService implements T.GitHubIssueService {
   public constructor(
     private readonly apiUrlBase: string,
     private readonly token: string,
@@ -11,7 +11,7 @@ export class GitHubIssueReaderImpl implements GitHubIssueReader {
     private readonly label: string
   ) {}
 
-  public async read(issueNumber: number): Promise<ReadOutput> {
+  public async read(issueNumber: number): Promise<T.ReadOutput> {
     const issue = await this.getIssue(issueNumber);
 
     const label = find(issue.labels, (l) => l.name === this.label);
@@ -30,7 +30,7 @@ export class GitHubIssueReaderImpl implements GitHubIssueReader {
 
   private async getIssue(issueNumber: number) {
     try {
-      const issue = <GetIssueResponse>await this.get(`/issues/${issueNumber}`);
+      const issue = <T.GetIssueResponse>await this.get(`/issues/${issueNumber}`);
       return issue;
     } catch (cause) {
       throw new Error(`Error fetching issue '${issueNumber}'`, { cause });

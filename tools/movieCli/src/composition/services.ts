@@ -1,4 +1,4 @@
-import { createGitHubIssueReader } from '@get-subtext/automation.github';
+import { createGitHubIssueService } from '@get-subtext/automation.github';
 import { createMovieReader } from '@get-subtext/movies.api';
 import { last, split } from 'lodash-es';
 import { rootDir } from '../rootDir';
@@ -14,7 +14,7 @@ const dataSeparator = '===';
 
 export const createHandler = (verbose: boolean) => {
   const logger = new Logger(logPrefix!, verbose);
-  const gitHubIssueReader = createGitHubIssueReader({ apiUrlBase: config.gitHub.apiUrlBase, apiToken: config.gitHub.token, dataSeparator, botLabel });
+  const gitHubIssueService = createGitHubIssueService({ apiUrlBase: config.gitHub.apiUrlBase, apiToken: config.gitHub.token, dataSeparator, botLabel });
 
   const movieReader = createMovieReader({
     omdb: { apiUrlBase: config.omdb.apiUrlBase, apiKey: config.omdb.apiKey },
@@ -22,5 +22,5 @@ export const createHandler = (verbose: boolean) => {
     subdl: { apiUrlBase: config.subdl.apiUrlBase, zipUrlBase: config.subdl.zipUrlBase, apiKey: config.subdl.apiKey },
   });
 
-  return new Handler(botLabel, gitHubIssueReader, movieReader, logger);
+  return new Handler(botLabel, gitHubIssueService, movieReader, logger);
 };
