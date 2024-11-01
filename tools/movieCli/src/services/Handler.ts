@@ -1,5 +1,6 @@
 import type { GitHubIssueReader } from '@get-subtext/automation.github';
 import type { MovieReader } from '@get-subtext/movies.api';
+import fs from 'fs';
 import { countBy, get, isNil } from 'lodash-es';
 import { ReadOutputCodeEnum } from 'packages.automation/github/src/services/GitHubIssueReader.types';
 import type { ProcessIssueInput } from './Handler.types';
@@ -57,13 +58,13 @@ export class Handler {
     const imdbId = input.imdbId;
     const { success, data, logs } = await this.movieReader.read(imdbId);
 
-    const stats = countBy(logs, (l) => (l.output.status >= 200 && l.output.status <= 299 ? 'passed' : 'failed'));
+    const apiStats = countBy(logs, (l) => (l.output.status >= 200 && l.output.status <= 299 ? 'passed' : 'failed'));
     if (success) {
-      this.logger.infoRequestMovieFound(imdbId, data.title, data.subtitlePackages.length, stats.passed, stats.failed);
+      this.logger.infoRequestMovieFound(imdbId, data.title, data.subtitlePackages.length, apiStats.passed, apiStats.failed);
     } else {
-      this.logger.infoRequestMovieNotFound(imdbId, stats.passed, stats.failed);
+      this.logger.infoRequestMovieNotFound(imdbId, apiStats.passed, apiStats.failed);
     }
 
-    // console.log(JSON.stringify(data, null, 2));
+    fs.writeFileSync('movie.json', JSON.stringify({ data, logs }, null, 2));
   }
 }

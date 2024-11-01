@@ -26,18 +26,18 @@ export class Logger {
     const passedCallP11n = apiCallsPassed === 1 ? 'call' : 'calls';
     const failedCallP11n = apiCallsFailed === 1 ? 'call' : 'calls';
     this.logInfo(`Found movie ${green(imdbId)} - ${green(title)}`);
-    this.logInfo(`- ${green(apiCallsPassed)} api ${passedCallP11n} passed`);
 
-    if (apiCallsFailed > 0) {
-      this.logWarn(`- ${green(apiCallsFailed)} api ${failedCallP11n} failed`);
+    if (apiCallsFailed === 0) {
+      this.logInfo(`- all api ${passedCallP11n} ${green('passed')}`);
     } else {
-      this.logInfo(`- ${green(apiCallsFailed)} api ${failedCallP11n} failed`);
+      this.logInfo(`- ${apiCallsPassed} api ${passedCallP11n} ${green('passed')}`);
+      this.logWarn(`- ${apiCallsFailed} api ${failedCallP11n} ${red('failed')}`);
     }
 
-    if (subtitleCount === 0) {
-      this.logWarn(`- ${green(subtitleCount)} valid subtitle ${packageP11n} found`);
+    if (subtitleCount > 0) {
+      this.logInfo(`- ${subtitleCount} ${green('valid subtitle ' + packageP11n)} found`);
     } else {
-      this.logInfo(`- ${green(subtitleCount)} valid subtitle ${packageP11n} found`);
+      this.logWarn(`- Could not find any ${red('valid subtitle ' + packageP11n)}`);
     }
   }
 
@@ -45,8 +45,13 @@ export class Logger {
     const passedCallP11n = apiCallsPassed === 1 ? 'call' : 'calls';
     const failedCallP11n = apiCallsFailed === 1 ? 'call' : 'calls';
     this.logInfo(`Could not find movie ${green(imdbId)}`);
+
     this.logInfo(`- ${green(apiCallsPassed)} api ${passedCallP11n} passed`);
-    this.logInfo(`- ${green(apiCallsFailed)} api ${failedCallP11n} failed`);
+    if (apiCallsFailed === 0) {
+      this.logInfo(`- ${green(apiCallsFailed)} api ${failedCallP11n} failed`);
+    } else {
+      this.logWarn(`- ${red(apiCallsFailed)} api ${failedCallP11n} failed`);
+    }
   }
 
   public warnIssueInvalidType(type: string) {
