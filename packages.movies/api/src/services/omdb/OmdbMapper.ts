@@ -4,7 +4,7 @@ import type * as T from './OmdbMapper.types';
 export class OmdbMapper implements T.OmdbMapper {
   public constructor() {}
 
-  public mapMovie(movie: T.ApiMovie): T.MapMovieOutput {
+  public toMovie(movie: T.ApiMovie): T.Movie {
     return {
       imdbId: movie.imdbID,
       title: movie.Title,

@@ -12,20 +12,20 @@ export class OmdbMovieReader implements T.MovieReader {
   public async read(imdbId: string): Promise<T.ReadMovieResponse> {
     const getMovieInfoRes = await this.omdbApi.getMovieInfo(imdbId);
     if (getMovieInfoRes.success) {
-      const data = this.omdbMapper.mapMovie(getMovieInfoRes.data);
+      const movieRaw = this.omdbMapper.toMovie(getMovieInfoRes.data);
       const movie: Movie = {
         imdbId,
-        title: data.title,
-        posterUrl: data.posterUrl,
-        releaseDate: data.releaseDate,
-        releaseYear: data.releaseYear,
-        rated: data.rated,
-        genres: data.genres,
-        directors: data.directors,
-        writers: data.writers,
-        actors: data.actors,
-        runTimeMins: data.runTimeMins,
-        plot: data.plot,
+        title: movieRaw.title,
+        posterUrl: movieRaw.posterUrl,
+        releaseDate: movieRaw.releaseDate,
+        releaseYear: movieRaw.releaseYear,
+        rated: movieRaw.rated,
+        genres: movieRaw.genres,
+        directors: movieRaw.directors,
+        writers: movieRaw.writers,
+        actors: movieRaw.actors,
+        runTimeMins: movieRaw.runTimeMins,
+        plot: movieRaw.plot,
         subtitlePackages: [],
       };
 

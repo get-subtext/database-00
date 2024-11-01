@@ -1,9 +1,9 @@
 import type * as T from './OmdbApi.types';
 
-export type ApiMovieRating = T.GetMovieInfoOutputDataRating;
-export type ApiMovie = T.GetMovieInfoOutputData;
+export type ApiMovieRating = T.Rating;
+export type ApiMovie = T.Movie;
 
-export interface MapMovieOutput {
+export interface Movie {
   imdbId: string;
   title: string;
   posterUrl: string | null;
@@ -19,5 +19,5 @@ export interface MapMovieOutput {
 }
 
 export interface OmdbMapper {
-  mapMovie: (movie: ApiMovie) => MapMovieOutput;
+  toMovie: (movie: ApiMovie) => Movie;
 }
