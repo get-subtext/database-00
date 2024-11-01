@@ -7,10 +7,10 @@ export class OmdbMovieReader implements MovieReader {
   public constructor(private readonly omdbApi: OmdbApi) {}
 
   public async read(imdbId: string) {
-    const searchRes = await this.omdbApi.search(imdbId);
-    if (!searchRes.success) return { success: false, data: null, logs: searchRes.logs };
+    const getMovieInfoRes = await this.omdbApi.getMovieInfo(imdbId);
+    if (!getMovieInfoRes.success) return { success: false, data: null, logs: getMovieInfoRes.logs };
 
-    const data = searchRes.data!;
+    const data = getMovieInfoRes.data!;
     const movie: Movie = {
       imdbId,
       title: data.Title,
@@ -27,7 +27,7 @@ export class OmdbMovieReader implements MovieReader {
       subtitlePackages: [],
     };
 
-    return { success: false, data: movie, logs: searchRes.logs };
+    return { success: false, data: movie, logs: getMovieInfoRes.logs };
   }
 
   private parseText(text: string) {

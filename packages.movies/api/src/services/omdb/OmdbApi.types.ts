@@ -40,5 +40,5 @@ export interface SearchOutput {
 }
 
 export interface OmdbApi {
-  search: () => Promise<SearchOutput>;
+  getMovieInfo: (imdbId: string) => Promise<SearchOutput>;
 }
