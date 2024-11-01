@@ -5,7 +5,8 @@
     "paths": {
       "@get-subtext/automation.github": ["packages.automation/github/src"],
       "@get-subtext/movie-cli": ["tools/movieCli/src"],
-      "@get-subtext/movies.api": ["packages.movies/api/src"]
+      "@get-subtext/movies.api": ["packages.movies/api/src"],
+      "@get-subtext/movies.database": ["packages.movies/database/src"]
     }
   }
 }
