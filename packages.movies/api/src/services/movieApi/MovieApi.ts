@@ -14,10 +14,13 @@ export class MovieReader implements T.MovieReader {
     const omdbRes = await this.omdbMovieReader.read(imdbId);
     const openSubtitlesRes = await this.openSubtitlesMovieReader.read(imdbId);
 
-    return {
-      success: omdbRes.success || openSubtitlesRes.success,
-      data: mergeMovie(omdbRes.data, openSubtitlesRes.data),
-      logs: concat(omdbRes.logs, openSubtitlesRes.logs),
-    };
+    const success = omdbRes.success || openSubtitlesRes.success;
+    const logs = concat(omdbRes.logs, openSubtitlesRes.logs);
+    if (success) {
+      const data = mergeMovie(omdbRes.data, openSubtitlesRes.data);
+      return { success, data, logs };
+    } else {
+      return { success, data: null, logs };
+    }
   }
 }

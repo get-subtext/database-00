@@ -1,35 +1,33 @@
 import { endsWith, map, parseInt, split, trim } from 'lodash-es';
 import { Movie } from '../common/Movie.types';
 import { MovieReader } from '../movieApi/MovieApi.types';
-import { OmdbApi } from './OmdbApi';
+import { SubdlApi } from './SubdlApi';
 
-export class OmdbMovieReader implements MovieReader {
-  public constructor(private readonly omdbApi: OmdbApi) {}
+export class SubdlMovieReader implements MovieReader {
+  public constructor(private readonly omdbApi: SubdlApi) {}
 
   public async read(imdbId: string) {
     const getMovieInfoRes = await this.omdbApi.getMovieInfo(imdbId);
-    if (getMovieInfoRes.success) {
-      const data = getMovieInfoRes.data;
-      const movie: Movie = {
-        imdbId,
-        title: data.Title,
-        posterUrl: this.parseText(data.Poster),
-        releaseDate: this.parseReleaseDate(data.Released),
-        releaseYear: this.parseReleaseYear(data.Year),
-        rated: this.parseText(data.Rated),
-        genres: this.parseTextArray(data.Genre),
-        directors: this.parseTextArray(data.Director),
-        writers: this.parseTextArray(data.Writer),
-        actors: this.parseTextArray(data.Actors),
-        runTimeMins: this.parseRunTime(data.Runtime),
-        plot: this.parseText(data.Plot),
-        subtitlePackages: [],
-      };
+    if (!getMovieInfoRes.success) return { success: false, data: null, logs: getMovieInfoRes.logs };
 
-      return { success: true, data: movie, logs: [getMovieInfoRes.log] };
-    } else {
-      return { success: false, data: null, logs: [getMovieInfoRes.log] };
-    }
+    const data = getMovieInfoRes.data!;
+    const movie: Movie = {
+      imdbId,
+      title: data.Title,
+      posterUrl: this.parseText(data.Poster),
+      releaseDate: this.parseReleaseDate(data.Released),
+      releaseYear: this.parseReleaseYear(data.Year),
+      rated: this.parseText(data.Rated),
+      genres: this.parseTextArray(data.Genre),
+      directors: this.parseTextArray(data.Director),
+      writers: this.parseTextArray(data.Writer),
+      actors: this.parseTextArray(data.Actors),
+      runTimeMins: this.parseRunTime(data.Runtime),
+      plot: this.parseText(data.Plot),
+      subtitlePackages: [],
+    };
+
+    return { success: false, data: movie, logs: getMovieInfoRes.logs };
   }
 
   private parseText(text: string) {

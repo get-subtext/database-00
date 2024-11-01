@@ -74,13 +74,13 @@ export interface GetMovieInfoOutputData {
 export interface GetMovieInfoOutputOk {
   success: true;
   data: GetMovieInfoOutputData;
-  logs: FetchLog[];
+  log: FetchLog;
 }
 
 export interface GetMovieInfoOutputFail {
   success: false;
   data: null;
-  logs: FetchLog[];
+  log: FetchLog;
 }
 
 export type GetMovieInfoOutput = GetMovieInfoOutputOk | GetMovieInfoOutputFail;
@@ -98,17 +98,33 @@ export interface GetDownloadInfoOutputData {
   ts: number;
 }
 
-export interface GetDownloadInfoOutput {
-  success: boolean;
-  logs: FetchLog[];
-  data: GetDownloadInfoOutputData | null;
+export interface GetDownloadInfoOutputOk {
+  success: true;
+  log: FetchLog;
+  data: GetDownloadInfoOutputData;
 }
 
-export interface GetFileOutput {
-  success: boolean;
-  logs: FetchLog[];
-  data: string | null;
+export interface GetDownloadInfoOutputFail {
+  success: false;
+  log: FetchLog;
+  data: null;
 }
+
+export type GetDownloadInfoOutput = GetDownloadInfoOutputOk | GetDownloadInfoOutputFail;
+
+export interface GetFileOutputOk {
+  success: true;
+  log: FetchLog;
+  data: string;
+}
+
+export interface GetFileOutputFail {
+  success: false;
+  log: FetchLog;
+  data: null;
+}
+
+export type GetFileOutput = GetFileOutputOk | GetFileOutputFail;
 
 export interface OpenSubtitlesApi {
   getMovieInfo: (imdbId: string, pageNumber: number) => Promise<GetMovieInfoOutput>;

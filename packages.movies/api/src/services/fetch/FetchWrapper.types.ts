@@ -1,3 +1,37 @@
+export interface GetTextInput {
+  url: string;
+  headers?: Record<string, string>;
+}
+
+export interface GetTextOutput {
+  success: boolean;
+  status: number;
+  body: string | null;
+}
+
+export interface GetJsonInput {
+  url: string;
+  headers?: Record<string, string>;
+}
+
+export interface GetJsonOutput {
+  success: boolean;
+  status: number;
+  body: any | null;
+}
+
+export interface PostJsonInput {
+  url: string;
+  headers?: Record<string, string>;
+  body?: any;
+}
+
+export interface PostJsonOutput {
+  success: boolean;
+  status: number;
+  body: any | null;
+}
+
 export enum DataTypeEnum {
   Json = 'Json',
   Text = 'Text',
@@ -19,4 +53,7 @@ export interface FetchWrapperOutput {
 
 export interface FetchWrapper {
   fetch: (input: FetchWrapperInput) => Promise<FetchWrapperOutput>;
+  getText: (input: GetTextInput) => Promise<GetTextOutput>;
+  getJson: (input: GetJsonInput) => Promise<GetJsonOutput>;
+  postJson: (input: PostJsonInput) => Promise<PostJsonOutput>;
 }

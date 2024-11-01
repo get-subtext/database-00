@@ -1,11 +1,11 @@
 import { FetchLog } from '../common/FetchLog.types';
 
-export interface SearchOutputDataRating {
+export interface GetMovieInfoOutputDataRating {
   Source: string;
   Value: string;
 }
 
-export interface SearchOutputData {
+export interface GetMovieInfoOutputData {
   Title: string;
   Year: string;
   Rated: string;
@@ -20,7 +20,7 @@ export interface SearchOutputData {
   Country: string;
   Awards: string;
   Poster: string;
-  Ratings: SearchOutputDataRating[];
+  Ratings: GetMovieInfoOutputDataRating[];
   Metascore: string;
   imdbRating: string;
   imdbVotes: string;
@@ -33,12 +33,20 @@ export interface SearchOutputData {
   Response: string;
 }
 
-export interface SearchOutput {
-  success: boolean;
-  logs: FetchLog[];
-  data: SearchOutputData | null;
+export interface GetMovieInfoOutputOk {
+  success: true;
+  log: FetchLog;
+  data: GetMovieInfoOutputData;
 }
 
+export interface GetMovieInfoOutputFail {
+  success: false;
+  log: FetchLog;
+  data: null;
+}
+
+export type GetMovieInfoOutput = GetMovieInfoOutputOk | GetMovieInfoOutputFail;
+
 export interface OmdbApi {
-  getMovieInfo: (imdbId: string) => Promise<SearchOutput>;
+  getMovieInfo: (imdbId: string) => Promise<GetMovieInfoOutput>;
 }
