@@ -4,6 +4,12 @@ export interface GitHubConfig {
   uiUrlBase: string;
 }
 
+export interface OmdbConfig {
+  apiKey: string;
+  apiUrlBase: string;
+}
+
 export interface Config {
   gitHub: GitHubConfig;
+  omdb: OmdbConfig;
 }

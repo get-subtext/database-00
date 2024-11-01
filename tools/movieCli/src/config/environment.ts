@@ -5,4 +5,6 @@ export const environment = cleanEnv(process.env, {
   REPO_TOKEN: str({}),
   REPO_OWNER: str({}),
   REPO_NAME: str({}),
+  // OMDB Config
+  OMDB_API_KEY: str({}),
 });
