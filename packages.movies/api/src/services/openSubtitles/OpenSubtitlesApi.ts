@@ -9,7 +9,7 @@ export class OpenSubtitlesApi implements T.OpenSubtitlesApi {
     private readonly fetchWrapper: FetchWrapper
   ) {}
 
-  public async getMovieInfo(imdbId: string, page: number): Promise<T.GetMovieInfoOutput> {
+  public async getSubtitlesPage(imdbId: string, page: number): Promise<T.GetSubtitlesPageResponse> {
     const url = `${this.apiUrlBase}/subtitles?imdb_id=${imdbId}&page=${page}`;
     const headers = this.createHeaders(this.apiKey);
     const { success, status, body: resBody } = await this.fetchWrapper.getJson({ url, headers });
@@ -18,7 +18,7 @@ export class OpenSubtitlesApi implements T.OpenSubtitlesApi {
     return { success, data: resBody, log };
   }
 
-  public async getDownloadInfo(fileId: number): Promise<T.GetDownloadInfoOutput> {
+  public async getDownloadMeta(fileId: number): Promise<T.GetDownloadMetaResponse> {
     const reqBody = { file_id: fileId, sub_format: 'srt' };
 
     const url = `${this.apiUrlBase}/download`;
@@ -30,7 +30,7 @@ export class OpenSubtitlesApi implements T.OpenSubtitlesApi {
     return { success, data: resBody, log };
   }
 
-  public async getFile(url: string): Promise<T.GetFileOutput> {
+  public async downloadTextFile(url: string): Promise<T.DownloadTextFileResponse> {
     const { success, status, body: resBody } = await this.fetchWrapper.getText({ url });
     const log = createLog({ input: { url, method: 'POST' }, output: { status, body: resBody } });
     return { success, data: <any>resBody, log };

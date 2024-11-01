@@ -9,7 +9,7 @@ export class OmdbMovieReader implements T.MovieReader {
     private readonly omdbMapper: OmdbMapper
   ) {}
 
-  public async read(imdbId: string): Promise<T.ReadOutput> {
+  public async read(imdbId: string): Promise<T.ReadMovieResponse> {
     const getMovieInfoRes = await this.omdbApi.getMovieInfo(imdbId);
     if (getMovieInfoRes.success) {
       const data = this.omdbMapper.mapMovie(getMovieInfoRes.data);

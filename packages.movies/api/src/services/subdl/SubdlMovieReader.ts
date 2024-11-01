@@ -12,10 +12,10 @@ export class SubdlMovieReader implements T.MovieReader {
     private readonly subdlApi: SubdlApi
   ) {}
 
-  public async read(imdbId: string): Promise<T.ReadOutput> {
+  public async read(imdbId: string): Promise<T.ReadMovieResponse> {
     const getMovieInfoRes = await this.subdlApi.getMovieInfo(imdbId);
     if (getMovieInfoRes.success) {
-      const output: T.ReadOutput = { success: true, data: defaultMovie(), logs: [] };
+      const output: T.ReadMovieResponse = { success: true, data: defaultMovie(), logs: [] };
       const data = getMovieInfoRes.data;
 
       // Assuming results is an array for TV episodes?

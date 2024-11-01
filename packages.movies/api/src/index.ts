@@ -5,12 +5,13 @@ import { OmdbApi } from './services/omdb/OmdbApi';
 import { OmdbMapper } from './services/omdb/OmdbMapper';
 import { OmdbMovieReader } from './services/omdb/OmdbMovieReader';
 import { OpenSubtitlesApi } from './services/openSubtitles/OpenSubtitlesApi';
+import { OpenSubtitlesMapper } from './services/openSubtitles/OpenSubtitlesMapper';
 import { OpenSubtitlesMovieReader } from './services/openSubtitles/OpenSubtitlesMovieReader';
 import { SubdlApi } from './services/subdl/SubdlApi';
 import { SubdlMovieReader } from './services/subdl/SubdlMovieReader';
 
 export type { Movie, OriginEnum, SourceTypeEnum, SubtitlePackage } from './services/common/Movie.types';
-export type { MovieReader, ReadOutput } from './services/movieApi/MovieApi.types';
+export type { MovieReader, ReadMovieResponse as ReadOutput } from './services/movieApi/MovieApi.types';
 
 export interface MovieReaderOptions {
   omdb: {
@@ -34,7 +35,8 @@ export const createMovieReader = ({ omdb, openSubtitles, subdl }: MovieReaderOpt
   const omdbMapper = new OmdbMapper();
   const omdbMovieReader = new OmdbMovieReader(omdbApi, omdbMapper);
   const openSubtitlesApi = new OpenSubtitlesApi(openSubtitles.apiKey, openSubtitles.apiUrlBase, fetchWrapper);
-  const openSubtitlesMovieReader = new OpenSubtitlesMovieReader(openSubtitlesApi);
+  const openSubtitlesMapper = new OpenSubtitlesMapper();
+  const openSubtitlesMovieReader = new OpenSubtitlesMovieReader(openSubtitlesApi, openSubtitlesMapper);
   const subdlApi = new SubdlApi(subdl.apiKey, subdl.apiUrlBase, subdl.zipUrlBase, fetchWrapper);
   const subdlMovieReader = new SubdlMovieReader(subdl.zipUrlBase, subdlApi);
   return new MovieReaderImpl(omdbMovieReader, openSubtitlesMovieReader, subdlMovieReader);

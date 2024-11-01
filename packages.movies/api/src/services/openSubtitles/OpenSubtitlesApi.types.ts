@@ -1,18 +1,18 @@
 import type { FetchLog } from '../common/FetchLog.types';
 
-export interface SearchOutputDataDataAttributesFile {
+export interface File {
   file_id: number;
   cd_number: number;
   file_name: string;
 }
 
-export interface SearchOutputDataDataAttributesRelatedLink {
+export interface RelatedLink {
   label: string;
   url: string;
   img_url: string;
 }
 
-export interface SearchOutputDataDataAttributesFeatureDetails {
+export interface FeatureDetails {
   feature_id: number;
   feature_type: string;
   year: number;
@@ -22,13 +22,13 @@ export interface SearchOutputDataDataAttributesFeatureDetails {
   tmdb_id: number;
 }
 
-export interface SearchOutputDataDataAttributesUploader {
+export interface Uploader {
   uploader_id: null;
   name: string;
   rank: string;
 }
 
-export interface SearchOutputDataDataAttributes {
+export interface Attributes {
   subtitle_id: string;
   language: string;
   download_count: number;
@@ -50,42 +50,42 @@ export interface SearchOutputDataDataAttributes {
   comments: string;
   legacy_subtitle_id: number;
   legacy_uploader_id: number;
-  uploader: SearchOutputDataDataAttributesUploader;
-  feature_details: SearchOutputDataDataAttributesFeatureDetails;
+  uploader: Uploader;
+  feature_details: FeatureDetails;
   url: string;
-  related_links: SearchOutputDataDataAttributesRelatedLink[];
-  files: SearchOutputDataDataAttributesFile[];
+  related_links: RelatedLink[];
+  files: File[];
 }
 
-export interface GetMovieInfoOutputDataData {
+export interface Subtitles {
   id: string;
   type: string;
-  attributes: SearchOutputDataDataAttributes;
+  attributes: Attributes;
 }
 
-export interface GetMovieInfoOutputData {
+export interface SubtitlesPage {
   total_pages: number;
   total_count: number;
   per_page: number;
   page: number;
-  data: GetMovieInfoOutputDataData[];
+  data: Subtitles[];
 }
 
-export interface GetMovieInfoOutputOk {
+export interface GetSubtitlesPageResponseOk {
   success: true;
-  data: GetMovieInfoOutputData;
+  data: SubtitlesPage;
   log: FetchLog;
 }
 
-export interface GetMovieInfoOutputFail {
+export interface GetSubtitlesPageResponseFail {
   success: false;
   data: null;
   log: FetchLog;
 }
 
-export type GetMovieInfoOutput = GetMovieInfoOutputOk | GetMovieInfoOutputFail;
+export type GetSubtitlesPageResponse = GetSubtitlesPageResponseOk | GetSubtitlesPageResponseFail;
 
-export interface GetDownloadInfoOutputData {
+export interface DownloadMeta {
   link: string;
   file_name: string;
   requests: number;
@@ -98,36 +98,36 @@ export interface GetDownloadInfoOutputData {
   ts: number;
 }
 
-export interface GetDownloadInfoOutputOk {
+export interface GetDownloadMetaResponseOk {
   success: true;
   log: FetchLog;
-  data: GetDownloadInfoOutputData;
+  data: DownloadMeta;
 }
 
-export interface GetDownloadInfoOutputFail {
+export interface GetDownloadMetaResponseFail {
   success: false;
   log: FetchLog;
   data: null;
 }
 
-export type GetDownloadInfoOutput = GetDownloadInfoOutputOk | GetDownloadInfoOutputFail;
+export type GetDownloadMetaResponse = GetDownloadMetaResponseOk | GetDownloadMetaResponseFail;
 
-export interface GetFileOutputOk {
+export interface DownloadTextFileResponseOk {
   success: true;
   log: FetchLog;
   data: string;
 }
 
-export interface GetFileOutputFail {
+export interface DownloadTextFileResponseFail {
   success: false;
   log: FetchLog;
   data: null;
 }
 
-export type GetFileOutput = GetFileOutputOk | GetFileOutputFail;
+export type DownloadTextFileResponse = DownloadTextFileResponseOk | DownloadTextFileResponseFail;
 
 export interface OpenSubtitlesApi {
-  getMovieInfo: (imdbId: string, pageNumber: number) => Promise<GetMovieInfoOutput>;
-  getDownloadInfo: (fileId: number) => Promise<GetDownloadInfoOutput>;
-  getFile: (url: string) => Promise<GetFileOutput>;
+  getSubtitlesPage: (imdbId: string, pageNumber: number) => Promise<GetSubtitlesPageResponse>;
+  getDownloadMeta: (fileId: number) => Promise<GetDownloadMetaResponse>;
+  downloadTextFile: (url: string) => Promise<DownloadTextFileResponse>;
 }
