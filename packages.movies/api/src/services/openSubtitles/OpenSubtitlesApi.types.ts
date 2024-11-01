@@ -71,11 +71,19 @@ export interface GetMovieInfoOutputData {
   data: GetMovieInfoOutputDataData[];
 }
 
-export interface GetMovieInfoOutput {
-  success: boolean;
+export interface GetMovieInfoOutputOk {
+  success: true;
+  data: GetMovieInfoOutputData;
   logs: FetchLog[];
-  data: GetMovieInfoOutputData | null;
 }
+
+export interface GetMovieInfoOutputFail {
+  success: false;
+  data: null;
+  logs: FetchLog[];
+}
+
+export type GetMovieInfoOutput = GetMovieInfoOutputOk | GetMovieInfoOutputFail;
 
 export interface GetDownloadInfoOutputData {
   link: string;
@@ -103,7 +111,7 @@ export interface GetFileOutput {
 }
 
 export interface OpenSubtitlesApi {
-  getMovieInfo: (imdbId: string) => Promise<GetMovieInfoOutput>;
+  getMovieInfo: (imdbId: string, pageNumber: number) => Promise<GetMovieInfoOutput>;
   getDownloadInfo: (fileId: number) => Promise<GetDownloadInfoOutput>;
   getFile: (url: string) => Promise<GetFileOutput>;
 }
