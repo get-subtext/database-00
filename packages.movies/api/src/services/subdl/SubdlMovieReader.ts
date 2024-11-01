@@ -30,7 +30,7 @@ export class SubdlMovieReader implements T.MovieReader {
       for (let i = 0; i < data.subtitles.length; i++) {
         const subtitle = data.subtitles[i];
 
-        const getZipFileRes = await this.subdlApi.getZipFile(subtitle.url);
+        const getZipFileRes = await this.subdlApi.downloadZipFile(subtitle.url);
 
         const sourceUrl = `${this.subdlZipUrlBase}${subtitle.url}`;
         if (getZipFileRes.success) {
@@ -71,7 +71,7 @@ export class SubdlMovieReader implements T.MovieReader {
     }
   }
 
-  private async extractZip(arrayBuffer: ArrayBuffer): Promise<T.ExtractZipOutput> {
+  private async extractZip(arrayBuffer: ArrayBuffer): Promise<T.ExtractZipResponse> {
     const data: Record<string, string> = {};
     try {
       const zip = new AdmZip(Buffer.from(arrayBuffer));
@@ -84,7 +84,7 @@ export class SubdlMovieReader implements T.MovieReader {
       return { success: true, data, message: null };
     } catch (error) {
       const message = `[Extract zip failed] ${get(error, 'message', '<unknown>')}`;
-      return { success: false, data, message };
+      return { success: false, data: null, message };
     }
   }
 }
