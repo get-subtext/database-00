@@ -4,7 +4,7 @@ import type { Movie } from '../common/Movie.types';
 import { OriginEnum, SourceTypeEnum } from '../common/Movie.types';
 import type * as T from '../movieApi/MovieApi.types';
 import { defaultMovie } from '../utils/defaultMovie';
-import { mergeMovie } from '../utils/mergeMovie';
+import { mergeMovies } from '../utils/mergeMovies';
 import { OpenSubtitlesApi } from './OpenSubtitlesApi';
 import type { GetMovieInfoOutputData, GetMovieInfoOutputDataData, SearchOutputDataDataAttributesRelatedLink } from './OpenSubtitlesApi.types';
 
@@ -24,7 +24,7 @@ export class OpenSubtitlesMovieReader implements T.MovieReader {
 
           const processMovieInfoRowRes = await this.processMovieInfoRow(row);
           output.logs.push(...processMovieInfoRowRes.logs);
-          output.data = mergeMovie(output.data, processMovieInfoRowRes.data);
+          output.data = mergeMovies([output.data, processMovieInfoRowRes.data]);
         }
       }
 

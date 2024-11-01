@@ -10,19 +10,16 @@ import { config } from './config';
 const pkgMeta = getPkgMeta(rootDir);
 const logPrefix = last(split(pkgMeta.name, '/'));
 const botLabel = 'subtext-bot';
+const dataSeparator = '===';
 
 export const createHandler = (verbose: boolean) => {
   const logger = new Logger(logPrefix!, verbose);
-  const gitHubIssueReader = createGitHubIssueReader({
-    apiUrlBase: config.gitHub.apiUrlBase,
-    apiToken: config.gitHub.token,
-    dataSeparator: '===',
-    botLabel,
-  });
+  const gitHubIssueReader = createGitHubIssueReader({ apiUrlBase: config.gitHub.apiUrlBase, apiToken: config.gitHub.token, dataSeparator, botLabel });
 
   const movieReader = createMovieReader({
     omdb: { apiUrlBase: config.omdb.apiUrlBase, apiKey: config.omdb.apiKey },
     openSubtitles: { apiUrlBase: config.openSubtitles.apiUrlBase, apiKey: config.openSubtitles.apiKey },
+    subdl: { apiUrlBase: config.subdl.apiUrlBase, zipUrlBase: config.subdl.zipUrlBase, apiKey: config.subdl.apiKey },
   });
 
   return new Handler(botLabel, gitHubIssueReader, movieReader, logger);

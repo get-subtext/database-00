@@ -2,7 +2,7 @@ import type { FetchWrapper } from '../fetch/FetchWrapper.types';
 import { createLog } from '../utils/createLog';
 import type * as T from './SubdlApi.types';
 
-export class OmdbApi implements T.OmdbApi {
+export class SubdlApi implements T.SubdlApi {
   public constructor(
     private readonly apiUrlBase: string,
     private readonly apiKey: string,
@@ -19,6 +19,6 @@ export class OmdbApi implements T.OmdbApi {
   }
 
   private createMovieInfoUrl(imdbId: string, apiKey: string) {
-    return `${this.apiUrlBase}/?i=${imdbId}&apikey=${apiKey}`;
+    return `${this.apiUrlBase}?imdb_id=${imdbId}&type=movie&languages=EN&api_key=${apiKey}`;
   }
 }

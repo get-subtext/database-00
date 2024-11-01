@@ -15,4 +15,9 @@ export const config: Config = {
     apiKey: environment.OPEN_SUBTITLES_API_KEY,
     apiUrlBase: 'https://api.opensubtitles.com/api/v1',
   },
+  subdl: {
+    apiKey: environment.SUBDL_API_KEY,
+    apiUrlBase: 'https://api.subdl.com/api/v1/subtitles',
+    zipUrlBase: 'https://dl.subdl.com',
+  },
 };

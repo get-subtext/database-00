@@ -9,4 +9,6 @@ export const environment = cleanEnv(process.env, {
   OMDB_API_KEY: str({}),
   // Open Subtitles Config
   OPEN_SUBTITLES_API_KEY: str({}),
+  // SUBDL Config
+  SUBDL_API_KEY: str({}),
 });
