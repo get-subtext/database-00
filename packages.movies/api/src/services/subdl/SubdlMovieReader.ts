@@ -13,20 +13,18 @@ export class SubdlMovieReader implements T.MovieReader {
   ) {}
 
   public async read(imdbId: string): Promise<T.ReadOutput> {
-    const output: T.ReadOutput = { success: true, data: defaultMovie(), logs: [] };
-
     const getMovieInfoRes = await this.subdlApi.getMovieInfo(imdbId);
     if (getMovieInfoRes.success) {
+      const output: T.ReadOutput = { success: true, data: defaultMovie(), logs: [] };
       const data = getMovieInfoRes.data;
-      const movie = { ...defaultMovie(), imdbId };
 
       // Assuming results is an array for TV episodes?
       // Let's iterate and get the data, with first element taking priority.
       for (let i = 0; i < data.results.length; i++) {
         const result = data.results[i];
-        movie.title = movie.title === 'Unknown' ? result.name : 'Unknown';
-        movie.releaseDate = movie.releaseDate ?? result.release_date ?? null;
-        movie.releaseYear = movie.releaseYear ?? result.year ?? null;
+        output.data.title = output.data.title === 'Unknown' ? result.name : 'Unknown';
+        output.data.releaseDate = output.data.releaseDate ?? result.release_date ?? null;
+        output.data.releaseYear = output.data.releaseYear ?? result.year ?? null;
       }
 
       for (let i = 0; i < data.subtitles.length; i++) {
@@ -38,12 +36,11 @@ export class SubdlMovieReader implements T.MovieReader {
         if (getZipFileRes.success) {
           const extractZipRes = await this.extractZip(getZipFileRes.data);
           if (extractZipRes.success) {
-            output.logs.push(getZipFileRes.log);
             const subtitleFilePairs = toPairs(extractZipRes.data);
             const zipFileName = path.basename(subtitle.url);
             for (let i = 0; i < subtitleFilePairs.length; i++) {
               const [subtitleFileName, text] = subtitleFilePairs[i];
-              movie.subtitlePackages.push({
+              output.data.subtitlePackages.push({
                 provider: 'Subdl',
                 author: subtitle.author ?? null,
                 origin: OriginEnum.Api,
@@ -51,6 +48,11 @@ export class SubdlMovieReader implements T.MovieReader {
                 text,
               });
             }
+
+            // Simulate a fetch log when the zip extract fails
+            const log = cloneDeep(getZipFileRes.log);
+            log.output.body = extractZipRes.data;
+            output.logs.push(log);
           } else {
             // Simulate a fetch log when the zip extract fails
             const log = cloneDeep(getZipFileRes.log);

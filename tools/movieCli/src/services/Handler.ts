@@ -55,7 +55,7 @@ export class Handler {
 
   public async requestMovie(data: any) {
     const imdbId = data.imdbId;
-    const movie = await this.movieReader.read(imdbId);
-    console.log(JSON.stringify(movie.data, null, 2));
+    const readRes = await this.movieReader.read(imdbId);
+    console.log(JSON.stringify(readRes.data, null, 2));
   }
 }
