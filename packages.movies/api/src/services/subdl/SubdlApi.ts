@@ -12,19 +12,19 @@ export class SubdlApi implements T.SubdlApi {
 
   public async getMovieInfo(imdbId: string): Promise<T.GetMovieInfoOutput> {
     const url = this.createMovieInfoUrl(imdbId, this.apiKey);
-    const { success, status, body } = await this.fetchWrapper.getJson({ url });
+    const { success, status, body: resBody } = await this.fetchWrapper.getJson({ url });
 
     const logUrl = this.createMovieInfoUrl(imdbId, '<API_KEY>');
-    const log = createLog({ input: { url: logUrl }, output: { status, body } });
-    return { success, data: body, log };
+    const log = createLog({ input: { url: logUrl }, output: { status, body: resBody } });
+    return { success, data: resBody, log };
   }
 
   public async getZipFile(urlPath: string): Promise<T.GetZipFileOutput> {
     const url = `${this.subdlZipUrlBase}${urlPath}`;
-    const { success, status, body } = await this.fetchWrapper.getFile({ url });
+    const { success, status, body: resBody } = await this.fetchWrapper.getFile({ url });
 
     const log = createLog({ input: { url }, output: { status, body: success ? '<ArrayBuffer>' : null } });
-    return success ? { success, data: body, log } : { success, data: null, log };
+    return success ? { success, data: resBody, log } : { success, data: null, log };
   }
 
   private createMovieInfoUrl(imdbId: string, apiKey: string) {

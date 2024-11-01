@@ -1,4 +1,4 @@
-import { isNil } from 'lodash-es';
+import { isNil, map } from 'lodash-es';
 import type { FetchLog } from '../common/FetchLog.types';
 import type { Movie } from '../common/Movie.types';
 import { OriginEnum, SourceTypeEnum } from '../common/Movie.types';
@@ -6,7 +6,7 @@ import type * as T from '../movieApi/MovieApi.types';
 import { defaultMovie } from '../utils/defaultMovie';
 import { mergeMovies } from '../utils/mergeMovies';
 import { OpenSubtitlesApi } from './OpenSubtitlesApi';
-import type { GetMovieInfoOutputData, GetMovieInfoOutputDataData, SearchOutputDataDataAttributesRelatedLink } from './OpenSubtitlesApi.types';
+import type { GetMovieInfoOutputData, SearchOutputDataDataAttributes, SearchOutputDataDataAttributesRelatedLink } from './OpenSubtitlesApi.types';
 
 export class OpenSubtitlesMovieReader implements T.MovieReader {
   public constructor(private readonly openSubtitlesApi: OpenSubtitlesApi) {}
@@ -22,7 +22,7 @@ export class OpenSubtitlesMovieReader implements T.MovieReader {
           if (row.type !== 'subtitle') continue;
           if (row.attributes.language !== 'en') continue;
 
-          const processMovieInfoRowRes = await this.processMovieInfoRow(row);
+          const processMovieInfoRowRes = await this.processMovieInfoRow(row.attributes);
           output.logs.push(...processMovieInfoRowRes.logs);
           output.data = mergeMovies([output.data, processMovieInfoRowRes.data]);
         }
@@ -38,48 +38,63 @@ export class OpenSubtitlesMovieReader implements T.MovieReader {
     type TOutput = { success: boolean; data: GetMovieInfoOutputData[]; logs: FetchLog[] };
     const output: TOutput = { success: true, data: [], logs: [] };
 
-    // Set `maxPages` to a reasonable value so the loop definitely terminates.
-    const maxPages = 100;
-    let page = 0;
-    while (true) {
-      page++;
-      const searchRes = await this.openSubtitlesApi.getMovieInfo(imdbId, page);
-      output.logs.push(searchRes.log);
-      if (searchRes.success) output.data.push(searchRes.data);
-      if (!searchRes.success) break;
-      if (searchRes.data!.page > searchRes.data!.total_pages) break;
-      if (page >= maxPages) break;
+    const getMovieInfoFirst = await this.openSubtitlesApi.getMovieInfo(imdbId, 1);
+    output.logs.push(getMovieInfoFirst.log);
+
+    if (getMovieInfoFirst.success) {
+      output.data.push(getMovieInfoFirst.data);
+
+      const totalPages = getMovieInfoFirst.data.total_pages ?? 1;
+      const pageRequests = [];
+      for (let i = 2; i <= totalPages; i++) {
+        pageRequests.push(this.openSubtitlesApi.getMovieInfo(imdbId, i));
+      }
+
+      const getMovieInfoRestRes = await Promise.all(pageRequests);
+      for (let i = 0; i < getMovieInfoRestRes.length; i++) {
+        output.logs.push(getMovieInfoRestRes[i].log);
+        if (getMovieInfoRestRes[i].success) output.data.push(getMovieInfoRestRes[i].data!);
+      }
     }
 
     return output;
   }
 
-  private async processMovieInfoRow(movieInfoRow: GetMovieInfoOutputDataData) {
+  private async processMovieInfoRow(attributes: SearchOutputDataDataAttributes) {
     type TOutput = { success: boolean; data: Movie; logs: FetchLog[] };
     const output: TOutput = { success: true, data: defaultMovie(), logs: [] };
 
-    output.data.title = movieInfoRow.attributes.feature_details.title ?? null;
-    output.data.releaseYear = movieInfoRow.attributes.feature_details.year ?? null;
-    output.data.posterUrl = this.getPosterLink(movieInfoRow.attributes.related_links);
+    output.data.title = attributes.feature_details.title ?? null;
+    output.data.releaseYear = attributes.feature_details.year ?? null;
+    output.data.posterUrl = this.getPosterLink(attributes.related_links);
 
-    const author = movieInfoRow.attributes.uploader.name ?? null;
-    for (let i = 0; i < movieInfoRow.attributes.files.length; i++) {
-      const file = movieInfoRow.attributes.files[i];
-      const getDownloadInfoRes = await this.openSubtitlesApi.getDownloadInfo(file.file_id);
+    const getDownloadInfoPromises = map(attributes.files, (file) => this.openSubtitlesApi.getDownloadInfo(file.file_id));
+    const getDownloadInfoResults = await Promise.all(getDownloadInfoPromises);
+
+    const getFilePromises = map(getDownloadInfoResults, (getDownloadInfoRes) => {
+      return getDownloadInfoRes.success ? this.openSubtitlesApi.getFile(getDownloadInfoRes.data.link) : Promise.resolve(null);
+    });
+
+    const getFileResults = await Promise.all(getFilePromises);
+
+    const author = attributes.uploader.name ?? null;
+    for (let i = 0; i < attributes.files.length; i++) {
+      const getDownloadInfoRes = getDownloadInfoResults[i];
       output.logs.push(getDownloadInfoRes.log);
 
-      if (getDownloadInfoRes.success) {
-        const url = getDownloadInfoRes.data!.link;
-        const getFileRes = await this.openSubtitlesApi.getFile(url);
+      const getFileRes = getFileResults[i];
+      if (getDownloadInfoRes.success && getFileRes !== null) {
         output.logs.push(getFileRes.log);
-
         if (getFileRes.success) {
+          const file = attributes.files[i];
+          const subtitleFileName = file.file_name;
+          const sourceUrl = getDownloadInfoRes.data.link;
           output.data.subtitlePackages.push({
             provider: 'OpenSubtitles',
             author,
             origin: OriginEnum.Api,
-            source: { type: SourceTypeEnum.StandaloneFile, sourceUrl: url, subtitleFileName: file.file_name },
-            text: getFileRes.data!,
+            source: { type: SourceTypeEnum.StandaloneFile, sourceUrl, subtitleFileName },
+            text: getFileRes.data,
           });
         }
       }
