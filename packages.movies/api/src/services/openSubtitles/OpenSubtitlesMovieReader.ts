@@ -1,10 +1,10 @@
 import { isNil, map } from 'lodash-es';
+import { defaultMovie } from '../../utils/defaultMovie';
+import { mergeMovies } from '../../utils/mergeMovies';
 import type { FetchLog } from '../common/FetchLog.types';
 import type { Movie } from '../common/Movie.types';
 import { OriginEnum, SourceTypeEnum } from '../common/Movie.types';
 import type * as T from '../movieApi/MovieApi.types';
-import { defaultMovie } from '../utils/defaultMovie';
-import { mergeMovies } from '../utils/mergeMovies';
 import { OpenSubtitlesApi } from './OpenSubtitlesApi';
 import type { GetMovieInfoOutputData, SearchOutputDataDataAttributes, SearchOutputDataDataAttributesRelatedLink } from './OpenSubtitlesApi.types';
 
