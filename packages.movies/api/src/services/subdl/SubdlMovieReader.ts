@@ -50,12 +50,12 @@ export class SubdlMovieReader implements T.MovieReader {
               });
             }
 
-            // Simulate a fetch log when the zip extract fails
+            // Update fetch log when the zip extract passes
             const log = cloneDeep(getZipFileRes.log);
             log.output.body = extractZipRes.data;
             output.logs.push(log);
           } else {
-            // Simulate a fetch log when the zip extract fails
+            // Update fetch log when the zip extract fails
             const log = cloneDeep(getZipFileRes.log);
             log.output.status = 0;
             log.output.body = extractZipRes.message;
@@ -84,7 +84,7 @@ export class SubdlMovieReader implements T.MovieReader {
 
       return { success: true, data, message: null };
     } catch (error) {
-      const message = `[Extract zip failed] ${get(error, 'message', '<unknown>')}`;
+      const message = `Extract zip failed: ${get(error, 'message', '<unknown>')}`;
       return { success: false, data: null, message };
     }
   }
