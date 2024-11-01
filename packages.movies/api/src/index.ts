@@ -8,6 +8,7 @@ import { OpenSubtitlesApi } from './services/openSubtitles/OpenSubtitlesApi';
 import { OpenSubtitlesMapper } from './services/openSubtitles/OpenSubtitlesMapper';
 import { OpenSubtitlesMovieReader } from './services/openSubtitles/OpenSubtitlesMovieReader';
 import { SubdlApi } from './services/subdl/SubdlApi';
+import { SubdlMapper } from './services/subdl/SubdlMapper';
 import { SubdlMovieReader } from './services/subdl/SubdlMovieReader';
 
 export type { Movie, OriginEnum, SourceTypeEnum, SubtitlePackage } from './services/common/Movie.types';
@@ -38,6 +39,7 @@ export const createMovieReader = ({ omdb, openSubtitles, subdl }: MovieReaderOpt
   const openSubtitlesMapper = new OpenSubtitlesMapper();
   const openSubtitlesMovieReader = new OpenSubtitlesMovieReader(openSubtitlesApi, openSubtitlesMapper);
   const subdlApi = new SubdlApi(subdl.apiKey, subdl.apiUrlBase, subdl.zipUrlBase, fetchWrapper);
-  const subdlMovieReader = new SubdlMovieReader(subdl.zipUrlBase, subdlApi);
+  const subdlMapper = new SubdlMapper();
+  const subdlMovieReader = new SubdlMovieReader(subdl.zipUrlBase, subdlApi, subdlMapper);
   return new MovieReaderImpl(omdbMovieReader, openSubtitlesMovieReader, subdlMovieReader);
 };
