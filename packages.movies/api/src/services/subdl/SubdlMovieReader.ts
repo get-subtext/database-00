@@ -33,12 +33,12 @@ export class SubdlMovieReader implements T.MovieReader {
         const subtitle = data.subtitles[i];
 
         const getZipFileRes = await this.subdlApi.getZipFile(subtitle.url);
-        output.logs.push(getZipFileRes.log);
 
         const sourceUrl = `${this.subdlZipUrlBase}${subtitle.url}`;
         if (getZipFileRes.success) {
           const extractZipRes = await this.extractZip(getZipFileRes.data);
           if (extractZipRes.success) {
+            output.logs.push(getZipFileRes.log);
             const subtitleFilePairs = toPairs(extractZipRes.data);
             const zipFileName = path.basename(subtitle.url);
             for (let i = 0; i < subtitleFilePairs.length; i++) {
@@ -58,6 +58,8 @@ export class SubdlMovieReader implements T.MovieReader {
             log.output.body = extractZipRes.message;
             output.logs.push(log);
           }
+        } else {
+          output.logs.push(getZipFileRes.log);
         }
       }
 

@@ -13,9 +13,8 @@ export class MovieReader implements T.MovieReader {
   ) {}
 
   public async read(imdbId: string) {
-    const omdbRes = await this.omdbMovieReader.read(imdbId);
-    const openSubtitlesRes = await this.openSubtitlesMovieReader.read(imdbId);
-    const subdlMovieReader = await this.subdlMovieReader.read(imdbId);
+    const readPromises = [this.omdbMovieReader.read(imdbId), this.openSubtitlesMovieReader.read(imdbId), await this.subdlMovieReader.read(imdbId)];
+    const [omdbRes, openSubtitlesRes, subdlMovieReader] = await Promise.all(readPromises);
 
     const success = omdbRes.success || openSubtitlesRes.success || subdlMovieReader.success;
     const logs = concat(omdbRes.logs, openSubtitlesRes.logs, subdlMovieReader.logs);
