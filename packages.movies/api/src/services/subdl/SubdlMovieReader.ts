@@ -5,6 +5,7 @@ import { defaultMovie } from '../../utils/defaultMovie';
 import { OriginEnum, SourceTypeEnum } from '../common/Movie.types';
 import type * as T from '../movieApi/MovieApi.types';
 import type { SubdlApi } from './SubdlApi';
+import type { ExtractZipResponse } from './SubdlMovieReader.types';
 
 export class SubdlMovieReader implements T.MovieReader {
   public constructor(
@@ -71,7 +72,7 @@ export class SubdlMovieReader implements T.MovieReader {
     }
   }
 
-  private async extractZip(arrayBuffer: ArrayBuffer): Promise<T.ExtractZipResponse> {
+  private async extractZip(arrayBuffer: ArrayBuffer): Promise<ExtractZipResponse> {
     const data: Record<string, string> = {};
     try {
       const zip = new AdmZip(Buffer.from(arrayBuffer));

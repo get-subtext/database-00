@@ -15,20 +15,6 @@ export interface ReadMovieResponseFail {
 
 export type ReadMovieResponse = ReadMovieResponseOk | ReadMovieResponseFail;
 
-export interface ExtractZipResponseOk {
-  success: true;
-  data: Record<string, string>;
-  message: null;
-}
-
-export interface ExtractZipResponseFail {
-  success: false;
-  data: null;
-  message: string;
-}
-
-export type ExtractZipResponse = ExtractZipResponseOk | ExtractZipResponseFail;
-
 export interface MovieReader {
   read: (imdbId: string) => Promise<ReadMovieResponse>;
 }
