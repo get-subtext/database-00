@@ -1,6 +1,6 @@
 import type { GitHubIssueService } from '@get-subtext/automation.github';
 import type { MovieReader } from '@get-subtext/movies.api';
-import { countBy, get, isNil } from 'lodash-es';
+import { countBy, get, isNil, join } from 'lodash-es';
 import { ReadOutputCodeEnum } from 'packages.automation/github/src/services/GitHubIssueService.types';
 import type { ProcessIssueInput } from './Handler.types';
 import type { Logger } from './Logger';
@@ -45,7 +45,7 @@ export class Handler {
   private async doProcessIssue(issueNumber: number, type: string, data: any) {
     switch (type) {
       case 'REQUEST_MOVIE':
-        await this.requestMovie(data);
+        await this.requestMovie(issueNumber, data);
         break;
       default:
         this.logger.warnIssueInvalidType(type);
@@ -53,15 +53,29 @@ export class Handler {
     }
   }
 
-  public async requestMovie(input: any) {
+  public async requestMovie(issueNumber: number, input: any) {
     const imdbId = input.imdbId;
     const { success, data, logs } = await this.movieReader.read(imdbId);
 
+    const issueComments: string[] = [];
     const apiStats = countBy(logs, (l) => (l.output.status >= 200 && l.output.status <= 299 ? 'passed' : 'failed'));
     if (success) {
       this.logger.infoRequestMovieFound(imdbId, data.title, data.subtitlePackages.length, apiStats.passed, apiStats.failed);
+      issueComments.push(`:clapper: **${data.title}**`);
     } else {
       this.logger.infoRequestMovieNotFound(imdbId, apiStats.passed, apiStats.failed);
+      issueComments.push(`:clapper: **Unknown Movie**`);
     }
+
+    const subtitleCount = data?.subtitlePackages.length ?? 0;
+    const subtitleP11n = subtitleCount === 1 ? 'subtitle' : 'subtitles';
+    const passedCallP11n = apiStats.passed === 1 ? 'call' : 'calls';
+    const failedCallP11n = apiStats.failed === 1 ? 'call' : 'calls';
+    issueComments.push(`- ${subtitleCount} ${subtitleP11n} found`);
+    issueComments.push(``);
+    issueComments.push(`:no_entry: **API Stats**`);
+    issueComments.push(`- ${apiStats.passed} API ${passedCallP11n} passed`);
+    issueComments.push(`- ${apiStats.failed} API ${failedCallP11n} failed`);
+    await this.gitHubIssueService.close(issueNumber, join(issueComments, '\n'), []);
   }
 }
