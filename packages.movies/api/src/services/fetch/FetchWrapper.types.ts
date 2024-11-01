@@ -3,22 +3,57 @@ export interface GetTextInput {
   headers?: Record<string, string>;
 }
 
-export interface GetTextOutput {
-  success: boolean;
+export interface GetTextOutputOk {
+  success: true;
   status: number;
-  body: string | null;
+  body: string;
 }
+
+export interface GetTextOutputFail {
+  success: false;
+  status: number;
+  body: string;
+}
+
+export type GetTextOutput = GetTextOutputOk | GetTextOutputFail;
 
 export interface GetJsonInput {
   url: string;
   headers?: Record<string, string>;
 }
 
-export interface GetJsonOutput {
+export interface GetJsonOutputOk {
   success: boolean;
   status: number;
-  body: any | null;
+  body: any;
 }
+
+export interface GetJsonOutputFail {
+  success: boolean;
+  status: number;
+  body: string;
+}
+
+export type GetJsonOutput = GetJsonOutputOk | GetJsonOutputFail;
+
+export interface GetFileInput {
+  url: string;
+  headers?: Record<string, string>;
+}
+
+export interface GetFileOutputOk {
+  success: true;
+  status: number;
+  body: ArrayBuffer;
+}
+
+export interface GetFileOutputFail {
+  success: false;
+  status: number;
+  body: string;
+}
+
+export type GetFileOutput = GetFileOutputOk | GetFileOutputFail;
 
 export interface PostJsonInput {
   url: string;
@@ -26,34 +61,28 @@ export interface PostJsonInput {
   body?: any;
 }
 
-export interface PostJsonOutput {
-  success: boolean;
+export interface PostJsonOutputOk {
+  success: true;
   status: number;
-  body: any | null;
+  body: any;
 }
+
+export interface PostJsonOutputFail {
+  success: false;
+  status: number;
+  body: string;
+}
+
+export type PostJsonOutput = PostJsonOutputOk | PostJsonOutputFail;
 
 export enum DataTypeEnum {
   Json = 'Json',
   Text = 'Text',
 }
 
-export interface FetchWrapperInput {
-  url: string;
-  method?: string;
-  headers?: Record<string, string>;
-  body?: any;
-  dataType?: DataTypeEnum;
-}
-
-export interface FetchWrapperOutput {
-  success: boolean;
-  status: number;
-  body: any;
-}
-
 export interface FetchWrapper {
-  fetch: (input: FetchWrapperInput) => Promise<FetchWrapperOutput>;
   getText: (input: GetTextInput) => Promise<GetTextOutput>;
   getJson: (input: GetJsonInput) => Promise<GetJsonOutput>;
+  getFile: (input: GetFileInput) => Promise<GetFileOutput>;
   postJson: (input: PostJsonInput) => Promise<PostJsonOutput>;
 }

@@ -4,8 +4,8 @@ import type * as T from './OmdbApi.types';
 
 export class OmdbApi implements T.OmdbApi {
   public constructor(
-    private readonly apiUrlBase: string,
     private readonly apiKey: string,
+    private readonly apiUrlBase: string,
     private readonly fetchWrapper: FetchWrapper
   ) {}
 

@@ -47,6 +47,21 @@ export interface GetMovieInfoOutputFail {
 
 export type GetMovieInfoOutput = GetMovieInfoOutputOk | GetMovieInfoOutputFail;
 
+export interface GetZipFileOutputOk {
+  success: true;
+  log: FetchLog;
+  data: ArrayBuffer;
+}
+
+export interface GetZipFileOutputFail {
+  success: false;
+  log: FetchLog;
+  data: null;
+}
+
+export type GetZipFileOutput = GetZipFileOutputOk | GetZipFileOutputFail;
+
 export interface SubdlApi {
   getMovieInfo: (imdbId: string) => Promise<GetMovieInfoOutput>;
+  getZipFile: (url: string) => Promise<GetZipFileOutput>;
 }

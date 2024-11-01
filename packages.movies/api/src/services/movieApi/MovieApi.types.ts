@@ -15,6 +15,12 @@ export interface ReadOutputFail {
 
 export type ReadOutput = ReadOutputOk | ReadOutputFail;
 
+export interface ExtractZipOutput {
+  success: boolean;
+  data: Record<string, string>;
+  message: string | null;
+}
+
 export interface MovieReader {
   read: (imdbId: string) => Promise<ReadOutput>;
 }

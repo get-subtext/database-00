@@ -63,6 +63,9 @@ importers:
 
   packages.movies/api:
     dependencies:
+      '@types/adm-zip':
+        specifier: ^0.5.6
+        version: 0.5.6
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
@@ -747,6 +750,9 @@ packages:
 
   '@tsconfig/recommended@1.0.8':
     resolution: {integrity: sha512-TotjFaaXveVUdsrXCdalyF6E5RyG6+7hHHQVZonQtdlk1rJZ1myDIvPUUKPhoYv+JAzThb2lQJh9+9ZfF46hsA==}
+
+  '@types/adm-zip@0.5.6':
+    resolution: {integrity: sha512-lRlcSLg5Yoo7C2H2AUiAoYlvifWoCx/se7iUNiCBTfEVVYFVn+Tr9ZGed4K73tYgLe9O4PjdJvbxlkdAOx/qiw==}
 
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -2956,6 +2962,10 @@ snapshots:
       '@sinonjs/commons': 3.0.1
 
   '@tsconfig/recommended@1.0.8': {}
+
+  '@types/adm-zip@0.5.6':
+    dependencies:
+      '@types/node': 22.8.6
 
   '@types/babel__core@7.20.5':
     dependencies:

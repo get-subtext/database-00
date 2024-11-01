@@ -14,13 +14,13 @@ export class MovieReader implements T.MovieReader {
 
   public async read(imdbId: string) {
     const omdbRes = await this.omdbMovieReader.read(imdbId);
-    // const openSubtitlesRes = await this.openSubtitlesMovieReader.read(imdbId);
+    const openSubtitlesRes = await this.openSubtitlesMovieReader.read(imdbId);
     const subdlMovieReader = await this.subdlMovieReader.read(imdbId);
 
-    const success = omdbRes.success || subdlMovieReader.success;
-    const logs = concat(omdbRes.logs, subdlMovieReader.logs);
+    const success = omdbRes.success || openSubtitlesRes.success || subdlMovieReader.success;
+    const logs = concat(omdbRes.logs, openSubtitlesRes.logs, subdlMovieReader.logs);
     if (success) {
-      const data = mergeMovies([omdbRes.data, subdlMovieReader.data]);
+      const data = mergeMovies([omdbRes.data, openSubtitlesRes.data, subdlMovieReader.data]);
       return { success, data, logs };
     } else {
       return { success, data: null, logs };

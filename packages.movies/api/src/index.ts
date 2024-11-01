@@ -13,27 +13,27 @@ export type { MovieReader, ReadOutput } from './services/movieApi/MovieApi.types
 
 export interface MovieReaderOptions {
   omdb: {
-    apiUrlBase: string;
     apiKey: string;
+    apiUrlBase: string;
   };
   openSubtitles: {
-    apiUrlBase: string;
     apiKey: string;
+    apiUrlBase: string;
   };
   subdl: {
+    apiKey: string;
     apiUrlBase: string;
     zipUrlBase: string;
-    apiKey: string;
   };
 }
 
 export const createMovieReader = ({ omdb, openSubtitles, subdl }: MovieReaderOptions): MovieReader => {
   const fetchWrapper = new FetchWrapper();
-  const omdbApi = new OmdbApi(omdb.apiUrlBase, omdb.apiKey, fetchWrapper);
+  const omdbApi = new OmdbApi(omdb.apiKey, omdb.apiUrlBase, fetchWrapper);
   const omdbMovieReader = new OmdbMovieReader(omdbApi);
-  const openSubtitlesApi = new OpenSubtitlesApi(openSubtitles.apiUrlBase, openSubtitles.apiKey, fetchWrapper);
+  const openSubtitlesApi = new OpenSubtitlesApi(openSubtitles.apiKey, openSubtitles.apiUrlBase, fetchWrapper);
   const openSubtitlesMovieReader = new OpenSubtitlesMovieReader(openSubtitlesApi);
-  const subdlApi = new SubdlApi(subdl.apiUrlBase, subdl.apiKey, fetchWrapper);
-  const subdlMovieReader = new SubdlMovieReader(subdlApi);
+  const subdlApi = new SubdlApi(subdl.apiKey, subdl.apiUrlBase, subdl.zipUrlBase, fetchWrapper);
+  const subdlMovieReader = new SubdlMovieReader(subdl.zipUrlBase, subdlApi);
   return new MovieReaderImpl(omdbMovieReader, openSubtitlesMovieReader, subdlMovieReader);
 };

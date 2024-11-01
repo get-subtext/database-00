@@ -4,8 +4,8 @@ import type * as T from './OpenSubtitlesApi.types';
 
 export class OpenSubtitlesApi implements T.OpenSubtitlesApi {
   public constructor(
-    private readonly apiUrlBase: string,
     private readonly apiKey: string,
+    private readonly apiUrlBase: string,
     private readonly fetchWrapper: FetchWrapper
   ) {}
 
