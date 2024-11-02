@@ -1,0 +1,14 @@
+{
+  "imdbId": "tt18412256",
+  "title": "Alien: Romulus",
+  "posterUrl": "https://m.media-amazon.com/images/M/MV5BMDU0NjcwOGQtNjNjOS00NzQ3LWIwM2YtYWVmODZjMzQzN2ExXkEyXkFqcGc@._V1_SX300.jpg",
+  "releaseDate": "2024-08-16T00:00:00.000Z",
+  "releaseYear": 2024,
+  "rated": "R",
+  "genres": ["Horror", "Sci-Fi", "Thriller"],
+  "directors": ["Fede Alvarez"],
+  "writers": ["Dan O'Bannon", "Ronald Shusett", "Fede Alvarez"],
+  "actors": ["Cailee Spaeny", "David Jonsson", "Archie Renaux"],
+  "runTimeMins": 119,
+  "plot": "While scavenging the deep ends of a derelict space station, a group of young space colonists come face to face with the most terrifying life form in the universe."
+}

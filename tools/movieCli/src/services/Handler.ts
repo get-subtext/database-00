@@ -64,7 +64,10 @@ export class Handler {
     if (success) {
       this.logger.infoRequestMovieFound(imdbId, data.title, data.subtitlePackages.length, apiStats.passed, apiStats.failed);
       issueComments.push(`:clapper: **${data.title}**`);
-      await this.movieWriter.writeMovie(data);
+      const filePaths = await this.movieWriter.writeMovie(data);
+      for (let i = 0; i < filePaths.length; i++) {
+        this.logger.infoRequestMovieFileWrite(filePaths[i]);
+      }
     } else {
       this.logger.infoRequestMovieNotFound(imdbId, apiStats.passed, apiStats.failed);
       issueComments.push(`:clapper: **Unknown Movie**`);

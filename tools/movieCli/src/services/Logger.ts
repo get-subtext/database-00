@@ -1,4 +1,8 @@
-import { blue, green, magenta, red, yellow } from 'colorette';
+import { blue, cyan, green, magenta, red, yellow } from 'colorette';
+import path from 'path';
+import { ensureForwardSlash } from '../utils/ensureForwardSlash';
+
+const quote = (value: string) => `'${value}'`;
 
 export class Logger {
   public constructor(
@@ -54,6 +58,10 @@ export class Logger {
     }
   }
 
+  public infoRequestMovieFileWrite(filePath: string) {
+    this.logInfo(`Wrote file ${this.formatPath(filePath)}`);
+  }
+
   public warnIssueInvalidType(type: string) {
     this.logError(`The issue has an invalid 'type' field in its yaml data: '${green(type)}'`);
   }
@@ -76,6 +84,10 @@ export class Logger {
     } else {
       this.logError(`An unexpected error occured reading the issue: '${message}'`);
     }
+  }
+
+  private formatPath(fileOrDir: string) {
+    return cyan(quote(ensureForwardSlash(path.relative(process.cwd(), fileOrDir))));
   }
 
   private logInfo(message: string) {
