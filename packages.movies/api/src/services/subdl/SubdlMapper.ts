@@ -4,7 +4,7 @@ import type * as T from './SubdlMapper.types';
 export class SubdlMapper implements T.SubdlMapper {
   public constructor() {}
 
-  public toMovie(movie: T.ApiMovie): T.Movie {
+  public toMovie(movie: T.SubdlApiMovie): T.SubdlMappedMovie {
     const meta = this.getMeta(movie);
 
     return {
@@ -15,7 +15,7 @@ export class SubdlMapper implements T.SubdlMapper {
     };
   }
 
-  private getMeta(movie: T.ApiMovie) {
+  private getMeta(movie: T.SubdlApiMovie) {
     type TOutput = { title: string | null; releaseDate: string | null; releaseYear: number | null };
     const output: TOutput = { title: 'Unknown', releaseDate: null, releaseYear: null };
 

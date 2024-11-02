@@ -10,7 +10,7 @@ export class SubdlApi implements T.SubdlApi {
     private readonly fetchWrapper: FetchWrapper
   ) {}
 
-  public async getMovie(imdbId: string): Promise<T.GetMovieResponse> {
+  public async getMovie(imdbId: string): Promise<T.SubdlGetMovieResponse> {
     const url = this.createUrl(imdbId, this.apiKey);
     const { success, status, body: resBody } = await this.fetchWrapper.getJson({ url });
 
@@ -19,7 +19,7 @@ export class SubdlApi implements T.SubdlApi {
     return { success, data: resBody, log };
   }
 
-  public async downloadZipFile(urlPath: string): Promise<T.DownloadZipFileResponse> {
+  public async downloadZipFile(urlPath: string): Promise<T.SubdlDownloadZipFileResponse> {
     const url = `${this.subdlZipUrlBase}${urlPath}`;
     const { success, status, body: resBody } = await this.fetchWrapper.getFile({ url });
 

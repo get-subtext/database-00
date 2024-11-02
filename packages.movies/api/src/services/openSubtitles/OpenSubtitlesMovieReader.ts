@@ -5,7 +5,7 @@ import type { FetchLog } from '../common/FetchLog.types';
 import type { Movie } from '../common/Movie.types';
 import { OriginEnum, SourceTypeEnum } from '../common/Movie.types';
 import type * as T from '../movieReader/MovieReader.types';
-import { OpenSubtitlesApi } from './OpenSubtitlesApi';
+import type { OpenSubtitlesApi } from './OpenSubtitlesApi';
 import type { OpenSubtitlesMapper, OsMappedMovie } from './OpenSubtitlesMapper.types';
 
 const provider = 'OpenSubtitles';

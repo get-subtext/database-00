@@ -1,6 +1,6 @@
 import type { FetchLog } from '../common/FetchLog.types';
 
-export interface Result {
+export interface SubdlResult {
   sd_id: number;
   type: string;
   name: string;
@@ -11,7 +11,7 @@ export interface Result {
   year: number;
 }
 
-export interface Subtitle {
+export interface SubdlSubtitle {
   release_name: string;
   name: string;
   lang: string;
@@ -27,41 +27,41 @@ export interface Subtitle {
   full_season: boolean;
 }
 
-export interface Movie {
+export interface SubdlMovie {
   status: boolean;
-  results: Result[];
-  subtitles: Subtitle[];
+  results: SubdlResult[];
+  subtitles: SubdlSubtitle[];
 }
 
-export interface GetMovieResponseOk {
+export interface SubdlGetMovieResponseOk {
   success: true;
   log: FetchLog;
-  data: Movie;
+  data: SubdlMovie;
 }
 
-export interface GetMovieResponseFail {
+export interface SubdlGetMovieResponseFail {
   success: false;
   log: FetchLog;
   data: null;
 }
 
-export type GetMovieResponse = GetMovieResponseOk | GetMovieResponseFail;
+export type SubdlGetMovieResponse = SubdlGetMovieResponseOk | SubdlGetMovieResponseFail;
 
-export interface DownloadZipFileResponseOk {
+export interface SubdlDownloadZipFileResponseOk {
   success: true;
   log: FetchLog;
   data: ArrayBuffer;
 }
 
-export interface DownloadZipFileResponseFail {
+export interface SubdlDownloadZipFileResponseFail {
   success: false;
   log: FetchLog;
   data: null;
 }
 
-export type DownloadZipFileResponse = DownloadZipFileResponseOk | DownloadZipFileResponseFail;
+export type SubdlDownloadZipFileResponse = SubdlDownloadZipFileResponseOk | SubdlDownloadZipFileResponseFail;
 
 export interface SubdlApi {
-  getMovie: (imdbId: string) => Promise<GetMovieResponse>;
-  downloadZipFile: (url: string) => Promise<DownloadZipFileResponse>;
+  getMovie: (imdbId: string) => Promise<SubdlGetMovieResponse>;
+  downloadZipFile: (url: string) => Promise<SubdlDownloadZipFileResponse>;
 }

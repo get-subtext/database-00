@@ -1,19 +1,19 @@
 import type * as T from './SubdlApi.types';
 
-export type ApiMovie = T.Movie;
+export type SubdlApiMovie = T.SubdlMovie;
 
-export interface Subtitle {
+export interface SubdlMappedSubtitle {
   baseUrl: string;
   author: string | null;
 }
 
-export interface Movie {
+export interface SubdlMappedMovie {
   title: string;
   releaseDate: string | null;
   releaseYear: number | null;
-  subtitles: Subtitle[];
+  subtitles: SubdlMappedSubtitle[];
 }
 
 export interface SubdlMapper {
-  toMovie: (movie: ApiMovie) => Movie;
+  toMovie: (movie: SubdlApiMovie) => SubdlMappedMovie;
 }
