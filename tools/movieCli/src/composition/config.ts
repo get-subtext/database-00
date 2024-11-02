@@ -1,7 +1,12 @@
+import path from 'path';
 import { environment } from '../config/environment';
+import { rootDir } from '../rootDir';
 import type { Config } from './config.types';
 
 export const config: Config = {
+  database: {
+    dir: path.resolve(rootDir, '..', '..', '__data__'),
+  },
   gitHub: {
     token: environment.REPO_TOKEN,
     apiUrlBase: `https://api.gitHub.com/repos/${environment.REPO_OWNER}/${environment.REPO_NAME}`,

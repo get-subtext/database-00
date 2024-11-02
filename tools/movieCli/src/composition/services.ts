@@ -1,5 +1,6 @@
 import { createGitHubIssueService } from '@get-subtext/automation.github';
 import { createMovieReader } from '@get-subtext/movies.api';
+import { createMovieWriter } from '@get-subtext/movies.database';
 import { last, split } from 'lodash-es';
 import { rootDir } from '../rootDir';
 import { Handler } from '../services/Handler';
@@ -22,5 +23,7 @@ export const createHandler = (verbose: boolean) => {
     subdl: { apiUrlBase: config.subdl.apiUrlBase, zipUrlBase: config.subdl.zipUrlBase, apiKey: config.subdl.apiKey },
   });
 
-  return new Handler(botLabel, gitHubIssueService, movieReader, logger);
+  const movieWriter = createMovieWriter({ dir: config.database.dir });
+
+  return new Handler(botLabel, gitHubIssueService, movieReader, movieWriter, logger);
 };

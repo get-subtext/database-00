@@ -1,3 +1,7 @@
+export interface DatabaseConfig {
+  dir: string;
+}
+
 export interface GitHubConfig {
   token: string;
   apiUrlBase: string;
@@ -21,6 +25,7 @@ export interface SubdlConfig {
 }
 
 export interface Config {
+  database: DatabaseConfig;
   gitHub: GitHubConfig;
   omdb: OmdbConfig;
   openSubtitles: OpenSubtitlesConfig;

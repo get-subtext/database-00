@@ -11,7 +11,8 @@ import { SubdlApi } from './services/subdl/SubdlApi';
 import { SubdlMapper } from './services/subdl/SubdlMapper';
 import { SubdlMovieReader } from './services/subdl/SubdlMovieReader';
 
-export type { Movie, OriginEnum, SourceTypeEnum, SubtitlePackage } from './services/common/Movie.types';
+export { OriginEnum, SourceTypeEnum } from './services/common/Movie.types';
+export type { Movie, SubtitlePackage } from './services/common/Movie.types';
 export type { MovieReader, ReadMovieResponse as ReadOutput } from './services/movieReader/MovieReader.types';
 
 export interface MovieReaderOptions {

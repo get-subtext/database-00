@@ -1,5 +1,6 @@
 import type { GitHubIssueService } from '@get-subtext/automation.github';
 import type { MovieReader } from '@get-subtext/movies.api';
+import type { MovieWriter } from '@get-subtext/movies.database';
 import { countBy, get, isNil, join } from 'lodash-es';
 import { ReadOutputCodeEnum } from 'packages.automation/github/src/services/GitHubIssueService.types';
 import type { ProcessIssueInput } from './Handler.types';
@@ -10,6 +11,7 @@ export class Handler {
     private readonly botLabel: string,
     private readonly gitHubIssueService: GitHubIssueService,
     private readonly movieReader: MovieReader,
+    private readonly movieWriter: MovieWriter,
     private readonly logger: Logger
   ) {}
 
@@ -62,6 +64,10 @@ export class Handler {
     if (success) {
       this.logger.infoRequestMovieFound(imdbId, data.title, data.subtitlePackages.length, apiStats.passed, apiStats.failed);
       issueComments.push(`:clapper: **${data.title}**`);
+      const filePaths = await this.movieWriter.writeMovie(data);
+      for (let i = 0; i < filePaths.length; i++) {
+        this.logger.infoRequestMovieFileWrite(filePaths[i]);
+      }
     } else {
       this.logger.infoRequestMovieNotFound(imdbId, apiStats.passed, apiStats.failed);
       issueComments.push(`:clapper: **Unknown Movie**`);

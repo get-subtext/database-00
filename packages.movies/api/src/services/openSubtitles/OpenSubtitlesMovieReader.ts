@@ -1,6 +1,9 @@
 import { map, range } from 'lodash-es';
+import path from 'path';
 import { defaultMovie } from '../../utils/defaultMovie';
+import { generateHashFromText } from '../../utils/generateHash';
 import { mergeMovies } from '../../utils/mergeMovies';
+import { toSubtext } from '../../utils/parseSrt';
 import type { FetchLog } from '../common/FetchLog.types';
 import type { Movie } from '../common/Movie.types';
 import { OriginEnum, SourceTypeEnum } from '../common/Movie.types';
@@ -88,9 +91,13 @@ export class OpenSubtitlesMovieReader implements T.MovieReader {
         output.logs.push(getFileRes.log);
         if (getFileRes.success) {
           const subtitleFileName = file.name;
-          const sourceUrl = getDownloadInfoRes.data.link;
-          const text = getFileRes.data;
-          output.data.subtitlePackages.push({ provider, author, origin, source: { type, sourceUrl, subtitleFileName }, text });
+          const ext = path.parse(path.basename(subtitleFileName)).ext;
+          if (ext === '.srt') {
+            const sourceUrl = getDownloadInfoRes.data.link;
+            const subtitles = toSubtext(getFileRes.data);
+            const subtitlePackageId = generateHashFromText(subtitles);
+            output.data.subtitlePackages.push({ subtitlePackageId, provider, author, origin, source: { type, sourceUrl, subtitleFileName }, subtitles });
+          }
         }
       }
     }
