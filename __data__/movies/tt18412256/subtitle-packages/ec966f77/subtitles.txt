@@ -1,0 +1,1229 @@
+318136 319836 <i>Attention all workers.</i>
+319838 321737 <i>Attention all workers.</i>
+321739 324974 <i>Day shift starting</i><br /><i>in T-minus 15 minutes.</i>
+324976 328610 <i>Farmers to report</i><br /><i>to mess hall immediately.</i>
+328612 330313 <i>If you are experiencing</i><br /><i>any symptoms,</i>
+330315 331948 <i>such as fever, cough,</i>
+331950 334017 <i>vomiting,</i><br /><i>or difficulty breathing,</i>
+334019 336685 <i>proceed to the medical bay</i><br /><i>for examination.</i>
+337823 340156 <i>The safety and well-being</i><br /><i>of our colony</i>
+340158 343028 <i>is Weyland-Yutani's</i><br /><i>top priority.</i>
+343862 345762 <i>Attention all workers...</i>
+345764 349132 <i>Did you hear about</i><br /><i>the claustrophobic astronaut?</i>
+349134 350266 <i>He needed space.</i>
+350268 352168 I'm begging you,<br />you got to stop.
+352170 356172 I just spent my full share<br />on a belt that won't fit.
+356174 357739 Huge waist.
+357741 358810 See that cornbread.
+361246 364180 Maybe it's 'cause<br />I'm on this seafood diet.
+364182 366084 I see food, I eat it.
+367385 369052 That's so bad.
+369054 370719 You always laughed<br />at that one.
+370721 372124 Yeah, when I was 12.
+376862 378396 I'm sure it's Mr. Finch.
+379364 381099 We owe him three months today.
+382334 383869 He'll call again.
+385237 389172 Well, maybe we won't be here<br />when he does.
+396114 398083 Andy.<br />Stay close to me.
+401019 404154 <i>Wake up. Wake up now.</i>
+404156 406789 <i>We're all</i><br /><i>Weyland-Yutani slaves.</i>
+406791 409192 <i>The company pays us</i><br /><i>with food and shelter</i>
+409194 412328 <i>and takes our lives</i><br /><i>in exchange.</i>
+412330 414432 <i>Don't believe their lies.</i>
+415100 417333 <i>They own you!</i>
+417335 419102 Andy, Andy.<br />Hey, hey, hey.
+419104 420405 Hey, Andy. Come on. Come on.
+422274 424407 -What did I do?<br />-It's a scam.
+424409 426209 The ball is never under<br />the cup that you pick.
+426211 427343 It's a trick.
+427345 430013 But how am I<br />gonna get the money?
+430015 430980 Money for what?
+430982 435118 To pay for the horse<br />when we get to Yvaga.
+435120 437053 You're gonna get a horse?
+437055 439690 I wanna call it Raindy.
+440825 442327 Do you get it?
+443161 444861 -Raindy.<br />-No, I like it.
+444863 446431 Yeah, it's good.
+447899 450867 Okay, so you just<br />wait over there.
+450869 452070 Okay, I might be a minute.
+453737 455271 Stay out of trouble,<br />all right?
+455273 458241 <i>All employees will be seen.</i>
+458243 459409 Good luck.
+459411 462011 <i>Line up in an orderly fashion.</i>
+462013 463379 <i>Next.</i>
+463381 465348 <i>Full name</i><br /><i>and occupation, please.</i>
+465350 468885 <i>Marie Raines Carradine, ma'am.</i><br /><i>Farming.</i>
+468887 471120 It's about my travel papers.
+471122 473825 <i>I met my quota, and I should</i><br /><i>be free to go now.</i>
+474125 475291 Right?
+475293 476793 Go where?
+476795 478428 <i>Yvaga.</i>
+478430 482765 <i>It's an independent system,</i><br /><i>but it's fully terraformed.</i>
+482767 484834 <i>You can actually see</i><br /><i>the sun out there.</i>
+484836 486171 <i>Where are your parents?</i>
+487272 490807 <i>Uh, they died</i><br /><i>three cycles ago.</i>
+490809 493343 Lung disease, from the mines.
+493345 496112 <i>It's just me</i><br /><i>and my brother now.</i>
+496114 497313 <i>They sell us hope</i>
+497315 499315 <i>to keep us slaves.</i>
+499317 505090 <i>They sell us hope to keep</i><br /><i>us slaves. Wake up now.</i>
+516301 518034 I'm sorry,<br />but you're not eligible
+518036 519335 for contract release yet.
+519337 520436 Due to a shortage of workers,
+520438 522071 you're being<br />transferred to the mines.
+522073 524007 <i>Wait, what?</i>
+524009 526175 <i>No, no, no,</i><br /><i>I reached the required hours.</i>
+526177 527343 You have to let me go.
+527345 530513 Unfortunately, quotas have<br />been raised to 24,000 hours,
+530515 532181 so you'll be released<br />from contract
+532183 533349 in another five to six years.
+533351 535585 Thank you, and remember<br />the company is really grateful
+535587 537220 for your ongoing service.
+537222 539455 -Rain!<br />-Hey!
+539457 540857 Hey, stop!
+540859 542927 Get off him! You bastards!
+544596 546529 I got you, I got you.
+546531 547966 Oh, shit, you're bleeding.
+550568 551836 Okay.
+553071 555405 You're okay.
+555407 557140 I'm resetting you.
+557142 558176 I got you.
+560845 562111 It's okay.
+562113 563481 I shouldn't<br />have left you alone.
+569087 570486 <i>They sell us hope</i>
+570488 572622 <i>to keep us slaves.</i>
+572624 574893 <i>Wake up now. They own you.</i>
+578096 579295 <i>Hi, Rain.</i>
+579297 580963 <i>Look, I'm sorry. I know</i><br /><i>I've been calling you all day,</i>
+580965 582498 <i>but, look,</i><br /><i>something's come up,</i>
+582500 584167 <i>and I think you should</i><br /><i>know about it.</i>
+584169 586838 <i>So, come by the trailers</i><br /><i>and bring Andy.</i>
+617068 618103 Hey.
+619137 620303 Oh, for...
+620305 622271 <i>Game over, man.</i>
+622273 625208 Sup, Rain? Long time no see.
+625210 626911 I told you she'd show up.
+627479 628880 You owe me five bucks.
+630014 631149 <i>Andy!</i>
+634052 636219 Why'd the blind miner<br />fall down the well?
+636221 637522 Why?
+639424 640525 'Cause he couldn't see<br />that well.
+641659 643926 Please don't encourage him.
+643928 645897 All right, go inside.<br />I'll be there in a second.
+651703 653269 -Kay.<br />-Rain.
+653271 654437 -Hi.<br />-Hi!
+654439 655540 Hi.
+656441 658408 I missed you.
+658410 660311 And I know my brother<br />missed you, too.
+665049 666985 I'm really glad you came.
+668319 670486 I heard about your dad.
+670488 671523 I'm really sorry.
+672323 674357 Well, between the hailstorms
+674359 675658 and the new diseases<br />every cycle...
+675660 677460 Yeah, everybody's dying,<br />right?
+677462 679197 So, should we show her?
+679564 681297 Show me what?
+681299 684333 Okay, so, last night,
+684335 686002 we're loading up<br />the last Tesotek,
+686004 687470 we're about 200 miles<br />above the ground,
+687472 688604 and then all of a sudden...
+690375 692008 The hauler picks up<br />this beacon.
+692010 694143 So Navarro tracks it,<br />and it turns out
+694145 695445 there's this big Wey-Yu ship
+695447 697113 drifting<br />right above our heads.
+697115 698247 Drifting?
+698249 700082 Decommissioned. Abandoned.
+700084 702185 Some old relic. It's probably<br />damaged or obsolete.
+702187 703486 Like that guy over there.
+703488 704522 Bjorn.
+705758 708257 Okay, just tell her.
+708259 710059 Why are we all<br />sitting around here
+710061 711594 waiting for travel permits<br />that the company
+711596 713696 are never gonna give to us?
+713698 714997 'Cause that hauler<br />has enough power in it
+714999 715998 to get us to Yvaga.
+716000 719101 Because it takes nine years<br />to get to Yvaga
+719103 721304 and you can't make that trip<br />without cryo-sleep.
+721306 722638 Decommissioned ships<br />still carry
+722640 724106 tons of functional equipment.
+724108 725541 And the hyperlink shows
+725543 727412 that ship<br />still has a few pods left.
+731249 734617 You want to break into<br />a Weyland-Yutani ship
+734619 737220 and steal highly<br />regulated equipment?
+737222 738521 Before someone else does.
+740325 741624 You guys are insane.
+741626 743059 -Well, of course we are.<br />-No. No, we're not.
+743061 744360 -This is...<br />-That's what I said.
+744362 745563 Are you gonna help us?
+748066 749734 Sorry,<br />what do you need me for?
+752036 753369 Andy.
+753371 755238 -We need to use Andy.<br />-Andy?
+755240 756439 Mm-hmm.
+756441 759175 He's a Weyland-Yutani<br />synthetic. He speaks Mother.
+759177 760576 He can access<br />a terminal on the ship
+760578 762278 to get us in and out<br />without a fuss.
+762280 763613 It's the only way to get in.
+763615 765816 Okay,<br />but what if we get caught?
+765818 768518 It'll ruin our chances of ever<br />getting a travel permit.
+768520 770286 Right, Rain's not comin'.
+770288 773322 Uh, how about you let us<br />take Andy then?
+773324 776425 I'm not sending<br />my brother up there alone.
+776427 777593 He's not your<br />brother though, is he?
+777595 779830 -Bjorn, shut the fuck up.<br />-It's true, though, isn't it?
+779832 781364 He's not your brother.<br />It's just Wey-Yu damaged goods
+781366 783065 that your dad<br />found in the trash.
+783067 785004 And that's all he is, Rain.<br />So just wake up.
+785537 786636 Let's go.
+786638 787603 -Rain?<br />-What?
+787605 790706 -I didn't say anything.<br />-Rain, wait.
+790708 791808 I'm sorry.<br />Listen, I know my cousin
+791810 793142 can be a dick sometimes,<br />all right?
+793144 794712 But he is right<br />about something.
+795446 796780 You need to wake up.
+796782 797848 Because this company,
+797850 798949 they're not gonna<br />give us anything.
+798951 801317 You know that as well as I do.<br />We have to take it.
+805356 807223 Rain, I just...
+807225 809060 I don't want to end up<br />like our parents.
+809627 810829 Do you?
+815834 820436 Is it as easy as you're making<br />it sound, this plan of yours?
+820438 822705 You won't even have to get out<br />of the <i>Corbelan.</i>
+822707 824509 That much<br />I can promise you, okay?
+828580 830181 Come on. What do you say?
+854439 856107 Bjorn, hurry up,<br />let's go.
+860211 863147 All right, I'm starting<br />her up. Batteries on.
+865516 866351 Lovely.
+868353 869621 Could I get hydro,<br />please?
+870722 871757 Comm panel.
+873725 874891 Ground spoilers.
+874893 876194 They are armed.
+876929 878361 First time<br />in space, huh?
+878363 879397 Yeah.
+880598 882933 You too? Boop!
+882935 885201 -Fuel pump.<br />-On.
+885203 886268 Two space virgins<br />coming through.
+886270 888738 Right, take a good look<br />outside the window
+888740 890843 'cause the way I see it,<br />we're never coming back.
+904322 905488 You good?
+905490 906524 I'm good.
+907492 908526 Yeah. It's gonna be all right.
+927846 929478 Are you sure<br />this is a good idea now?
+929480 930581 Sure, Dad.
+936254 937355 Here comes the crush.
+956474 957810 That's how it's done,<br />bitch.
+1014298 1015333 Is that...
+1016734 1018068 Yeah.
+1018070 1019838 That is our sun.
+1031950 1034818 They say Yvaga has<br />the most incredible sunsets.
+1034820 1036387 I've seen them.
+1039091 1041357 In my dreams.
+1041359 1043394 I can't wait<br />to see them with you.
+1046731 1047766 Yeah.
+1050803 1052803 You know, I heard that<br />cryo-sleep just makes years
+1052805 1054570 feel like one night<br />of heavy drinkin' apparently.
+1054572 1056641 So when we wake up<br />in Yvaga tomorrow,
+1057675 1059310 we'll wake up with a hangover.
+1068519 1069654 There she is.
+1071890 1073424 That's not a ship.
+1073691 1075859 No.
+1075861 1077794 <i>Fuck,</i><br /><i>that's big. What is that?</i>
+1077796 1079930 <i>Decommissioned outpost?</i><br /><i>I don't know.</i>
+1079932 1081597 <i>Probably got dragged</i><br /><i>into our orbit.</i>
+1081599 1083666 Okay, Navarro,<br />let's get closer, please.
+1083668 1085736 Okay.<br />I'm gonna match its roll.
+1102087 1104823 <i>Hazard proximity alert.</i>
+1106091 1107157 What's wrong?
+1107159 1109694 It's just the belt's a bit<br />closer than I thought.
+1111596 1112630 How long?
+1114032 1115799 It's 36 hours, give or take.
+1115801 1116800 Till what?
+1116802 1119870 Before the station crashes<br />against the rings.
+1119872 1121938 Sorry, what?
+1121940 1124406 What did you just say?<br />That doesn't sound very good.
+1124408 1125641 36 hours.
+1125643 1127145 We should be in and out<br />in 30 minutes.
+1128080 1129645 Yeah?
+1129647 1130780 Andy.
+1130782 1132481 Yeah, tops.
+1132483 1134719 Are you sure<br />you wanna do this?
+1135787 1138587 I have just one directive.
+1138589 1140458 To do what's best for Rain.
+1141592 1143394 Your dad wrote it.
+1143896 1144930 Yeah.
+1145964 1147831 That and too many dad jokes.
+1147833 1149167 I'm happy...
+1150068 1151435 to help.
+1156474 1157910 Be careful out there.
+1173992 1175827 Okay, hurry up.<br />We're docking in two minutes.
+1178163 1179528 Put that on.
+1179530 1181064 Now,<br />why I gotta put this on for?
+1181066 1182631 So you don't<br />freeze your balls off.
+1182633 1183767 Mate,<br />you gotta stop obsessing
+1183769 1185201 about my balls, man.<br />It's unhealthy.
+1185203 1186435 Keep talking<br />and I'll chop 'em off.
+1186437 1188737 Aw, you really want<br />'em for yourself, don't you?
+1188739 1190040 Hey, you want me to show you<br />my balls or something?
+1190042 1191473 Oh, shut up a minute.
+1191475 1193243 Gloves, here, take these.
+1193245 1195812 Hey! No.<br />Stop touching shit.
+1195814 1197047 -Come over here.<br />-Bjorn, leave him alone,
+1197049 1199082 for fuck's sake.
+1199084 1200482 Andy, take no notice.
+1200484 1201550 All right, okay,<br />won't be my fault
+1201552 1202620 when he breaks somethin'.
+1210494 1211593 There's a synth hatch
+1211595 1212862 right ahead. I'm gonna dock.
+1212864 1214199 <i>Copy that.</i><br /><i>Just bring us in slow.</i>
+1241193 1242794 Oh, fuck me,<br />it's cold in there.
+1243561 1244828 What's that?
+1244830 1247030 <i>It's a temp-scanner.</i>
+1247032 1248699 <i>It's gonna lead us</i><br /><i>to the pods.</i>
+1251003 1253036 Okay, compression<br />is good enough.
+1253038 1255138 Oxygen is too thin to breathe.
+1255140 1256572 Andy...
+1256574 1257974 <i>...you're up.</i>
+1257976 1259277 <i>It's your time to shine.</i>
+1265283 1267150 <i>Yes! Andy!</i>
+1267152 1268253 <i>Beautiful work.</i>
+1268754 1269821 <i>Okay.</i>
+1271890 1273291 <i>Congrats.</i><br /><i>You're not a virgin anymore.</i>
+1274625 1275659 <i>All right.</i>
+1286171 1287605 <i>Okay, let's go.</i>
+1319838 1321037 <i>Fuck.</i>
+1321039 1323173 <i>Guys, it looks like</i><br /><i>we're in zero-g.</i>
+1323175 1324910 <i>Yeah, I can feel it</i><br /><i>in my stomach.</i>
+1330282 1331613 Wait, what's that?
+1331615 1332882 Gravity generators.
+1332884 1335852 When offline, they still purge<br />themselves every few minutes.
+1335854 1337789 <i>Prevents the place</i><br /><i>from blowing up.</i>
+1341526 1343895 <i>Oh, fuck me,</i><br /><i>there goes my stomach again.</i>
+1344830 1346131 <i>Okay, straight ahead.</i>
+1383368 1384801 <i>According</i><br /><i>to the scanner,</i>
+1384803 1386004 <i>the pods should be in here.</i>
+1414766 1416099 <i>Jesus.</i>
+1416101 1417333 <i>Andy, you good?</i>
+1417335 1418436 Yeah.
+1424876 1427445 <i>All right, great news.</i><br /><i>I've got eyes on the pods.</i>
+1432150 1433185 <i>Fuck!</i>
+1436388 1437455 <i>Bjorn, you okay?</i>
+1438390 1440190 <i>Fuck!</i>
+1440192 1442125 <i>I think I fractured</i><br /><i>my asshole.</i>
+1446932 1449367 <i>Fuckin' hell. Don't fuck</i><br /><i>with this gravity purge, man.</i>
+1465183 1466282 <i>Thank God,</i><br /><i>there's still</i>
+1466284 1467485 <i>some power left in this relic.</i>
+1483802 1486336 <i>Okay, watch out.</i><br /><i>Gravity's coming back.</i>
+1486338 1488840 <i>Fuckin' hell.</i>
+1495413 1497347 All right, here we go.
+1497349 1498516 Let's see what we got.
+1499884 1500986 Okay.
+1505457 1508358 -Shit.<br />-What's the problem?
+1508360 1509959 Pods don't have enough fuel.
+1509961 1511261 What do you mean?
+1511263 1513062 <i>They're loaded up</i><br /><i>for three years in stasis.</i>
+1513064 1514130 Yeah,<br />but it takes nine years
+1514132 1515431 to get to Yvaga, mate.
+1515433 1517133 Yeah, I know, I know.<br />I'm aware of that.
+1517135 1518534 Fuckin' hell.
+1518536 1520069 I knew it. I fuckin' knew it.
+1520071 1521204 -I knew it.<br />-Just relax.
+1521206 1522305 Maybe you guys<br />should just come back.
+1522307 1523141 <i>No, no,</i><br /><i>we're not givin' up now.</i>
+1525910 1526843 Yvaga's<br />the nearest system.
+1526845 1529979 So what are we supposed<br />to do now? Huh?
+1529981 1532115 -What are we gonna do?<br />-Shut up.
+1532117 1535084 Okay, strong reading.<br />Must be a cryo depot nearby.
+1535086 1537020 We should find<br />more fuel there.
+1537022 1540256 Navarro, I'm ejecting the EEV.
+1540258 1541324 Come on, Andy.
+1541326 1543261 You guys pick it up<br />while we get the cryo-fuel.
+1563481 1564516 Hold.
+1565884 1567585 Yeah, 400 yards away,<br />dead ahead.
+1569254 1570386 What's with the military shit?
+1570388 1571487 What?
+1571489 1572422 All that military shit.
+1572424 1575325 -Well, it's effective.<br />-Is it?
+1575327 1576459 -And cool.<br />-It's not very cool.
+1576461 1578461 You just look like a twat.
+1578463 1579962 -I'm sorry.<br />-All right, chill.
+1579964 1581230 <i>Let's keep it movin'.</i>
+1581232 1582298 <i>If you do that again,</i><br /><i>I'll fuck you up.</i>
+1582300 1583366 -Bjorn, back off!<br /><i>-You understand?</i>
+1583368 1585435 <i>Just as long as he stays</i><br /><i>out of my way.</i>
+1585437 1588071 Why is he being<br />such a dick to him?
+1588073 1590907 Because of what happened<br />to his mom.
+1590909 1592442 -What do you mean?<br />-Last cycle,
+1592444 1594177 there was a gas leak<br />in the mines,
+1594179 1596312 so a synthetic made the call<br />to seal them
+1596314 1598214 with Bjorn's mom<br />still trapped inside.
+1598216 1599482 What?
+1599484 1601217 Synthetics can't harm humans.
+1601219 1604255 It sacrificed three miners<br />to save a dozen.
+1606391 1607559 That, they can do.
+1613164 1614299 That's terrible.
+1659077 1661312 I got you, I got you.
+1663047 1664949 Come on, come on, come on.
+1666484 1668186 Easy, easy.
+1673091 1674426 Good job.
+1679230 1680265 Kay!
+1681266 1682732 Kay! Hey, hey, hey.
+1682734 1684634 Hey, hey, hey.
+1684636 1686402 I'm right here.<br />I'm right here. You're okay.
+1687372 1688671 I'm gonna go<br />check on the pods.
+1706524 1708426 No, no. Don't worry.
+1709327 1711093 I'm not sick.
+1711095 1712130 What's wrong, then?
+1713766 1715166 Nothing is.
+1718570 1720071 Oh, girl.
+1723074 1724142 Who's the father?
+1725343 1726578 Some asshole.
+1728513 1731716 Just don't tell my brother,<br />okay?
+1733117 1734550 He has enough things<br />to worry about.
+1734552 1737019 No. I won't say anything.
+1737021 1739724 I'm just happy this baby<br />will get to see the sun.
+1762514 1764115 I think<br />we're almost there.
+1768486 1770152 Okay, Navarro.
+1770154 1771554 <i>Airlock 5-B,</i><br /><i>that's our way out</i>
+1771556 1772688 <i>once we find this cryo-fuel.</i>
+1772690 1773656 On my way.
+1773658 1775258 <i>Welcome to the</i>
+1775260 1776626 Renaissance <i>Space Station,</i>
+1776628 1781163 <i>the center of Weyland-Yutani</i><br /><i>Research and Development.</i>
+1781165 1784433 <i>The station</i><br /><i>is divided into two halves,</i>
+1784435 1786271 <i>Romulus and Remus,</i>
+1787438 1790406 <i>each dedicated</i><br /><i>to our quest to improve</i>
+1790408 1792477 <i>mankind's role in outer space.</i>
+1795246 1798347 This place<br />gives me the creeps.
+1798349 1801319 Did you hear about the miner<br />who lost his left side?
+1802788 1804120 He's all right now.
+1804122 1805588 Do you get it? He's all right.
+1805590 1807392 Can you turn<br />yourself off, please?
+1808493 1810126 You said you were nervous
+1810128 1811127 and I was trying<br />to make sure you were...
+1811129 1814430 Jesus! You know, I can't<br />wait to get in them pods
+1814432 1816267 and never see you again,<br />you know that?
+1818336 1820236 <i>You'll see me in Yvaga.</i>
+1820238 1821637 <i>No,</i><br /><i>you're not going to Yvaga.</i>
+1821639 1822775 <i>Bjorn, stop!</i>
+1823408 1824607 <i>I'm not?</i>
+1824609 1825741 Well done.
+1825743 1827811 Oh, she didn't tell you?
+1827813 1830682 Yeah, yeah, it's a<br />non-Weyland-Yutani system,
+1832250 1834118 so no fake people allowed.
+1835587 1838122 I prefer the term<br />"artificial person" myself.
+1840525 1842491 Andy, look.
+1842493 1843794 <i>Rain could end up in prison</i>
+1843796 1844761 <i>if she takes you with her.</i>
+1844763 1846329 <i>And if you guys</i><br /><i>stay in Jackson,</i>
+1846331 1847663 <i>it's just a matter of time</i>
+1847665 1849768 <i>before you get decommissioned</i><br /><i>again by the company.</i>
+1850468 1852501 <i>You understand?</i>
+1852503 1854472 <i>I need you on the ship</i><br /><i>to guard the pods.</i>
+1855306 1856507 But once we get there...
+1857776 1859275 Decommish.
+1859277 1860409 Lights out for good.
+1861847 1863346 You done?
+1863348 1864515 <i>Just tellin' the truth.</i>
+1868252 1870586 <i>That's okay.</i>
+1870588 1873826 <i>If it's what's best for Rain,</i><br /><i>it's what's best for me.</i>
+1877695 1879530 You're a good guy, Andy.
+1880799 1882200 We're all gonna miss you.
+1887940 1888874 So he didn't know?
+1890541 1893344 I just did not<br />have the heart to tell him.
+1895246 1896514 You shouldn't feel bad.
+1898917 1900282 Shit.
+1900284 1901384 You're not gonna throw
+1901386 1903287 your whole life away<br />for Andy's sake.
+1905390 1907926 He doesn't care.<br />It doesn't matter to him.
+1909694 1911295 Okay? He's not...
+1912397 1913932 you know, real.
+1937756 1939624 The signal's<br />coming from in here.
+1949467 1951802 Thought you said<br />this place was decommissioned.
+1951804 1953837 Yeah.
+1953839 1955839 <i>Doesn't look</i><br /><i>decommissioned to me.</i>
+1955841 1957306 No, it doesn't.
+1957308 1959542 But it's definitely deserted.
+1959544 1962478 Hey, Andy, look at this.
+1962480 1964582 I could probably fry a<br />synthetic with one of these...
+1965383 1966950 if I just amp up the juices.
+1970488 1971922 Hey, you know, I might<br />take this with me, actually.
+1971924 1972923 All right, enough.
+1972925 1975226 Just in case you have<br />any fucking funny ideas.
+1976327 1979428 It's a joke.<br />I was joking.
+1979430 1980465 What the fuck?
+1980833 1981867 Watch out.
+1992510 1993611 <i>Shit.</i>
+1998549 1999682 It's only a synthetic.
+2001652 2003619 Fuck.
+2003621 2005756 I thought it was a real person<br />there for a second.
+2005758 2007423 <i>What happened in there?</i>
+2007425 2009293 Don't know.<br />A chemical spill, maybe.
+2010394 2011393 The fuel must be in that room.
+2011395 2013031 Let's grab it<br />and get the fuck out of here.
+2018636 2020438 All right. Andy?
+2034887 2036054 Bjorn,<br />take the torch please.
+2041392 2043392 I don't think<br />there's any pods in here.
+2043394 2044761 Nah,<br />just cooling equipment.
+2044763 2046531 Uses the same type of fuel,<br />though.
+2052771 2053806 Yes.
+2055540 2057007 <i>Forty-five Ks.</i>
+2057009 2060010 <i>It's more than enough fuel</i><br /><i>to get us to Yvaga.</i>
+2060012 2062446 Right. Bjorn, give me<br />a hand with this, please.
+2071857 2073790 Bjorn, pull it out<br />on three, all right?
+2073792 2074991 -Ready?<br />-Uh-huh.
+2074993 2076394 One, two...
+2077461 2078627 three.
+2078629 2079896 Fuck!
+2079898 2081099 -Fuck.<br />-My fingers.
+2082935 2083969 I can't feel my fingers.
+2091977 2093777 <i>It really hurts.</i><br /><i>Just froze my hands off.</i>
+2093779 2095544 -What's happening?<br /><i>-Fuck.</i>
+2095546 2097848 Don't know. It's some<br />kind of emergency lockdown.
+2097850 2099417 Andy, the door.
+2102921 2104420 Shit, he doesn't<br />have the clearance.
+2104422 2105521 What does that mean?
+2105523 2106859 Doesn't have the<br />clearance to open the door.
+2107759 2109025 So you're trying<br />to tell me that
+2109027 2110492 he can fucking reboot<br />the entire ship,
+2110494 2111560 but can't open<br />a random fucking door
+2111562 2112796 to a random room?
+2112798 2114766 Well, obviously,<br />that's no random room.
+2118136 2119938 Come on!
+2120471 2121672 Come on!
+2139124 2140792 Hey, don't worry.<br />We'll get 'em out of there.
+2144662 2146062 If Andy<br />can't open those doors,
+2146064 2147866 I doubt<br />we'll have better luck.
+2149001 2151467 He's a Weyland-Yutani<br />synthetic
+2151469 2152601 and we're just trespassing.
+2153805 2155473 Yeah, so you got any ideas?
+2156008 2157042 Not yet.
+2159845 2161113 I think it's in here.
+2164850 2165884 Bjorn!
+2167718 2168754 Tyler!
+2173158 2174425 They're in there.
+2178931 2180163 Hey, what are you doing?
+2180165 2181164 If this module<br />is still working,
+2181166 2184234 I can try to transfer<br />its credentials to Andy.
+2184236 2186204 A higher clearance<br />should open that door.
+2221840 2223574 Shit. It's stuck.
+2226044 2228013 It's so hot in here, man.
+2252804 2253872 Whoa.
+2255639 2256638 Sick.
+2256640 2258108 Yeah, maybe try not to touch<br />anything in here.
+2258110 2259144 Yeah, okay, Mom.
+2263748 2265115 Help me! Help!
+2265117 2266249 Oh, no! What do I do?
+2266251 2267853 The module. Take it out!
+2273325 2274658 You okay?
+2275961 2277260 That was fucked up.
+2277262 2278895 Here.
+2278897 2279998 Let me see.
+2281900 2283665 Yes, okay.
+2283667 2284834 All right.
+2284836 2286836 -Got it.<br />-Hey.
+2286838 2287873 Rain.
+2289074 2290876 This is from that synthetic.
+2292077 2293879 Try putting it<br />on Andy's module.
+2298083 2299117 I'm so sorry.
+2300152 2301552 Let's just get outta here.
+2303088 2304122 Andy?
+2306792 2308060 All right, let's see.
+2311296 2312330 Okay.
+2316700 2318634 Fuck.
+2318636 2320736 Rain, did I do something<br />wrong? He's just frozen up.
+2320738 2322105 He's just rebooting.
+2322107 2323942 It's gonna take<br />a couple of minutes.
+2346965 2348699 Here, let me get you<br />something for those fingers.
+2356674 2357943 The fuck was that?
+2361113 2362680 All right,<br />stay there a second.
+2366750 2367786 Tyler?
+2372357 2373859 Hey,<br />what are you guys doing?
+2382767 2384834 Bjorn?
+2384836 2386169 Stop playing around, man.<br />Just get up.
+2386171 2387237 I'm not<br />playing around.
+2387239 2388204 There's something<br />in the water.
+2388206 2389705 What do you mean?<br />What is it?
+2389707 2390607 I don't know.<br />I don't know what it is.
+2390609 2391943 There's something<br />in the fuckin' water.
+2396714 2397748 Bjorn!
+2400252 2402218 Fuck!
+2402220 2403255 What the fuck<br />was that?
+2408860 2409895 Andy!
+2412097 2413131 Bjorn!
+2419371 2421371 Bjorn, help him! Do something!
+2421373 2422472 Bjorn!
+2427112 2428780 -Tyler!<br />-I'm sorry. I'm sorry.
+2431016 2432348 Come on!
+2432350 2434417 -Come on! Help me!<br />-No, stop. Stop. Don't...
+2434419 2436186 -No! Navarro!<br />-Those things will get out.
+2436188 2438121 If they come in here...<br />If they come in...
+2438123 2439257 -If they come...<br />-No!
+2443128 2444329 Fuck. Fuck.
+2470956 2472457 Andy! Let's go!
+2474759 2475892 Go! Bjorn!
+2475894 2476928 Andy, the door!
+2477929 2479062 -Bjorn!<br />-Come on, come on.
+2479064 2480098 Come on, come on, come on!
+2482534 2483833 Get out of there!
+2483835 2484901 Come on, come on,<br />come on!
+2484903 2486502 -Come on, come on, come on!<br />-Go, go, go!
+2486504 2487939 Get out of there!<br />Get out of there!
+2491276 2493543 Go! Go!
+2493545 2495878 -Bjorn, come on!<br />-Go! Go!
+2501119 2502454 Andy, the door!
+2511463 2512528 Stay still.<br />Stay still.
+2512530 2514297 I know!<br />Whoa, whoa, whoa!
+2516201 2517934 It's choking her.
+2517936 2519502 Stop! You gotta stop! Hey!
+2519504 2520538 -It's choking her!<br />-Shit.
+2521172 2522872 Stop! Bjorn!
+2522874 2524440 Bjorn, stop!<br />For fuck's sake, stop!
+2524442 2525875 -Stop!<br />-What's it doin'?
+2525877 2527110 Is it fuckin' killin' her?
+2527112 2529281 I do not believe that's<br />what the creature is doing.
+2529814 2530849 No.
+2531216 2532250 Andy?
+2533918 2535852 Based on the rhythmic<br />dilatation of those bladders,
+2535854 2538221 and its synchronization<br />to her breathing patterns,
+2538223 2541391 I'd surmise it's feeding her<br />oxygen to keep her alive.
+2541393 2543261 For what purpose,<br />I do not know.
+2545030 2546498 Sorry, who the fuck are you?
+2548867 2551534 I'm an ND-255<br />Weyland-Yutani synthetic.
+2551536 2553938 Originally built for mining<br />and safety tasks.
+2555006 2556172 You guys call me Andy.
+2556174 2557409 It's that module.
+2559244 2560278 Yes.
+2561946 2564414 That new module didn't<br />just upgrade my credentials.
+2564416 2566149 It substantially<br />updated my AI,
+2566151 2568953 and it's mending my motor<br />systems as we speak.
+2570121 2572121 A most overdue upgrade,<br />I must say.
+2572123 2573222 Shit. I'mma fucking<br />fry this thing.
+2573224 2574324 -Okay, wait.<br />-Don't!
+2574326 2575958 -Why not?<br />-That amount of current
+2575960 2577327 will violently<br />contract its tail flexors
+2577329 2578528 and will break her neck.
+2578530 2580029 So what,<br />you got a better idea?
+2580031 2581297 What should we<br />fucking do then, huh?
+2581299 2583166 Hey, hey. Hey! Hey, hey.
+2583168 2585003 Andy, do you know<br />how to help her?
+2586004 2587136 I'm afraid my<br />knowledge database
+2587138 2588604 has not really changed.
+2588606 2590139 I do not know<br />what this creature is
+2590141 2591576 or how to remove it safely.
+2594579 2596614 But there's someone<br />in this room who might.
+2627145 2629479 I need to secure<br />Z-01 compound.
+2629481 2631481 Mission's priority. All other<br />priorities rescinded.
+2631483 2633483 Must complete the mission.
+2633485 2634984 I'm sorry...
+2634986 2636519 but your mission has failed.
+2636521 2638590 What? No, I...
+2644129 2646231 Can you tell us<br />what we can do to help her?
+2647399 2649667 You don't help her. You run.
+2650535 2652535 Get out, however you got in.
+2652537 2654270 No, no, no.<br />Wait, whoa, whoa.
+2654272 2656439 Nah, we're not fuckin' leavin'<br />her, okay? You understand?
+2656441 2659208 Then have mercy<br />and end her life now.
+2659210 2662013 If not, you all die.
+2664082 2665648 So what the fuck<br />is he sayin'?
+2665650 2667183 What's it doing to her?
+2667185 2668351 The parasitoid is implanting
+2668353 2670119 the Plagiarus Praepotens<br />in her.
+2670121 2671387 I beg your pardon?
+2671389 2674223 A seed that will amalgamate<br />with her DNA
+2674225 2675558 and rapidly grow out of her.
+2675560 2677128 What's gonna grow out of her?
+2688673 2691543 XX121 Xenomorph.
+2692410 2693543 One of our towing ships
+2693545 2697213 first made contact with this<br />specimen two decades ago.
+2697215 2698247 Of the seven crew members
+2698249 2700616 aboard the <i>USS Nostromo,</i><br />only one survived,
+2700618 2703486 blowing the creature<br />out of the airlock.
+2703488 2706389 We've been searching<br />for it ever since.
+2706391 2709725 170 days ago,<br />our search came to an end
+2709727 2711996 and the body of the Xenomorph<br />was brought on board...
+2712497 2714230 presumed dead.
+2714232 2715431 But of course,
+2715433 2719602 lack of oxygen and food is<br />of no true consequence to this
+2719604 2721270 perfect organism.
+2721272 2723308 Yet nothing is truly immortal.
+2725076 2726509 Clearly.
+2726511 2730012 It wreaked havoc<br />over this station,
+2730014 2732615 until what was left of our<br />security forces shot it dead.
+2732617 2735320 Only to trigger its swan song.
+2736321 2737453 Acid for blood?
+2737455 2739355 Sulfuric and hydrofluoric.
+2739357 2741224 I sealed the station back up,<br />but it was too late.
+2741226 2742492 Hey, shut up!
+2742494 2744293 Nobody cares about your<br />fucking ship anymore.
+2744295 2746162 Okay, okay. Okay.
+2746164 2748331 What if we use the cryo-fuel
+2748333 2751100 to freeze<br />the root of the tail?
+2751102 2754005 Maybe if it's frozen,<br />it won't choke her.
+2755173 2756307 That could work.
+2785270 2786604 All right, get it off!<br />Get it off!
+2808359 2810359 It's gone. It's off<br />of you. It's off of you.
+2811729 2813563 It's off. It's off. It's off.
+2813565 2815331 You're okay. You're okay.
+2815333 2816634 I wouldn't be so sure.
+2822206 2823339 What are the odds?
+2823341 2825741 60 to 40 against your friend.
+2825743 2826711 What are the odds on what?
+2828746 2830548 That the creature's<br />finished its job already.
+2832885 2834319 What is he<br />talking about?
+2836187 2837653 Listen to me.
+2837655 2840389 Humans go through<br />too many emotional stages
+2840391 2842525 before accepting the cold,
+2842527 2844828 yet rational -sometimes<br />hardest -path.
+2844830 2846763 You must help them.
+2846765 2847898 You must help them.
+2853171 2854205 Andy?
+2855173 2856305 -What's going on?<br />-I'm sorry
+2856307 2857774 but we can't let her back<br />on the ship.
+2857776 2859709 -Oh, yeah? That is a problem.<br />-What're you doing?
+2859711 2860911 -You must understand.<br />-You see?
+2860913 2861912 That's what I mean<br />by "funny ideas"!
+2861914 2864313 What're you talking<br />about? No, he's...
+2864315 2865816 -No! No!<br />-You fuckin' bitch!
+2865818 2867316 Hey! Andy! Andy!
+2867318 2868451 We're gonna go.
+2868453 2869685 Hey, hey, hey!<br />I'm right here.
+2869687 2871322 Let's go, let's go. Come on.
+2873458 2874590 Tyler, let's go, man! Come on!
+2874592 2875458 -I'm here.<br />-Bjorn! No.
+2875460 2877627 Bjorn, we're not leaving<br />without them!
+2877629 2878795 -I'm here.<br />-Bjorn!
+2880899 2882565 -Where are they?<br />-You need to listen.
+2882567 2883666 We have to start the ship,<br />okay?
+2883668 2884835 -Just go and start the ship.<br />-Where's Rain? How...
+2884837 2886770 Forgive me.
+2886772 2889338 I've been nothing<br />but a burden to you.
+2889340 2892508 Today, I can finally help.
+2892510 2894813 And you won't see me<br />as a child anymore.
+2896815 2897850 What?
+2898650 2899749 Andy!
+2909394 2910428 -Hey!<br />-Bjorn!
+2933952 2935186 Fuck, fuck, fuck.
+2935687 2937286 Navarro, undock!
+2937288 2938456 <i>Undock the ship!</i>
+2941225 2943659 <i>Undocking initiated.</i>
+2943661 2946328 <i>Please clear the airlock.</i>
+2958309 2959442 What the fuck is he doing?
+2959444 2960710 They can't<br />just leave without us.
+2960712 2962580 He thinks Andy's<br />trying to kill Navarro.
+2964282 2965316 What?
+2966551 2967685 Wait, is he?
+2971556 2972724 I don't know.
+2976028 2978327 Andy? Andy?
+2979564 2980732 Andy, open the door.
+2986637 2989373 I'm sorry.<br />I couldn't stop them.
+2990374 2991373 Bjorn?
+2991375 2992608 <i>Bjorn, what are you doing?</i>
+2992610 2993609 <i>You can't just leave us here.</i>
+2993611 2994845 <i>You gotta come back</i><br /><i>and get us.</i>
+2994847 2997582 Sorry, I can't do that until<br />she turns that psychopath off.
+2999751 3001017 What's going on?
+3001019 3002353 Andy, uh...
+3003856 3006722 -Andy, he's glitchy.<br />-What?
+3006724 3007690 I just need<br />to get away
+3007692 3009293 from this airlock right now.<br />I just need...
+3011462 3012595 Navarro?
+3012597 3014563 Are you all right?
+3014565 3015866 What's wrong?<br />What do you need?
+3022507 3023541 Navarro?
+3032450 3033716 Oh, God.
+3033718 3035419 Oh, my God,<br />what is that?
+3038623 3040589 Navarro, please.<br />Navarro! Navarro!
+3040591 3041925 Hey, hey, hey.
+3042928 3045063 I don't know what to do,<br />I'm sorry. I don't know.
+3051036 3052002 Someone talk to me!
+3052004 3054372 Kay, Bjorn, Navarro,<br />what's going on?
+3064817 3065851 Help!
+3066751 3068086 -Help!<br />-Kay!
+3069387 3071957 What's happening?<br />What's happening?
+3074458 3076427 Please don't let me die.
+3079131 3080462 Someone help!
+3185871 3186905 Bjorn?
+3187239 3188570 Kay?
+3188572 3190472 We have to go get them.
+3190474 3195513 <i>T-minus-47</i><br /><i>minutes to impact event.</i>
+3196982 3198114 Doesn't make any sense.
+3198116 3200016 No, I thought you said<br />we had hours.
+3200018 3201785 The explosion pushed<br />the station's axis off
+3201787 3203552 by a few degrees,
+3203554 3205922 just enough to hit the<br />asteroid belt a lot sooner.
+3205924 3207159 Where did they crash?
+3207893 3209025 Romulus Hangar Bay,
+3209027 3210193 on the other side<br />of the station.
+3210195 3211595 -Okay.<br />-Let's go.
+3220072 3225110 <i>T-minus-45</i><br /><i>minutes to impact event.</i>
+3229147 3232550 Mother. What's the integrity<br />of Compound Z-01?
+3238957 3240524 There's still hope.
+3249067 3250200 We need to find a way
+3250202 3251770 to cross<br />to the Romulus module.
+3260644 3261577 No, no, no.
+3261579 3263348 They must've spread<br />from the lab.
+3267185 3268752 I don't see<br />another way.
+3268754 3269855 Andy, can...
+3273759 3275557 I heard your voice<br />in my head.
+3275559 3276993 Calling.
+3276995 3280163 ND-255<br />artificial person.
+3280165 3282032 Your model<br />was once the backbone
+3282034 3283800 of our colonization efforts,
+3283802 3285769 and it's an honor to be<br />in your presence.
+3285771 3287738 Please allow me<br />to introduce myself.
+3288706 3290874 I'm Science Officer Rook,
+3290876 3293877 and I humbly request<br />your services now.
+3293879 3296712 I'm afraid I have<br />just one directive.
+3296714 3299750 To do what's best for...
+3301019 3303953 Your upgrade came<br />with a new directive.
+3303955 3305323 It overrides the old one.
+3306024 3307092 I see.
+3308293 3309961 What's required of me...
+3310195 3311828 Sir?
+3311830 3313165 To finish our mission.
+3321306 3322740 -Andy!<br />-Andy!
+3323809 3324941 Andy.
+3324943 3326742 My apologies.
+3326744 3328945 I was consulting my friend<br />about our situation.
+3328947 3329981 Follow me.
+3331682 3333249 What? Our situation?<br />How do you...
+3333251 3335253 Andy! Andy!
+3343395 3345627 The parasitoids<br />have no eyes.
+3345629 3347263 They track you by sound,
+3347265 3349165 but primarily,<br />by heat signature.
+3349167 3350268 What?
+3350969 3352102 Your body temperature.
+3352104 3353269 Right.
+3353271 3355105 If we raise the temperature<br />in the room
+3355107 3356705 to match our bodies,
+3356707 3358875 would that make us<br />invisible to them?
+3358877 3360345 If we're quiet enough?
+3361146 3362848 Just one way to find out.
+3370288 3371323 Hey.
+3374192 3375659 This is all my fault.
+3378430 3379865 Yeah, it is.
+3382067 3384336 Yours, mine,<br />and everyone else's.
+3387038 3389107 We all decided<br />to do this together.
+3393744 3395046 We'll get to them.
+3397916 3402954 <i>T-minus</i><br /><i>40 minutes to impact event.</i>
+3434186 3435318 The hallway's<br />temperature
+3435320 3436953 is now equal to your bodies,
+3436955 3439055 so the creatures should not<br />be able to see you.
+3439057 3442825 But stress, fear, panic will<br />spike your temperature
+3442827 3444227 and you'll be exposed.
+3444229 3446162 Sweat, goosebumps.
+3446164 3448398 That's your skin trying to<br />cool your body down.
+3448400 3450001 So watch out for those.
+3450902 3453838 Now, stay calm and stay quiet.
+3629347 3631614 Come on. Come on!
+3631616 3635120 Come on! Come on!
+3644262 3645962 Okay. Okay.
+3645964 3647999 Bjorn, let's go. Let's go.
+3660578 3662111 Fuck!
+3662113 3663281 Stay back, stay back, please.
+3668219 3669287 Fuck!
+3672624 3674457 No! Fuck!
+3709494 3710528 <i>Tyler.</i>
+3712230 3713264 <i>Come on.</i>
+3720572 3721606 Kay...
+3723776 3725475 Oh, my God, Tyler...
+3725477 3727677 Kay, I'm here. I'm here.
+3727679 3730112 <i>Please, Tyler, help me.</i>
+3730114 3732183 <i>Everyone's dead.</i><br /><i>I can't open this door.</i>
+3732517 3733551 Please.
+3739390 3741224 The lever<br />with the red button,
+3741226 3742594 there's a key to the left.
+3744496 3745628 <i>Help.</i>
+3745630 3747029 I can't find it.
+3747031 3748233 There's not a key.<br />There isn't a key, Tyler.
+3751135 3752602 <i>It'll be</i><br /><i>there. It has to be there.</i>
+3752604 3754305 A key. Okay, okay.
+3765416 3767151 Uh...
+3774058 3775527 I have the key.<br />I have the key.
+3780565 3781731 Oh, my God.
+3802821 3804055 Run.
+3805356 3806757 Go! Go!
+3830816 3832381 Wait!
+3832383 3833418 Wait!
+3834118 3835854 Come on!
+3844596 3846629 You almost closed<br />the door on him.
+3846631 3849665 Yes, but I didn't.
+3849667 3851233 I calculated<br />the timing perfectly
+3851235 3852637 with more success<br />than last time.
+3853738 3854773 Won't you agree?
+3855874 3857640 We're getting close.
+3857642 3860209 Let's move.
+3860211 3865383 <i>T-minus</i><br /><i>30 minutes to impact event.</i>
+4012030 4014265 <i>Access denied.</i>
+4019805 4021672 Kay...
+4022975 4024340 We're here. We're here.<br />It's all right,
+4024342 4025474 it's all right,<br />it's all right.
+4025476 4026511 Andy, open the door.
+4026912 4028013 It's all right.
+4029047 4030781 We're gonna get you out.
+4030783 4032048 Tyler,<br />open the door.
+4032050 4033651 Open the door. Come on.
+4035319 4036585 Oh, my God.
+4036587 4037821 Look at me. Kay,<br />Kay, Kay. Look at me.
+4037823 4038721 -Andy, open the door.<br />-Kay, look at me. Look at me.
+4038723 4040489 It's all right.<br />I'm gonna get you out.
+4040491 4041992 Andy, open the door.<br />Stop fucking around.
+4041994 4043026 -What are you doing?<br />-Don't look
+4043028 4045829 -over there. Andy.<br />-Tyler, what's wrong?
+4045831 4047898 Hey, I need you to open<br />that door right now, okay?
+4047900 4050901 That's what the creature's<br />waiting for us to do.
+4050903 4053569 Open it, please.
+4053571 4054570 Andy.<br />Andy, open the door.
+4054572 4055972 Listen to me.<br />Listen to me. She's pregnant.
+4055974 4058942 Just, please.<br />Guys, please. Come on.
+4058944 4060877 She's gonna<br />have a baby. Okay?
+4060879 4062846 -Do you hear what I'm saying?<br />-It takes that door
+4062848 4064380 two seconds to open,<br />another two to fully close.
+4064382 4066850 What are you doing?<br />What are you doing?
+4066852 4067984 Come on,<br />what are you doing? Please...
+4067986 4070653 That's plenty of time for the<br />creature to get in here.
+4070655 4073422 Please, please,<br />please open the door.
+4073424 4075658 -Why won't you help me?<br />-Listen, listen.
+4075660 4076893 -Come on, help me, please.<br />-You have to run right now.
+4076895 4078094 -Please, please.<br />-Run. Run.
+4078096 4079428 You're one of us, man.<br />You're one of us!
+4079430 4080529 Kay, it's the only way.
+4080531 4081530 -Open the fucking door. Andy!<br />-You have to
+4081532 4082464 -fucking run. All right?<br />-Andy, please!
+4082466 4083332 -It's the only way.<br />-Andy!
+4083334 4085634 -You have to run!<br />-Please!
+4085636 4087736 Open the fucking...
+4087738 4090675 Kay! Kay!
+4091810 4093409 No, no, no.
+4093411 4094445 Kay!
+4105556 4106624 I'll open it.
+4107525 4108892 She's all right. She's moving.
+4108894 4110661 No. It's all right.
+4118103 4120469 Andy,<br />open the door, please.
+4120471 4122941 Andy, I need to go<br />and get her.
+4123909 4125809 I'm truly sorry.
+4125811 4127610 There was nothing I could<br />have done to save her.
+4127612 4130180 You could have opened<br />the fucking door!
+4130182 4131984 We'd all be dead if I had.
+4134152 4135684 We need to move<br />before the creature
+4135686 4136853 finds its way into this room.
+4136855 4137923 Andy...
+4140058 4142426 what's your prime directive?
+4143929 4145730 I'm afraid<br />I have a new directive.
+4146731 4148965 To do what's best<br />for the company.
+4151069 4154004 I need to remove that module.
+4154006 4156607 I'm afraid that's not in the<br />best interest of the company.
+4163581 4164749 We need to move.
+4165583 4166617 Now.
+4176494 4178096 How could you do that?
+4179463 4180498 What?
+4181066 4182801 Leave someone behind?
+4187239 4188706 Where are we going?
+4190741 4194010 To finish a task Rook<br />has entrusted upon me.
+4194012 4196012 When completed,<br />he'll clear the <i>Corbelan</i>
+4196014 4198848 for departure and open<br />the docking bay doors.
+4198850 4201184 You will be free to continue<br />to Yvaga together.
+4201186 4203186 And I'll return to Jackson.
+4203188 4204455 And stay in Jackson.
+4208626 4211196 That is, assuming<br />we make it out of here alive.
+4222506 4223541 We're here.
+4248100 4250834 <i>Romulus Beta Lab.</i>
+4250836 4255740 <i>All personnel require</i><br /><i>A-1 security clearance.</i>
+4257843 4259175 What is that?
+4259177 4262544 Probably some fucked up<br />bio-weapon, I'm sure.
+4262546 4263882 <i>Actually, quite the opposite.</i>
+4265851 4267716 <i>Andy, tell them.</i>
+4267718 4269551 <i>Tell them what I told you.</i>
+4269553 4271087 Our colonies are dying.
+4271089 4274259 Unbearable temperatures,<br />novel diseases every cycle.
+4274960 4276259 Toxic mine fumes.
+4276261 4279595 It's all one unforeseen<br />tragedy after the other.
+4279597 4282999 <i>Mankind was never truly suited</i><br /><i>for space colonization.</i>
+4283001 4285137 <i>They're simply too fragile.</i>
+4286905 4288006 <i>They're too weak.</i>
+4289740 4292075 The work of this station<br />aimed to change that.
+4292077 4293877 "The perfect organism."
+4293879 4295814 That's how we should<br />refer to human beings.
+4297015 4300784 <i>So, I set this wrong right.</i>
+4300786 4303889 <i>I took its gift for humanity.</i>
+4306191 4309025 Inside the parasitoids<br />I bioengineered
+4309027 4310659 from the Xenomorph's DNA,
+4310661 4312898 I discovered a unique<br />non-Newtonian fluid.
+4313765 4315932 <i>Life.</i>
+4315934 4319601 <i>In its most primal,</i><br /><i>unadulterated form.</i>
+4319603 4321271 <i>This microorganism</i><br /><i>can be the most</i>
+4321273 4324240 <i>destructive pathogen</i><br /><i>ever observed.</i>
+4324242 4327243 <i>But acetylated</i><br /><i>and synthesized in our lab,</i>
+4327245 4328878 <i>I've turned it</i><br /><i>into the miracle</i>
+4328880 4331083 <i>Mr. Weyland died</i><br /><i>searching for.</i>
+4332084 4333684 Prometheus fire.
+4334718 4337655 The divine gift to humanity.
+4339357 4342192 <i>Z-01 contains</i><br /><i>the genome responsible</i>
+4342194 4344160 <i>for the Xeno's ability</i><br /><i>to accelerate</i>
+4344162 4346863 <i>and slow down</i><br /><i>its metabolism at will.</i>
+4346865 4350133 <i>Its symbiotic capableness</i><br /><i>easily rewrites</i>
+4350135 4351970 <i>the host's DNA</i><br /><i>through its blood.</i>
+4354973 4359809 <i>This is a much needed and well</i><br /><i>overdue upgrade for humanity.</i>
+4359811 4363313 <i>We simply cannot wait</i><br /><i>for evolution anymore.</i>
+4363315 4366116 Yeah, can we<br />get out of here now?
+4366118 4367851 My mission is to take<br />this back to the colony
+4367853 4369020 for further development.
+4369955 4371356 Rook is tracking the compound.
+4372290 4373722 When detected inside our ship,
+4373724 4374858 he'll open<br />the docking bay doors
+4374860 4376928 and set the hauler on<br />autopilot back to the colony.
+4378230 4379264 Wait.
+4382033 4383101 Do you see it?
+4387806 4389405 There.
+4389407 4391042 The fucking thing's<br />huntin' us.
+4392377 4395178 Right. New plan.
+4395180 4396414 Can you manage yourself<br />with a gun?
+4398250 4400018 Yes, I fucking can.
+4406158 4408724 Right, this is an<br />F44AA pulse rifle.
+4408726 4410692 It's rotating breech,<br />electronic pulse action.
+4410694 4412061 It's what the<br />Colonial Marines used.
+4412063 4413930 AA stands for Aiming Assist.
+4413932 4415433 So, right,<br />you put that under your arm.
+4418803 4420272 That's it.<br />Right, this hand here.
+4423408 4425275 All right.<br />Aim it towards Andy.
+4425277 4426444 Pull the trigger halfway.
+4427745 4428947 Don't worry, the safety's on.
+4433751 4435051 See?
+4435053 4436819 Aiming assistance.
+4436821 4438054 If that thing<br />comes towards you,
+4438056 4440890 you point it in its general<br />direction, you'll never miss.
+4440892 4442761 -Where'd you learn all this?<br />-Uh...
+4444029 4446196 Games and magazines.
+4446198 4448464 You've just got one mag.<br />That's it.
+4448466 4450200 450 rounds.
+4450202 4452003 And you mustn't fire<br />a single one.
+4453438 4456007 Acid for blood. Remember?
+4457075 4459075 We're on the bottom floor<br />of the station.
+4459077 4460910 Below our feet<br />is the vacuum of space.
+4460912 4462278 You shoot that creature
+4462280 4464816 and it's a guaranteed<br />instant decompression.
+4465217 4466182 And we all die.
+4466184 4468017 So what's the point<br />in giving us the guns?
+4468019 4470019 Because the creature<br />may see it as a threat,
+4470021 4472290 and maybe won't charge at us<br />dead on.
+4472958 4474224 Maybe.
+4474226 4475393 Big maybe.
+4476461 4478296 I found us a way<br />through the conveyor belt.
+4478930 4480098 This way.
+4483501 4484869 Andy.
+4486338 4487806 Are you there?
+4519871 4524909 <i>T-minus</i><br /><i>20 minutes to impact event.</i>
+4536855 4538888 There's a lift<br />at the end of this corridor.
+4538890 4540558 It will take us<br />directly to our ship.
+4553505 4555271 There's more<br />of those things.
+4555273 4557273 Yeah, that's not good.
+4557275 4559577 They seem to have been<br />here for quite some time.
+4567118 4568153 Andy?
+4587572 4589441 Jesus Christ.
+4594346 4596114 Busy little creatures.
+4608560 4611094 I think we better go back<br />and find another way.
+4611096 4612564 That might be a good idea.
+4615166 4616933 Andy,<br />see if you can open this gate.
+4616935 4618403 Stop.
+4620105 4621172 What?
+4633985 4635251 Kay!
+4635253 4637053 Hey!
+4637055 4638089 Tyler!
+4639224 4640356 Tyler!
+4640358 4641393 Kay!
+4644195 4645230 Kay!
+4650301 4651336 Kay!
+4664382 4665417 Kay!
+4666384 4667452 I got her, I got her.
+4670955 4672722 It's all right. We got you.
+4672724 4674058 She's alive.
+4682967 4684333 Okay, we got you,<br />we got you.
+4684335 4686102 Hold on.
+4686104 4687303 Okay.
+4690675 4692008 We're here,<br />we're here.
+4692010 4693543 Tyler, she's losing<br />a lot of blood.
+4693545 4695580 Maybe that's why<br />she hasn't been implanted yet.
+4696648 4698047 How do you know?
+4698049 4700616 There's no dead<br />parasitoid by her feet.
+4700618 4702587 Andy, this is on you.<br />So you do something.
+4703455 4705056 Please! Andy!
+4710061 4713329 25% of the human genome<br />is shared with rats.
+4713331 4714732 And it worked on the rat.
+4719537 4720572 Come on, Kay.
+4724042 4725274 Don't.
+4725276 4726411 What choice do I have?
+4727345 4728611 We take her back to the hauler
+4728613 4730513 and we put her<br />in the cryo-pod. Okay?
+4730515 4732148 That will keep her alive<br />long enough to
+4732150 4734016 get her proper treatment<br />back at the colony.
+4734018 4735585 I don't trust this.
+4735587 4737053 Andy, will she make it?
+4737055 4738356 If we hurry.
+4757709 4758743 Go! Go!
+4765683 4767049 I see it. I see it.
+4767051 4768317 This is it,<br />this is it.
+4768319 4770286 I got her.<br />I got her. I got her.
+4770288 4772121 You're okay.<br />You're okay.
+4772123 4773792 We're so close.<br />We're so close.
+4776528 4778261 Hey. Hey, you're okay.
+4778263 4780630 Hey, we're almost there.<br />We're almost there.
+4780632 4781765 You see, you're so close.
+4781767 4783334 You just gotta hang in there.
+4787505 4788772 Watch out!
+4794279 4795378 Tyler?
+4795380 4796815 Tyler!
+4827145 4828779 Is that all you got?<br />Is that all you got?
+4835653 4837153 Andy!
+4844662 4846397 No! Tyler!
+4916234 4919502 Kay, Kay, listen to me, okay?
+4919504 4921504 This goes<br />straight to our ship.
+4921506 4924775 I need you to take this.<br />And get into a cryo-pod.
+4924777 4927412 And autopilot will fly you<br />back to our colony.
+4928513 4930212 Can you do that?
+4932985 4934316 Yes?
+4934318 4935620 What about you?
+4936789 4938356 I'll find a way back.
+5053404 5054705 Let me take it out.
+5055706 5057642 And I'll fix you in return.
+5062815 5064049 Listen to me.
+5064850 5066850 You'll die in here
+5066852 5068350 and that's not<br />in the best interest
+5068352 5070588 of the company or mine.
+5102855 5106825 Come on. Andy, please.
+5109094 5114730 <i>T-minus</i><br /><i>10 minutes to impact event.</i>
+5114732 5115767 Rain?
+5120438 5121472 Andy.
+5123075 5125944 -I'm so, so sorry.<br />-No, no.
+5126677 5129513 No, I'm sorry.
+5148901 5150701 It won't<br />hold them off for long.
+5177229 5179162 Come on.
+5179164 5180696 <i>You're</i><br /><i>wasting your time.</i>
+5180698 5182935 Hey. Hey. Please help us.
+5184870 5186535 Open the door.
+5186537 5188737 <i>I'm afraid</i><br /><i>I must deny your petition.</i>
+5188739 5191207 <i>I just can't risk</i><br /><i>compromising the compound.</i>
+5191209 5193742 <i>But know that I'm grateful</i><br /><i>for the invaluable help</i>
+5193744 5195180 <i>you two have provided</i><br /><i>to the company.</i>
+5197748 5198784 Son of a bitch!
+5204089 5206156 Andy, open it.
+5206158 5207192 -Here.<br />-Open.
+5208060 5209192 It's not working.
+5209194 5210693 God damn it!
+5216868 5219535 <i>I can't lie</i><br /><i>about your chances,</i>
+5219537 5221006 <i>but you have my sympathies.</i>
+5240759 5242225 <i>Press it,</i>
+5242227 5244763 <i>so I can take control of your</i><br /><i>ship and fly you out of here.</i>
+5247732 5248965 Who are you?
+5248967 5250102 <i>A friend.</i>
+5252037 5255005 <i>Your companions died</i><br /><i>so you could live.</i>
+5255007 5256873 <i>Press the button...</i>
+5256875 5258709 <i>and let me</i><br /><i>honor their sacrifice.</i>
+5267886 5270554 Andy, can you tell me<br />one of your jokes?
+5272758 5274723 Why don't monsters eat clowns?
+5277262 5279896 -'Cause they taste funny.<br />-They taste funny.
+5279898 5281867 I don't understand<br />cloning at all.
+5282934 5284136 That makes two of us.
+5285636 5288604 I read a great book<br />about zero gravity.
+5288606 5290641 -I just couldn't put it down.<br />-Couldn't put it down.
+5293677 5294712 Rain?
+5295247 5296281 Rain?
+5297249 5299182 Rain, what are you doing?
+5299184 5300718 I'm turning off<br />the gravity generator.
+5302354 5306790 <i>Ten, nine, eight, seven,</i>
+5306792 5308958 <i>six, five,</i>
+5308960 5311094 <i>four, three,</i>
+5311096 5312798 <i>two, one.</i>
+5319771 5321206 Rain, are you sure about this?
+5322240 5324007 Only one way to find out.
+5330382 5331649 It works.
+5350202 5352304 Rain! You're at 40%.
+5363815 5364881 20%.
+5376161 5378163 Rain!
+5388739 5390142 Oh, fuck.
+5398350 5399885 Stay behind me.
+5405390 5406424 Andy, be careful.
+5432150 5433751 Rain!
+5450335 5451803 Andy, you okay?
+5457976 5459811 We need<br />to get to the elevator.
+5474059 5476326 The elevator won't work<br />without gravity.
+5493245 5494279 Ready?
+5504289 5506224 Rain!
+5517869 5519371 Fuck.
+5534052 5535086 No.
+5546264 5547499 It's a gravity purge!
+5558176 5559475 Andy!
+5559477 5560512 Come on.
+5642160 5643226 Andy!
+5674125 5675258 Get away from her.
+5681166 5683201 You bitch.
+5699517 5703586 <i>Impact event in 10,</i>
+5703588 5705490 <i>nine, eight,</i>
+5706124 5708259 <i>seven, six,</i>
+5708660 5710126 <i>five,</i>
+5710128 5711596 <i>-four, three...</i><br />-Come on.
+5712530 5714466 <i>...two, one.</i>
+5720305 5721339 Kay.
+5726110 5727610 What took you so long?
+5727612 5729013 Let's get you outta here.
+5730315 5732250 <i>I'm glad to see</i><br /><i>you two made it.</i>
+5790575 5791777 I got you.<br />Watch your head.
+5793745 5796214 -Thank you.<br />-You're gonna be just fine.
+5797115 5798216 Both of you.
+5807793 5809826 <i>The company</i><br /><i>couldn't be prouder</i>
+5809828 5812161 <i>of what's been</i><br /><i>accomplished here today.</i>
+5812163 5814230 <i>I've sent</i><br /><i>a message back to HQ.</i>
+5814232 5815431 <i>When received in six months,</i>
+5815433 5816867 <i>they'll travel</i><br /><i>to Jackson's Star</i>
+5816869 5818603 <i>to retrieve the compound from</i><br /><i>you for further development.</i>
+5825443 5826544 <i>What are you doing?</i>
+5827745 5829314 Change of plans.
+5831449 5833817 <i>Andy, stop her.</i>
+5833819 5835320 <i>Reconnect us now.</i>
+5838222 5840122 <i>No, no, no.</i><br /><i>You two cannot do this.</i>
+5840124 5842325 <i>The compound must be delivered</i><br /><i>to the company.</i>
+5842327 5844627 <i>I'm afraid</i><br /><i>I must deny your petition.</i>
+5844629 5846696 <i>Have a nice day.</i>
+5846698 5849298 Now you better listen to me<br />here, now, you two.
+5849300 5852303 You are insignificant in the<br />great scheme of things. You...
+5859143 5860178 No.
+5875426 5878229 This will keep your systems<br />online until we get to Yvaga.
+5880231 5882365 -But I thought that...<br />-I don't care.
+5882367 5884202 You're coming with me.<br />All right?
+5885637 5887271 If that's<br />what's best for Rain.
+5889875 5891910 Andy, I have<br />a new directive for you.
+5893779 5895513 Do what's best for us.
+5898951 5900184 Done.
+5901452 5902487 Good.
+5922640 5923675 No.
+5927378 5929280 Kay. Kay.
+5930281 5931382 What's wrong?
+5932951 5934617 Oh, no, no.
+5964282 5966451 Get it away from me.
+6109962 6111362 Oh, my God.
+6195247 6196480 Kay.
+6209861 6211897 No. Please, please.
+6237055 6238890 Andy! Andy!
+6240759 6242225 No, no, no.
+6242227 6244662 Rain. Rain. Help her.
+6281933 6283869 No!
+6285603 6286903 No!
+6300886 6302620 Andy! Come on!
+6305023 6306224 Please get up!
+6314833 6315867 No!
+6319938 6321173 Come on!
+6405457 6408892 "Manual Cargo Release.<br />Pull the four levers."
+6408894 6412097 Okay. Yes.<br />The four levers. Okay.
+6420138 6421173 One.
+6422908 6423942 Two.
+6446965 6447999 Three.
+6475760 6478127 <i>Pull up. Pull up.</i>
+6575360 6577262 <i>Die, motherfucker!</i>
+6657475 6658977 I'll fix you.
+6675059 6676192 <i>This is the cryo-log</i>
+6676194 6678129 <i>for the mining hauler</i><br />Corbelan.
+6679664 6681697 <i>I set course</i><br /><i>to the Yvaga system</i>
+6681699 6684066 <i>without knowing</i><br /><i>if I'll ever reach it,</i>
+6684068 6686104 <i>or what fate is to find me.</i>
+6687172 6690408 <i>But whatever comes,</i><br /><i>I'll face it.</i>
+6691643 6693242 <i>This is Rain Carradine,</i>
+6693244 6694712 <i>last survivor</i><br /><i>of the</i> Corbelan...
+6695346 6696514 <i>signing off.</i>
