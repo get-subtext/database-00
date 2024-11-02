@@ -8,7 +8,7 @@ export interface SubtitleBlock {
   text: string;
 }
 
-export const toLines = (srtContent: string): string => {
+export const toSubtext = (srtContent: string): string => {
   const blocks = toBlocks(srtContent);
   const lines: string[] = [];
   for (let i = 0; i < blocks.length; i++) {

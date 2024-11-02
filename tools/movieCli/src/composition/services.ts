@@ -13,8 +13,6 @@ const logPrefix = last(split(pkgMeta.name, '/'));
 const botLabel = 'subtext-bot';
 const dataSeparator = '===';
 
-console.log(config.database.dir);
-
 export const createHandler = (verbose: boolean) => {
   const logger = new Logger(logPrefix!, verbose);
   const gitHubIssueService = createGitHubIssueService({ apiUrlBase: config.gitHub.apiUrlBase, apiToken: config.gitHub.token, dataSeparator, botLabel });
