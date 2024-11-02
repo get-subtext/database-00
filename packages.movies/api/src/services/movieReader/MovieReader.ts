@@ -1,9 +1,9 @@
 import { concat } from 'lodash-es';
+import { mergeMovies } from '../../utils/mergeMovies';
 import { OmdbMovieReader } from '../omdb/OmdbMovieReader';
 import { OpenSubtitlesMovieReader } from '../openSubtitles/OpenSubtitlesMovieReader';
 import type { SubdlMovieReader } from '../subdl/SubdlMovieReader';
-import { mergeMovies } from '../utils/mergeMovies';
-import type * as T from './MovieApi.types';
+import type * as T from './MovieReader.types';
 
 export class MovieReader implements T.MovieReader {
   public constructor(
@@ -18,11 +18,11 @@ export class MovieReader implements T.MovieReader {
 
     const success = omdbRes.success || openSubtitlesRes.success || subdlMovieReader.success;
     const logs = concat(omdbRes.logs, openSubtitlesRes.logs, subdlMovieReader.logs);
-    if (success) {
-      const data = mergeMovies([omdbRes.data, openSubtitlesRes.data, subdlMovieReader.data]);
-      return { success, data, logs };
-    } else {
+    if (!success) {
       return { success, data: null, logs };
     }
+
+    const data = mergeMovies([omdbRes.data, openSubtitlesRes.data, subdlMovieReader.data]);
+    return { success, data, logs };
   }
 }

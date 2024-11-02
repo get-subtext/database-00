@@ -1,5 +1,5 @@
+import { createLog } from '../../utils/createLog';
 import type { FetchWrapper } from '../fetch/FetchWrapper.types';
-import { createLog } from '../utils/createLog';
 import type * as T from './SubdlApi.types';
 
 export class SubdlApi implements T.SubdlApi {
@@ -10,16 +10,16 @@ export class SubdlApi implements T.SubdlApi {
     private readonly fetchWrapper: FetchWrapper
   ) {}
 
-  public async getMovieInfo(imdbId: string): Promise<T.GetMovieInfoOutput> {
-    const url = this.createMovieInfoUrl(imdbId, this.apiKey);
+  public async getMovie(imdbId: string): Promise<T.SubdlGetMovieResponse> {
+    const url = this.createUrl(imdbId, this.apiKey);
     const { success, status, body: resBody } = await this.fetchWrapper.getJson({ url });
 
-    const logUrl = this.createMovieInfoUrl(imdbId, '<API_KEY>');
+    const logUrl = this.createUrl(imdbId, '<API_KEY>');
     const log = createLog({ input: { url: logUrl }, output: { status, body: resBody } });
     return { success, data: resBody, log };
   }
 
-  public async getZipFile(urlPath: string): Promise<T.GetZipFileOutput> {
+  public async downloadZipFile(urlPath: string): Promise<T.SubdlDownloadZipFileResponse> {
     const url = `${this.subdlZipUrlBase}${urlPath}`;
     const { success, status, body: resBody } = await this.fetchWrapper.getFile({ url });
 
@@ -27,7 +27,7 @@ export class SubdlApi implements T.SubdlApi {
     return success ? { success, data: resBody, log } : { success, data: null, log };
   }
 
-  private createMovieInfoUrl(imdbId: string, apiKey: string) {
+  private createUrl(imdbId: string, apiKey: string) {
     return `${this.apiUrlBase}?imdb_id=${imdbId}&type=movie&languages=EN&api_key=${apiKey}`;
   }
 }

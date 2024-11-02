@@ -1,6 +1,6 @@
 import type { FetchLog } from '../common/FetchLog.types';
 
-export interface GetMovieInfoOutputDataResult {
+export interface SubdlResult {
   sd_id: number;
   type: string;
   name: string;
@@ -11,7 +11,7 @@ export interface GetMovieInfoOutputDataResult {
   year: number;
 }
 
-export interface GetMovieInfoOutputDataSubtitle {
+export interface SubdlSubtitle {
   release_name: string;
   name: string;
   lang: string;
@@ -27,41 +27,41 @@ export interface GetMovieInfoOutputDataSubtitle {
   full_season: boolean;
 }
 
-export interface GetMovieInfoOutputData {
+export interface SubdlMovie {
   status: boolean;
-  results: GetMovieInfoOutputDataResult[];
-  subtitles: GetMovieInfoOutputDataSubtitle[];
+  results: SubdlResult[];
+  subtitles: SubdlSubtitle[];
 }
 
-export interface GetMovieInfoOutputOk {
+export interface SubdlGetMovieResponseOk {
   success: true;
   log: FetchLog;
-  data: GetMovieInfoOutputData;
+  data: SubdlMovie;
 }
 
-export interface GetMovieInfoOutputFail {
+export interface SubdlGetMovieResponseFail {
   success: false;
   log: FetchLog;
   data: null;
 }
 
-export type GetMovieInfoOutput = GetMovieInfoOutputOk | GetMovieInfoOutputFail;
+export type SubdlGetMovieResponse = SubdlGetMovieResponseOk | SubdlGetMovieResponseFail;
 
-export interface GetZipFileOutputOk {
+export interface SubdlDownloadZipFileResponseOk {
   success: true;
   log: FetchLog;
   data: ArrayBuffer;
 }
 
-export interface GetZipFileOutputFail {
+export interface SubdlDownloadZipFileResponseFail {
   success: false;
   log: FetchLog;
   data: null;
 }
 
-export type GetZipFileOutput = GetZipFileOutputOk | GetZipFileOutputFail;
+export type SubdlDownloadZipFileResponse = SubdlDownloadZipFileResponseOk | SubdlDownloadZipFileResponseFail;
 
 export interface SubdlApi {
-  getMovieInfo: (imdbId: string) => Promise<GetMovieInfoOutput>;
-  getZipFile: (url: string) => Promise<GetZipFileOutput>;
+  getMovie: (imdbId: string) => Promise<SubdlGetMovieResponse>;
+  downloadZipFile: (url: string) => Promise<SubdlDownloadZipFileResponse>;
 }

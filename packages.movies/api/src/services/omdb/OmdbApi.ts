@@ -1,5 +1,5 @@
+import { createLog } from '../../utils/createLog';
 import type { FetchWrapper } from '../fetch/FetchWrapper.types';
-import { createLog } from '../utils/createLog';
 import type * as T from './OmdbApi.types';
 
 export class OmdbApi implements T.OmdbApi {
@@ -9,16 +9,16 @@ export class OmdbApi implements T.OmdbApi {
     private readonly fetchWrapper: FetchWrapper
   ) {}
 
-  public async getMovieInfo(imdbId: string): Promise<T.GetMovieInfoOutput> {
-    const url = this.createMovieInfoUrl(imdbId, this.apiKey);
+  public async getMovie(imdbId: string): Promise<T.OmdbGetMovieResponse> {
+    const url = this.createUrl(imdbId, this.apiKey);
     const { success, status, body: resBody } = await this.fetchWrapper.getJson({ url });
 
-    const logUrl = this.createMovieInfoUrl(imdbId, '<API_KEY>');
+    const logUrl = this.createUrl(imdbId, '<API_KEY>');
     const log = createLog({ input: { url: logUrl }, output: { status, body: resBody } });
     return { success, data: resBody, log };
   }
 
-  private createMovieInfoUrl(imdbId: string, apiKey: string) {
+  private createUrl(imdbId: string, apiKey: string) {
     return `${this.apiUrlBase}/?i=${imdbId}&apikey=${apiKey}`;
   }
 }

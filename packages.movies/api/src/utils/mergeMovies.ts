@@ -1,5 +1,5 @@
 import { concat, isNil, uniq } from 'lodash-es';
-import { Movie } from '../common/Movie.types';
+import { Movie } from '../services/common/Movie.types';
 import { defaultMovie } from './defaultMovie';
 
 export const mergeMovies = (movies: (Movie | null)[]): Movie => {

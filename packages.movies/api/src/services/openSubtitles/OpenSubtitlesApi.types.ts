@@ -1,18 +1,18 @@
 import type { FetchLog } from '../common/FetchLog.types';
 
-export interface SearchOutputDataDataAttributesFile {
+export interface OsFile {
   file_id: number;
   cd_number: number;
   file_name: string;
 }
 
-export interface SearchOutputDataDataAttributesRelatedLink {
+export interface OsRelatedLink {
   label: string;
   url: string;
   img_url: string;
 }
 
-export interface SearchOutputDataDataAttributesFeatureDetails {
+export interface OsFeatureDetails {
   feature_id: number;
   feature_type: string;
   year: number;
@@ -22,13 +22,13 @@ export interface SearchOutputDataDataAttributesFeatureDetails {
   tmdb_id: number;
 }
 
-export interface SearchOutputDataDataAttributesUploader {
+export interface OsUploader {
   uploader_id: null;
   name: string;
   rank: string;
 }
 
-export interface SearchOutputDataDataAttributes {
+export interface OsAttributes {
   subtitle_id: string;
   language: string;
   download_count: number;
@@ -50,42 +50,42 @@ export interface SearchOutputDataDataAttributes {
   comments: string;
   legacy_subtitle_id: number;
   legacy_uploader_id: number;
-  uploader: SearchOutputDataDataAttributesUploader;
-  feature_details: SearchOutputDataDataAttributesFeatureDetails;
+  uploader: OsUploader;
+  feature_details: OsFeatureDetails;
   url: string;
-  related_links: SearchOutputDataDataAttributesRelatedLink[];
-  files: SearchOutputDataDataAttributesFile[];
+  related_links: OsRelatedLink[];
+  files: OsFile[];
 }
 
-export interface GetMovieInfoOutputDataData {
+export interface OsMovie {
   id: string;
   type: string;
-  attributes: SearchOutputDataDataAttributes;
+  attributes: OsAttributes;
 }
 
-export interface GetMovieInfoOutputData {
+export interface OsMoviePage {
   total_pages: number;
   total_count: number;
   per_page: number;
   page: number;
-  data: GetMovieInfoOutputDataData[];
+  data: OsMovie[];
 }
 
-export interface GetMovieInfoOutputOk {
+export interface OsGetMoviePageResponseOk {
   success: true;
-  data: GetMovieInfoOutputData;
+  data: OsMoviePage;
   log: FetchLog;
 }
 
-export interface GetMovieInfoOutputFail {
+export interface OsGetMoviePageResponseFail {
   success: false;
   data: null;
   log: FetchLog;
 }
 
-export type GetMovieInfoOutput = GetMovieInfoOutputOk | GetMovieInfoOutputFail;
+export type OsGetMoviePageResponse = OsGetMoviePageResponseOk | OsGetMoviePageResponseFail;
 
-export interface GetDownloadInfoOutputData {
+export interface OsDownloadMeta {
   link: string;
   file_name: string;
   requests: number;
@@ -98,36 +98,36 @@ export interface GetDownloadInfoOutputData {
   ts: number;
 }
 
-export interface GetDownloadInfoOutputOk {
+export interface OsGetDownloadMetaResponseOk {
   success: true;
   log: FetchLog;
-  data: GetDownloadInfoOutputData;
+  data: OsDownloadMeta;
 }
 
-export interface GetDownloadInfoOutputFail {
+export interface OsGetDownloadMetaResponseFail {
   success: false;
   log: FetchLog;
   data: null;
 }
 
-export type GetDownloadInfoOutput = GetDownloadInfoOutputOk | GetDownloadInfoOutputFail;
+export type OsGetDownloadMetaResponse = OsGetDownloadMetaResponseOk | OsGetDownloadMetaResponseFail;
 
-export interface GetFileOutputOk {
+export interface OsDownloadTextFileResponseOk {
   success: true;
   log: FetchLog;
   data: string;
 }
 
-export interface GetFileOutputFail {
+export interface OsDownloadTextFileResponseFail {
   success: false;
   log: FetchLog;
   data: null;
 }
 
-export type GetFileOutput = GetFileOutputOk | GetFileOutputFail;
+export type OsDownloadTextFileResponse = OsDownloadTextFileResponseOk | OsDownloadTextFileResponseFail;
 
 export interface OpenSubtitlesApi {
-  getMovieInfo: (imdbId: string, pageNumber: number) => Promise<GetMovieInfoOutput>;
-  getDownloadInfo: (fileId: number) => Promise<GetDownloadInfoOutput>;
-  getFile: (url: string) => Promise<GetFileOutput>;
+  getMoviePage: (imdbId: string, pageNumber: number) => Promise<OsGetMoviePageResponse>;
+  getDownloadMeta: (fileId: number) => Promise<OsGetDownloadMetaResponse>;
+  downloadTextFile: (url: string) => Promise<OsDownloadTextFileResponse>;
 }

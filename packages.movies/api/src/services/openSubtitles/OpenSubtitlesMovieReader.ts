@@ -1,84 +1,85 @@
-import { isNil, map } from 'lodash-es';
+import { map, range } from 'lodash-es';
+import { defaultMovie } from '../../utils/defaultMovie';
+import { mergeMovies } from '../../utils/mergeMovies';
 import type { FetchLog } from '../common/FetchLog.types';
 import type { Movie } from '../common/Movie.types';
 import { OriginEnum, SourceTypeEnum } from '../common/Movie.types';
-import type * as T from '../movieApi/MovieApi.types';
-import { defaultMovie } from '../utils/defaultMovie';
-import { mergeMovies } from '../utils/mergeMovies';
-import { OpenSubtitlesApi } from './OpenSubtitlesApi';
-import type { GetMovieInfoOutputData, SearchOutputDataDataAttributes, SearchOutputDataDataAttributesRelatedLink } from './OpenSubtitlesApi.types';
+import type * as T from '../movieReader/MovieReader.types';
+import type { OpenSubtitlesApi } from './OpenSubtitlesApi';
+import type { OpenSubtitlesMapper, OsMappedMovie } from './OpenSubtitlesMapper.types';
+
+const provider = 'OpenSubtitles';
+const origin = OriginEnum.Api;
+const type = SourceTypeEnum.StandaloneFile;
 
 export class OpenSubtitlesMovieReader implements T.MovieReader {
-  public constructor(private readonly openSubtitlesApi: OpenSubtitlesApi) {}
+  public constructor(
+    private readonly openSubtitlesApi: OpenSubtitlesApi,
+    private readonly openSubtitlesMapper: OpenSubtitlesMapper
+  ) {}
 
-  public async read(imdbId: string): Promise<T.ReadOutput> {
-    const movieInfoListRes = await this.getMovieInfoList(imdbId);
-    if (movieInfoListRes.success) {
-      const output: T.ReadOutput = { success: true, data: defaultMovie(), logs: [...movieInfoListRes.logs] };
-      for (let i = 0; i < movieInfoListRes.data.length; i++) {
-        const movieInfo = movieInfoListRes.data[i];
-        for (let i = 0; i < movieInfo.data.length; i++) {
-          const row = movieInfo.data[i];
-          if (row.type !== 'subtitle') continue;
-          if (row.attributes.language !== 'en') continue;
+  public async read(imdbId: string): Promise<T.ReadMovieResponse> {
+    const output: T.ReadMovieResponse = { success: true, data: defaultMovie(), logs: [] };
 
-          const processMovieInfoRowRes = await this.processMovieInfoRow(row.attributes);
-          output.logs.push(...processMovieInfoRowRes.logs);
-          output.data = mergeMovies([output.data, processMovieInfoRowRes.data]);
-        }
-      }
-
-      return output;
-    } else {
-      return { success: false, data: null, logs: [...movieInfoListRes.logs] };
+    const getSubtitlePackageListRes = await this.getSubtitlePackageList(imdbId);
+    output.logs.push(...getSubtitlePackageListRes.logs);
+    for (let i = 0; i < getSubtitlePackageListRes.data.length; i++) {
+      const subtitlePackage = getSubtitlePackageListRes.data[i];
+      const toMovieRes = await this.toMovie(subtitlePackage);
+      output.logs.push(...toMovieRes.logs);
+      output.data = mergeMovies([output.data, toMovieRes.data]);
     }
+
+    return output;
   }
 
-  private async getMovieInfoList(imdbId: string) {
-    type TOutput = { success: boolean; data: GetMovieInfoOutputData[]; logs: FetchLog[] };
-    const output: TOutput = { success: true, data: [], logs: [] };
+  private async getSubtitlePackageList(imdbId: string) {
+    type TOutput = { data: OsMappedMovie[]; logs: FetchLog[] };
+    const output: TOutput = { data: [], logs: [] };
 
-    const getMovieInfoFirst = await this.openSubtitlesApi.getMovieInfo(imdbId, 1);
-    output.logs.push(getMovieInfoFirst.log);
+    const getMoviePageFirstRes = await this.openSubtitlesApi.getMoviePage(imdbId, 1);
+    output.logs.push(getMoviePageFirstRes.log);
 
-    if (getMovieInfoFirst.success) {
-      output.data.push(getMovieInfoFirst.data);
+    if (getMoviePageFirstRes.success) {
+      const moviePage = this.openSubtitlesMapper.toMoviePage(getMoviePageFirstRes.data);
+      output.data.push(...moviePage.movie);
 
-      const totalPages = getMovieInfoFirst.data.total_pages ?? 1;
-      const pageRequests = [];
-      for (let i = 2; i <= totalPages; i++) {
-        pageRequests.push(this.openSubtitlesApi.getMovieInfo(imdbId, i));
-      }
+      const totalPages = moviePage.totalPages ?? 1;
+      const remainingPages = range(2, totalPages + 1);
+      const getMoviePagePromises = map(remainingPages, (page) => this.openSubtitlesApi.getMoviePage(imdbId, page));
+      const getMoviePageResults = await Promise.all(getMoviePagePromises);
 
-      const getMovieInfoRestRes = await Promise.all(pageRequests);
-      for (let i = 0; i < getMovieInfoRestRes.length; i++) {
-        output.logs.push(getMovieInfoRestRes[i].log);
-        if (getMovieInfoRestRes[i].success) output.data.push(getMovieInfoRestRes[i].data!);
+      for (let j = 0; j < getMoviePageResults.length; j++) {
+        const getMoviePageRes = getMoviePageResults[j];
+        output.logs.push(getMoviePageRes.log);
+        if (getMoviePageRes.success) {
+          const moviePage = this.openSubtitlesMapper.toMoviePage(getMoviePageRes.data);
+          output.data.push(...moviePage.movie);
+        }
       }
     }
 
     return output;
   }
 
-  private async processMovieInfoRow(attributes: SearchOutputDataDataAttributes) {
-    type TOutput = { success: boolean; data: Movie; logs: FetchLog[] };
-    const output: TOutput = { success: true, data: defaultMovie(), logs: [] };
+  private async toMovie({ title, releaseYear, posterUrl, author, files }: OsMappedMovie) {
+    type TOutput = { data: Movie; logs: FetchLog[] };
+    const output: TOutput = { data: defaultMovie(), logs: [] };
 
-    output.data.title = attributes.feature_details.title ?? null;
-    output.data.releaseYear = attributes.feature_details.year ?? null;
-    output.data.posterUrl = this.getPosterLink(attributes.related_links);
+    output.data.title = title ?? output.data.title;
+    output.data.releaseYear = releaseYear;
+    output.data.posterUrl = posterUrl;
 
-    const getDownloadInfoPromises = map(attributes.files, (file) => this.openSubtitlesApi.getDownloadInfo(file.file_id));
+    const getDownloadInfoPromises = map(files, (file) => this.openSubtitlesApi.getDownloadMeta(file.id));
     const getDownloadInfoResults = await Promise.all(getDownloadInfoPromises);
 
     const getFilePromises = map(getDownloadInfoResults, (getDownloadInfoRes) => {
-      return getDownloadInfoRes.success ? this.openSubtitlesApi.getFile(getDownloadInfoRes.data.link) : Promise.resolve(null);
+      return getDownloadInfoRes.success ? this.openSubtitlesApi.downloadTextFile(getDownloadInfoRes.data.link) : Promise.resolve(null);
     });
 
     const getFileResults = await Promise.all(getFilePromises);
-
-    const author = attributes.uploader.name ?? null;
-    for (let i = 0; i < attributes.files.length; i++) {
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
       const getDownloadInfoRes = getDownloadInfoResults[i];
       output.logs.push(getDownloadInfoRes.log);
 
@@ -86,29 +87,14 @@ export class OpenSubtitlesMovieReader implements T.MovieReader {
       if (getDownloadInfoRes.success && getFileRes !== null) {
         output.logs.push(getFileRes.log);
         if (getFileRes.success) {
-          const file = attributes.files[i];
-          const subtitleFileName = file.file_name;
+          const subtitleFileName = file.name;
           const sourceUrl = getDownloadInfoRes.data.link;
-          output.data.subtitlePackages.push({
-            provider: 'OpenSubtitles',
-            author,
-            origin: OriginEnum.Api,
-            source: { type: SourceTypeEnum.StandaloneFile, sourceUrl, subtitleFileName },
-            text: getFileRes.data,
-          });
+          const text = getFileRes.data;
+          output.data.subtitlePackages.push({ provider, author, origin, source: { type, sourceUrl, subtitleFileName }, text });
         }
       }
     }
 
     return output;
-  }
-
-  private getPosterLink(relatedLinks: SearchOutputDataDataAttributesRelatedLink[]) {
-    for (let j = 0; j < relatedLinks.length; j++) {
-      const relatedLink = relatedLinks[j];
-      if (!isNil(relatedLink.img_url)) return relatedLink.img_url;
-    }
-
-    return null;
   }
 }
