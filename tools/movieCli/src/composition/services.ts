@@ -1,5 +1,6 @@
 import { createGitHubIssueService } from '@get-subtext/automation.github';
 import { createMovieReader } from '@get-subtext/movies.api';
+import { createMovieWriter } from '@get-subtext/movies.database';
 import { last, split } from 'lodash-es';
 import { rootDir } from '../rootDir';
 import { Handler } from '../services/Handler';
@@ -12,6 +13,8 @@ const logPrefix = last(split(pkgMeta.name, '/'));
 const botLabel = 'subtext-bot';
 const dataSeparator = '===';
 
+console.log(config.database.dir);
+
 export const createHandler = (verbose: boolean) => {
   const logger = new Logger(logPrefix!, verbose);
   const gitHubIssueService = createGitHubIssueService({ apiUrlBase: config.gitHub.apiUrlBase, apiToken: config.gitHub.token, dataSeparator, botLabel });
@@ -22,5 +25,7 @@ export const createHandler = (verbose: boolean) => {
     subdl: { apiUrlBase: config.subdl.apiUrlBase, zipUrlBase: config.subdl.zipUrlBase, apiKey: config.subdl.apiKey },
   });
 
-  return new Handler(botLabel, gitHubIssueService, movieReader, logger);
+  const movieWriter = createMovieWriter({ dir: config.database.dir });
+
+  return new Handler(botLabel, gitHubIssueService, movieReader, movieWriter, logger);
 };
