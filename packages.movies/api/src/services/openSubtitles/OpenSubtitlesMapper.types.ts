@@ -1,7 +1,7 @@
 import type * as T from './OpenSubtitlesApi.types';
 
-export type ApiSubtitlesPage = T.SubtitlesPage;
-export type ApiSubtitles = T.Subtitles;
+export type ApiSubtitlesPage = T.MoviePage;
+export type ApiMovie = T.Movie;
 export type ApiRelatedLink = T.RelatedLink;
 
 export interface File {
@@ -9,7 +9,7 @@ export interface File {
   name: string;
 }
 
-export interface SubtitlePackage {
+export interface Movie {
   title: string | null;
   releaseYear: number | null;
   posterUrl: string | null;
@@ -17,11 +17,11 @@ export interface SubtitlePackage {
   files: File[];
 }
 
-export interface ToSubtitlePackagePage {
+export interface MoviePage {
   totalPages: number;
-  subtitlePackages: SubtitlePackage[];
+  movie: Movie[];
 }
 
 export interface OpenSubtitlesMapper {
-  toSubtitlePackagePage: (movie: ApiSubtitlesPage) => ToSubtitlePackagePage;
+  toMoviePage: (movie: ApiSubtitlesPage) => MoviePage;
 }

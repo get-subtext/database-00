@@ -3,7 +3,7 @@ import { cloneDeep, get, toPairs } from 'lodash-es';
 import path from 'path';
 import { defaultMovie } from '../../utils/defaultMovie';
 import { OriginEnum, SourceTypeEnum } from '../common/Movie.types';
-import type * as T from '../movieApi/MovieApi.types';
+import type * as T from '../movieReader/MovieReader.types';
 import type { SubdlApi } from './SubdlApi';
 import type { SubdlMapper } from './SubdlMapper.types';
 import type { ExtractZipResponse } from './SubdlMovieReader.types';
@@ -20,13 +20,15 @@ export class SubdlMovieReader implements T.MovieReader {
   ) {}
 
   public async read(imdbId: string): Promise<T.ReadMovieResponse> {
-    const getMovieInfoRes = await this.subdlApi.getMovieInfo(imdbId);
+    const getMovieRes = await this.subdlApi.getMovie(imdbId);
 
-    if (!getMovieInfoRes.success) return { success: false, data: null, logs: [getMovieInfoRes.log] };
+    if (!getMovieRes.success) {
+      return { success: false, data: null, logs: [getMovieRes.log] };
+    }
 
-    const { title, releaseDate, releaseYear, subtitles } = this.subdlMapper.toSubtitlePackage(getMovieInfoRes.data);
+    const { title, releaseDate, releaseYear, subtitles } = this.subdlMapper.toMovie(getMovieRes.data);
     const movie = { ...defaultMovie(), title, releaseDate, releaseYear };
-    const logs = [getMovieInfoRes.log];
+    const logs = [getMovieRes.log];
     for (let i = 0; i < subtitles.length; i++) {
       const { baseUrl, author } = subtitles[i];
 
@@ -35,7 +37,7 @@ export class SubdlMovieReader implements T.MovieReader {
       if (!downloadZipFileRes.success) logs.push(downloadZipFileRes.log);
       if (!downloadZipFileRes.success) continue;
 
-      // if download fails, override download log with zip extract info
+      // if download passes, override download log with zip extract info
       const extractZipRes = await this.extractZip(downloadZipFileRes.data);
       const log = cloneDeep(downloadZipFileRes.log);
       log.output.status = extractZipRes.success ? log.output.status : 0;

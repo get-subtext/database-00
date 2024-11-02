@@ -7,7 +7,7 @@ export interface Subtitle {
   author: string | null;
 }
 
-export interface SubtitlePackage {
+export interface Movie {
   title: string;
   releaseDate: string | null;
   releaseYear: number | null;
@@ -15,5 +15,5 @@ export interface SubtitlePackage {
 }
 
 export interface SubdlMapper {
-  toSubtitlePackage: (movie: ApiMovie) => SubtitlePackage;
+  toMovie: (movie: ApiMovie) => Movie;
 }

@@ -4,12 +4,12 @@ import type * as T from './OpenSubtitlesMapper.types';
 export class OpenSubtitlesMapper implements T.OpenSubtitlesMapper {
   public constructor() {}
 
-  public toSubtitlePackagePage(movie: T.ApiSubtitlesPage): T.ToSubtitlePackagePage {
-    const subtitlePackages = map(movie.data, (d) => this.toSubtitlePackage(d));
-    return { totalPages: movie.total_pages, subtitlePackages: compact(subtitlePackages) };
+  public toMoviePage(moviePage: T.ApiSubtitlesPage): T.MoviePage {
+    const movie = map(moviePage.data, (d) => this.toMovie(d));
+    return { totalPages: moviePage.total_pages, movie: compact(movie) };
   }
 
-  private toSubtitlePackage(movie: T.ApiSubtitles): T.SubtitlePackage | null {
+  private toMovie(movie: T.ApiMovie): T.Movie | null {
     if (movie.type !== 'subtitle' || movie.attributes.language !== 'en') return null;
 
     return {

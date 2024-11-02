@@ -1,6 +1,6 @@
 import { FetchWrapper } from './services/fetch/FetchWrapper';
-import { MovieReader as MovieReaderImpl } from './services/movieApi/MovieApi';
-import type { MovieReader } from './services/movieApi/MovieApi.types';
+import { MovieReader as MovieReaderImpl } from './services/movieReader/MovieReader';
+import type { MovieReader } from './services/movieReader/MovieReader.types';
 import { OmdbApi } from './services/omdb/OmdbApi';
 import { OmdbMapper } from './services/omdb/OmdbMapper';
 import { OmdbMovieReader } from './services/omdb/OmdbMovieReader';
@@ -12,7 +12,7 @@ import { SubdlMapper } from './services/subdl/SubdlMapper';
 import { SubdlMovieReader } from './services/subdl/SubdlMovieReader';
 
 export type { Movie, OriginEnum, SourceTypeEnum, SubtitlePackage } from './services/common/Movie.types';
-export type { MovieReader, ReadMovieResponse as ReadOutput } from './services/movieApi/MovieApi.types';
+export type { MovieReader, ReadMovieResponse as ReadOutput } from './services/movieReader/MovieReader.types';
 
 export interface MovieReaderOptions {
   omdb: {

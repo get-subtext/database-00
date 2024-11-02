@@ -57,33 +57,33 @@ export interface Attributes {
   files: File[];
 }
 
-export interface Subtitles {
+export interface Movie {
   id: string;
   type: string;
   attributes: Attributes;
 }
 
-export interface SubtitlesPage {
+export interface MoviePage {
   total_pages: number;
   total_count: number;
   per_page: number;
   page: number;
-  data: Subtitles[];
+  data: Movie[];
 }
 
-export interface GetSubtitlesPageResponseOk {
+export interface GetMoviePageResponseOk {
   success: true;
-  data: SubtitlesPage;
+  data: MoviePage;
   log: FetchLog;
 }
 
-export interface GetSubtitlesPageResponseFail {
+export interface GetMoviePageResponseFail {
   success: false;
   data: null;
   log: FetchLog;
 }
 
-export type GetSubtitlesPageResponse = GetSubtitlesPageResponseOk | GetSubtitlesPageResponseFail;
+export type GetMoviePageResponse = GetMoviePageResponseOk | GetMoviePageResponseFail;
 
 export interface DownloadMeta {
   link: string;
@@ -127,7 +127,7 @@ export interface DownloadTextFileResponseFail {
 export type DownloadTextFileResponse = DownloadTextFileResponseOk | DownloadTextFileResponseFail;
 
 export interface OpenSubtitlesApi {
-  getSubtitlesPage: (imdbId: string, pageNumber: number) => Promise<GetSubtitlesPageResponse>;
+  getMoviePage: (imdbId: string, pageNumber: number) => Promise<GetMoviePageResponse>;
   getDownloadMeta: (fileId: number) => Promise<GetDownloadMetaResponse>;
   downloadTextFile: (url: string) => Promise<DownloadTextFileResponse>;
 }

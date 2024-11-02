@@ -4,7 +4,7 @@ import type * as T from './SubdlMapper.types';
 export class SubdlMapper implements T.SubdlMapper {
   public constructor() {}
 
-  public toSubtitlePackage(movie: T.ApiMovie): T.SubtitlePackage {
+  public toMovie(movie: T.ApiMovie): T.Movie {
     const meta = this.getMeta(movie);
 
     return {

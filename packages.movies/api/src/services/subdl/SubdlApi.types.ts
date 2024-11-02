@@ -33,19 +33,19 @@ export interface Movie {
   subtitles: Subtitle[];
 }
 
-export interface GetSubtitlesResponseOk {
+export interface GetMovieResponseOk {
   success: true;
   log: FetchLog;
   data: Movie;
 }
 
-export interface GetSubtitlesResponseFail {
+export interface GetMovieResponseFail {
   success: false;
   log: FetchLog;
   data: null;
 }
 
-export type GetMovieInfoResponse = GetSubtitlesResponseOk | GetSubtitlesResponseFail;
+export type GetMovieResponse = GetMovieResponseOk | GetMovieResponseFail;
 
 export interface DownloadZipFileResponseOk {
   success: true;
@@ -62,6 +62,6 @@ export interface DownloadZipFileResponseFail {
 export type DownloadZipFileResponse = DownloadZipFileResponseOk | DownloadZipFileResponseFail;
 
 export interface SubdlApi {
-  getMovieInfo: (imdbId: string) => Promise<GetMovieInfoResponse>;
+  getMovie: (imdbId: string) => Promise<GetMovieResponse>;
   downloadZipFile: (url: string) => Promise<DownloadZipFileResponse>;
 }

@@ -9,7 +9,7 @@ export class OpenSubtitlesApi implements T.OpenSubtitlesApi {
     private readonly fetchWrapper: FetchWrapper
   ) {}
 
-  public async getSubtitlesPage(imdbId: string, page: number): Promise<T.GetSubtitlesPageResponse> {
+  public async getMoviePage(imdbId: string, page: number): Promise<T.GetMoviePageResponse> {
     const url = `${this.apiUrlBase}/subtitles?imdb_id=${imdbId}&page=${page}`;
     const headers = this.createHeaders(this.apiKey);
     const { success, status, body: resBody } = await this.fetchWrapper.getJson({ url, headers });

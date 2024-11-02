@@ -33,20 +33,20 @@ export interface Movie {
   Response: string;
 }
 
-export interface GetMovieInfoResponseOk {
+export interface GetMovieResponseOk {
   success: true;
   log: FetchLog;
   data: Movie;
 }
 
-export interface GetMovieInfoResponseFail {
+export interface GetMovieResponseFail {
   success: false;
   log: FetchLog;
   data: null;
 }
 
-export type GetMovieInfoResponse = GetMovieInfoResponseOk | GetMovieInfoResponseFail;
+export type GetMovieResponse = GetMovieResponseOk | GetMovieResponseFail;
 
 export interface OmdbApi {
-  getMovieInfo: (imdbId: string) => Promise<GetMovieInfoResponse>;
+  getMovie: (imdbId: string) => Promise<GetMovieResponse>;
 }

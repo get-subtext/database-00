@@ -1,6 +1,5 @@
 import type * as T from './OmdbApi.types';
 
-export type ApiMovieRating = T.Rating;
 export type ApiMovie = T.Movie;
 
 export interface Movie {
