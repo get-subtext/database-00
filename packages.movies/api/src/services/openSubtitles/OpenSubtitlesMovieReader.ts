@@ -46,15 +46,15 @@ export class OpenSubtitlesMovieReader implements T.MovieReader {
 
       const totalPages = moviePage.totalPages ?? 1;
       const remainingPages = range(2, totalPages + 1);
-      const getSubtitlesPromises = map(remainingPages, (page) => this.openSubtitlesApi.getMoviePage(imdbId, page));
-      const getSubtitlesResults = await Promise.all(getSubtitlesPromises);
+      const getMoviePagePromises = map(remainingPages, (page) => this.openSubtitlesApi.getMoviePage(imdbId, page));
+      const getMoviePageResults = await Promise.all(getMoviePagePromises);
 
-      for (let j = 0; j < getSubtitlesResults.length; j++) {
-        const getSubtitlesRes = getSubtitlesResults[j];
-        output.logs.push(getSubtitlesRes.log);
-        if (getSubtitlesRes.success) {
-          const subtitlePackagePage = this.openSubtitlesMapper.toMoviePage(getSubtitlesRes.data);
-          output.data.push(...subtitlePackagePage.movie);
+      for (let j = 0; j < getMoviePageResults.length; j++) {
+        const getMoviePageRes = getMoviePageResults[j];
+        output.logs.push(getMoviePageRes.log);
+        if (getMoviePageRes.success) {
+          const moviePage = this.openSubtitlesMapper.toMoviePage(getMoviePageRes.data);
+          output.data.push(...moviePage.movie);
         }
       }
     }
