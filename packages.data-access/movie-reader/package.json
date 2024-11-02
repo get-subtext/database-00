@@ -1,5 +1,5 @@
 {
-  "name": "@get-subtext/movies.api",
+  "name": "@get-subtext/data-access.movie-reader",
   "version": "1.0.0",
   "private": true,
   "scripts": {
