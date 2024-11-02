@@ -1,6 +1,6 @@
 import { createGitHubIssueService } from '@get-subtext/automation.github';
-import { createMovieReader } from '@get-subtext/movies.api';
-import { createMovieWriter } from '@get-subtext/movies.database';
+import { createMovieReader } from '@get-subtext/data-access.movie-reader';
+import { createMovieWriter } from '@get-subtext/data-access.movie-writer';
 import { last, split } from 'lodash-es';
 import { rootDir } from '../rootDir';
 import { Handler } from '../services/Handler';

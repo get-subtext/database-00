@@ -1,5 +1,5 @@
 {
-  "name": "@get-subtext/movies.database",
+  "name": "@get-subtext/data-access.movie-writer",
   "version": "1.0.0",
   "private": true,
   "scripts": {

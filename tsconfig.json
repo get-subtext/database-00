@@ -4,9 +4,9 @@
     "baseUrl": ".",
     "paths": {
       "@get-subtext/automation.github": ["packages.automation/github/src"],
-      "@get-subtext/movie-cli": ["tools/movieCli/src"],
-      "@get-subtext/movies.api": ["packages.movies/api/src"],
-      "@get-subtext/movies.database": ["packages.movies/database/src"]
+      "@get-subtext/data-access.movie-reader": ["packages.data-access/movie-reader/src"],
+      "@get-subtext/data-access.movie-writer": ["packages.data-access/movie-writer/src"],
+      "@get-subtext/movie-cli": ["tools/movieCli/src"]
     }
   }
 }
