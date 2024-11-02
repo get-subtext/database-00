@@ -9,7 +9,7 @@ export class OmdbApi implements T.OmdbApi {
     private readonly fetchWrapper: FetchWrapper
   ) {}
 
-  public async getMovie(imdbId: string): Promise<T.GetMovieResponse> {
+  public async getMovie(imdbId: string): Promise<T.OmdbGetMovieResponse> {
     const url = this.createUrl(imdbId, this.apiKey);
     const { success, status, body: resBody } = await this.fetchWrapper.getJson({ url });
 

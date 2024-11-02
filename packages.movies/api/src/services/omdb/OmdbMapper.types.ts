@@ -1,8 +1,8 @@
 import type * as T from './OmdbApi.types';
 
-export type ApiMovie = T.Movie;
+export type OmdbApiMovie = T.OmdbMovie;
 
-export interface Movie {
+export interface OmdbMappedMovie {
   imdbId: string;
   title: string;
   posterUrl: string | null;
@@ -18,5 +18,5 @@ export interface Movie {
 }
 
 export interface OmdbMapper {
-  toMovie: (movie: ApiMovie) => Movie;
+  toMovie: (movie: OmdbApiMovie) => OmdbMappedMovie;
 }
