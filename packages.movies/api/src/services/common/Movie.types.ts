@@ -9,11 +9,12 @@ export enum SourceTypeEnum {
 }
 
 export interface SubtitlePackage {
+  subtitlePackageId: string;
   provider: string;
   author: string | null;
   origin: OriginEnum;
   source: ZipFileSource | StandaloneFileSource;
-  text: string;
+  subtitles: string;
 }
 
 interface ZipFileSource {

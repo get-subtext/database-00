@@ -1,7 +1,9 @@
 import AdmZip from 'adm-zip';
-import { cloneDeep, get, toPairs } from 'lodash-es';
+import { cloneDeep, get, join, toPairs } from 'lodash-es';
 import path from 'path';
 import { defaultMovie } from '../../utils/defaultMovie';
+import { generateHashFromText } from '../../utils/generateHash';
+import { toLines } from '../../utils/parseSrt';
 import { OriginEnum, SourceTypeEnum } from '../common/Movie.types';
 import type * as T from '../movieReader/MovieReader.types';
 import type { SubdlApi } from './SubdlApi';
@@ -50,7 +52,9 @@ export class SubdlMovieReader implements T.MovieReader {
       const zipFileName = path.basename(baseUrl);
       for (let i = 0; i < subtitleFilePairs.length; i++) {
         const [subtitleFileName, text] = subtitleFilePairs[i];
-        movie.subtitlePackages.push({ provider, author, origin, source: { type, sourceUrl, zipFileName, subtitleFileName }, text });
+        const subtitles = join(toLines(text), '\n');
+        const subtitlePackageId = generateHashFromText(subtitles);
+        movie.subtitlePackages.push({ subtitlePackageId, provider, author, origin, source: { type, sourceUrl, zipFileName, subtitleFileName }, subtitles });
       }
     }
 

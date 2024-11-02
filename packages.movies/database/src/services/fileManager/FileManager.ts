@@ -6,26 +6,50 @@ export class FileManager implements T.FileManager {
   public constructor(private readonly dir: string) {}
 
   public async writeMovieData(data: T.FmMovie) {
-    const filePath = this.getMovieDataFilePath(data.imdbId);
+    const filePath = this.getMovieItemFilePath(data.imdbId);
     await this.writeJsonFile(filePath, data);
     return filePath;
   }
 
-  private getMovieRootDir() {
-    const filePath = path.resolve(this.dir, 'movies');
+  public async writeSubtitlePackage(imdbId: string, subtitlePackage: T.FmSubtitlePackage) {
+    const filePath = this.getSubtitlePackageItemFilePath(imdbId, subtitlePackage.subtitlePackageId);
+    await this.writeJsonFile(filePath, subtitlePackage);
     return filePath;
+  }
+
+  private getMovieRootDir() {
+    const movieRootDir = path.resolve(this.dir, 'movies');
+    return movieRootDir;
   }
 
   private getMovieItemDir(imdbId: string) {
     const movieRootDir = this.getMovieRootDir();
-    const movieDir = path.resolve(movieRootDir, imdbId);
-    return movieDir;
+    const movieItemDir = path.resolve(movieRootDir, imdbId);
+    return movieItemDir;
   }
 
-  private getMovieDataFilePath(imdbId: string) {
+  private getSubtitlePackageRootDir(imdbId: string) {
+    const movieItemDir = this.getMovieItemDir(imdbId);
+    const subtitlePackageRootDir = path.resolve(movieItemDir, 'subtitles');
+    return subtitlePackageRootDir;
+  }
+
+  private getSubtitlePackageItemDir(imdbId: string, subtitlePackageId: string) {
+    const subtitlePackageRootDir = this.getSubtitlePackageRootDir(imdbId);
+    const subtitlePackageItemDir = path.resolve(subtitlePackageRootDir, 'subtitles', subtitlePackageId);
+    return subtitlePackageItemDir;
+  }
+
+  private getMovieItemFilePath(imdbId: string) {
     const movieItemDir = this.getMovieItemDir(imdbId);
     const filePath = path.resolve(movieItemDir, 'index.json');
     return filePath;
+  }
+
+  private getSubtitlePackageItemFilePath(imdbId: string, subtitlePackageId: string) {
+    const subtitlesDir = this.getSubtitlePackageItemDir(imdbId, subtitlePackageId);
+    const subtitlePackageItemFilePath = path.resolve(subtitlesDir, 'index.json');
+    return subtitlePackageItemFilePath;
   }
 
   private async writeJsonFile(filePath: string, fileContent: any) {
