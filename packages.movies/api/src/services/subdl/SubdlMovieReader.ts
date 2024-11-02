@@ -24,30 +24,23 @@ export class SubdlMovieReader implements T.MovieReader {
 
     if (!getMovieInfoRes.success) return { success: false, data: null, logs: [getMovieInfoRes.log] };
 
-    const output: T.ReadMovieResponse = { success: true, data: defaultMovie(), logs: [] };
     const { title, releaseDate, releaseYear, subtitles } = this.subdlMapper.toSubtitlePackage(getMovieInfoRes.data);
-
-    output.data.title = title;
-    output.data.releaseDate = releaseDate;
-    output.data.releaseYear = releaseYear;
-
+    const movie = { ...defaultMovie(), title, releaseDate, releaseYear };
+    const logs = [getMovieInfoRes.log];
     for (let i = 0; i < subtitles.length; i++) {
       const { baseUrl, author } = subtitles[i];
 
-      const getZipFileRes = await this.subdlApi.downloadZipFile(baseUrl);
-      if (!getZipFileRes.success) {
-        output.logs.push(getZipFileRes.log);
-        continue;
-      }
+      // if download fails, record download log as-is
+      const downloadZipFileRes = await this.subdlApi.downloadZipFile(baseUrl);
+      if (!downloadZipFileRes.success) logs.push(downloadZipFileRes.log);
+      if (!downloadZipFileRes.success) continue;
 
-      const extractZipRes = await this.extractZip(getZipFileRes.data);
-
-      // Update fetch log based on result of zip extract
-      const log = cloneDeep(getZipFileRes.log);
+      // if download fails, override download log with zip extract info
+      const extractZipRes = await this.extractZip(downloadZipFileRes.data);
+      const log = cloneDeep(downloadZipFileRes.log);
       log.output.status = extractZipRes.success ? log.output.status : 0;
       log.output.body = extractZipRes.success ? extractZipRes.data : extractZipRes.message;
-      output.logs.push(log);
-
+      logs.push(log);
       if (!extractZipRes.success) continue;
 
       const sourceUrl = `${this.subdlZipUrlBase}${baseUrl}`;
@@ -55,11 +48,11 @@ export class SubdlMovieReader implements T.MovieReader {
       const zipFileName = path.basename(baseUrl);
       for (let i = 0; i < subtitleFilePairs.length; i++) {
         const [subtitleFileName, text] = subtitleFilePairs[i];
-        output.data.subtitlePackages.push({ provider, author, origin, source: { type, sourceUrl, zipFileName, subtitleFileName }, text });
+        movie.subtitlePackages.push({ provider, author, origin, source: { type, sourceUrl, zipFileName, subtitleFileName }, text });
       }
     }
 
-    return output;
+    return { success: true, data: movie, logs };
   }
 
   private async extractZip(arrayBuffer: ArrayBuffer): Promise<ExtractZipResponse> {
