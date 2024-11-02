@@ -6,7 +6,7 @@ import type { Movie } from '../common/Movie.types';
 import { OriginEnum, SourceTypeEnum } from '../common/Movie.types';
 import type * as T from '../movieReader/MovieReader.types';
 import { OpenSubtitlesApi } from './OpenSubtitlesApi';
-import type { OpenSubtitlesMapper } from './OpenSubtitlesMapper.types';
+import type { OpenSubtitlesMapper, OsMappedMovie } from './OpenSubtitlesMapper.types';
 
 const provider = 'OpenSubtitles';
 const origin = OriginEnum.Api;
@@ -34,7 +34,7 @@ export class OpenSubtitlesMovieReader implements T.MovieReader {
   }
 
   private async getSubtitlePackageList(imdbId: string) {
-    type TOutput = { data: Movie[]; logs: FetchLog[] };
+    type TOutput = { data: OsMappedMovie[]; logs: FetchLog[] };
     const output: TOutput = { data: [], logs: [] };
 
     const getMoviePageFirstRes = await this.openSubtitlesApi.getMoviePage(imdbId, 1);
@@ -62,7 +62,7 @@ export class OpenSubtitlesMovieReader implements T.MovieReader {
     return output;
   }
 
-  private async toMovie({ title, releaseYear, posterUrl, author, files }: Movie) {
+  private async toMovie({ title, releaseYear, posterUrl, author, files }: OsMappedMovie) {
     type TOutput = { data: Movie; logs: FetchLog[] };
     const output: TOutput = { data: defaultMovie(), logs: [] };
 

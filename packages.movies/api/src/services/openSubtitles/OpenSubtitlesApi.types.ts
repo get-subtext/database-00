@@ -1,18 +1,18 @@
 import type { FetchLog } from '../common/FetchLog.types';
 
-export interface File {
+export interface OsFile {
   file_id: number;
   cd_number: number;
   file_name: string;
 }
 
-export interface RelatedLink {
+export interface OsRelatedLink {
   label: string;
   url: string;
   img_url: string;
 }
 
-export interface FeatureDetails {
+export interface OsFeatureDetails {
   feature_id: number;
   feature_type: string;
   year: number;
@@ -22,13 +22,13 @@ export interface FeatureDetails {
   tmdb_id: number;
 }
 
-export interface Uploader {
+export interface OsUploader {
   uploader_id: null;
   name: string;
   rank: string;
 }
 
-export interface Attributes {
+export interface OsAttributes {
   subtitle_id: string;
   language: string;
   download_count: number;
@@ -50,42 +50,42 @@ export interface Attributes {
   comments: string;
   legacy_subtitle_id: number;
   legacy_uploader_id: number;
-  uploader: Uploader;
-  feature_details: FeatureDetails;
+  uploader: OsUploader;
+  feature_details: OsFeatureDetails;
   url: string;
-  related_links: RelatedLink[];
-  files: File[];
+  related_links: OsRelatedLink[];
+  files: OsFile[];
 }
 
-export interface Movie {
+export interface OsMovie {
   id: string;
   type: string;
-  attributes: Attributes;
+  attributes: OsAttributes;
 }
 
-export interface MoviePage {
+export interface OsMoviePage {
   total_pages: number;
   total_count: number;
   per_page: number;
   page: number;
-  data: Movie[];
+  data: OsMovie[];
 }
 
-export interface GetMoviePageResponseOk {
+export interface OsGetMoviePageResponseOk {
   success: true;
-  data: MoviePage;
+  data: OsMoviePage;
   log: FetchLog;
 }
 
-export interface GetMoviePageResponseFail {
+export interface OsGetMoviePageResponseFail {
   success: false;
   data: null;
   log: FetchLog;
 }
 
-export type GetMoviePageResponse = GetMoviePageResponseOk | GetMoviePageResponseFail;
+export type OsGetMoviePageResponse = OsGetMoviePageResponseOk | OsGetMoviePageResponseFail;
 
-export interface DownloadMeta {
+export interface OsDownloadMeta {
   link: string;
   file_name: string;
   requests: number;
@@ -98,36 +98,36 @@ export interface DownloadMeta {
   ts: number;
 }
 
-export interface GetDownloadMetaResponseOk {
+export interface OsGetDownloadMetaResponseOk {
   success: true;
   log: FetchLog;
-  data: DownloadMeta;
+  data: OsDownloadMeta;
 }
 
-export interface GetDownloadMetaResponseFail {
+export interface OsGetDownloadMetaResponseFail {
   success: false;
   log: FetchLog;
   data: null;
 }
 
-export type GetDownloadMetaResponse = GetDownloadMetaResponseOk | GetDownloadMetaResponseFail;
+export type OsGetDownloadMetaResponse = OsGetDownloadMetaResponseOk | OsGetDownloadMetaResponseFail;
 
-export interface DownloadTextFileResponseOk {
+export interface OsDownloadTextFileResponseOk {
   success: true;
   log: FetchLog;
   data: string;
 }
 
-export interface DownloadTextFileResponseFail {
+export interface OsDownloadTextFileResponseFail {
   success: false;
   log: FetchLog;
   data: null;
 }
 
-export type DownloadTextFileResponse = DownloadTextFileResponseOk | DownloadTextFileResponseFail;
+export type OsDownloadTextFileResponse = OsDownloadTextFileResponseOk | OsDownloadTextFileResponseFail;
 
 export interface OpenSubtitlesApi {
-  getMoviePage: (imdbId: string, pageNumber: number) => Promise<GetMoviePageResponse>;
-  getDownloadMeta: (fileId: number) => Promise<GetDownloadMetaResponse>;
-  downloadTextFile: (url: string) => Promise<DownloadTextFileResponse>;
+  getMoviePage: (imdbId: string, pageNumber: number) => Promise<OsGetMoviePageResponse>;
+  getDownloadMeta: (fileId: number) => Promise<OsGetDownloadMetaResponse>;
+  downloadTextFile: (url: string) => Promise<OsDownloadTextFileResponse>;
 }

@@ -4,12 +4,12 @@ import type * as T from './OpenSubtitlesMapper.types';
 export class OpenSubtitlesMapper implements T.OpenSubtitlesMapper {
   public constructor() {}
 
-  public toMoviePage(moviePage: T.ApiSubtitlesPage): T.MoviePage {
+  public toMoviePage(moviePage: T.OsApiSubtitlesPage): T.OsMappedMoviePage {
     const movie = map(moviePage.data, (d) => this.toMovie(d));
     return { totalPages: moviePage.total_pages, movie: compact(movie) };
   }
 
-  private toMovie(movie: T.ApiMovie): T.Movie | null {
+  private toMovie(movie: T.OsApiMovie): T.OsMappedMovie | null {
     if (movie.type !== 'subtitle' || movie.attributes.language !== 'en') return null;
 
     return {
@@ -21,7 +21,7 @@ export class OpenSubtitlesMapper implements T.OpenSubtitlesMapper {
     };
   }
 
-  private getPosterLink(relatedLinks: T.ApiRelatedLink[]) {
+  private getPosterLink(relatedLinks: T.OsApiRelatedLink[]) {
     for (let j = 0; j < relatedLinks.length; j++) {
       const relatedLink = relatedLinks[j];
       if (!isNil(relatedLink.img_url)) return relatedLink.img_url;

@@ -1,27 +1,27 @@
 import type * as T from './OpenSubtitlesApi.types';
 
-export type ApiSubtitlesPage = T.MoviePage;
-export type ApiMovie = T.Movie;
-export type ApiRelatedLink = T.RelatedLink;
+export type OsApiSubtitlesPage = T.OsMoviePage;
+export type OsApiMovie = T.OsMovie;
+export type OsApiRelatedLink = T.OsRelatedLink;
 
-export interface File {
+export interface OsMappedFile {
   id: number;
   name: string;
 }
 
-export interface Movie {
+export interface OsMappedMovie {
   title: string | null;
   releaseYear: number | null;
   posterUrl: string | null;
   author: string | null;
-  files: File[];
+  files: OsMappedFile[];
 }
 
-export interface MoviePage {
+export interface OsMappedMoviePage {
   totalPages: number;
-  movie: Movie[];
+  movie: OsMappedMovie[];
 }
 
 export interface OpenSubtitlesMapper {
-  toMoviePage: (movie: ApiSubtitlesPage) => MoviePage;
+  toMoviePage: (movie: OsApiSubtitlesPage) => OsMappedMoviePage;
 }
